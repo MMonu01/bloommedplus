@@ -10,23 +10,25 @@
       "orders": []
     }
   ],
-  "admin":    {
+  "admin":   [ {
       "id": "mdmonu",
       "full_name": "Md Monu",
       "mobile": "9315238455",
       "email": "mdmonu2021@gmail.com",
       "password": "Dyson_Sphere",
       "customers": [],
-      "orders": [],
-
-
-      "product": {
-        "skin care": [
+      "orders": []
+}],
+      "products": [{
+      "id":1,
+      "name":"skin care",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/d31e6bfc-9848-47c5-bc45-a9268270ddc7.png",
+        "product_list": [
           {
             "id": "sc1",
             "adminId": "mdmonu",
             "image": "https://onemg.gumlet.io/images/w_150,c_fit,q_auto,h_150,f_auto/963edfc93b2f4f319f6f6d08df1cece8/tetmosol-medicated-soap.jpg",
-            "product_name": "Tetmosol Medicated Soap",
+            "name": "Tetmosol Medicated Soap",
             "stock": 40,
             "price": 71,
             "discount": 10,
@@ -37,8 +39,8 @@
             "rating": "4.3",
             "description": "Tetmosol Medicated Soap is a Grade 1 medicated soap that helps cleanse the skin and relieves skin problems like itching, irritation, rashes and redness. It has a mild fragrance and can be used daily for adults and children."
           }  
-    ]
-  }
-}
   
+        ]
+}
+      ]
 }

@@ -10,8 +10,8 @@ const AllRoutes = ()=>{
 return(
     <Routes>
 <Route path='/' element={<Home/>}/>
-<Route path='/products' element={<Products/>}/>
-<Route path='/products/:id' element={<SingleProduct/>}/>
+<Route path='/products/:id' element={<Products/>}/>
+<Route path='/products/:id/product/:subid' element={<SingleProduct/>}/>
     </Routes>
 )
 }
