@@ -1,9 +1,44 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "user": [
+    {
+      "id": "mdmonu",
+      "full_name": "Md Monu",
+      "mobile": "9315238455",
+      "email": "mdmonu2021@gmail.com",
+      "password": "matrioshka_brain",
+      "cart": [],
+      "orders": []
+    }
+  ],
+  "admin":    {
+      "id": "mdmonu",
+      "full_name": "Md Monu",
+      "mobile": "9315238455",
+      "email": "mdmonu2021@gmail.com",
+      "password": "Dyson_Sphere",
+      "customers": [],
+      "orders": [],
+
+
+      "product": {
+        "skin care": [
+          {
+            "id": "sc1",
+            "adminId": "mdmonu",
+            "image": "https://onemg.gumlet.io/images/w_150,c_fit,q_auto,h_150,f_auto/963edfc93b2f4f319f6f6d08df1cece8/tetmosol-medicated-soap.jpg",
+            "product_name": "Tetmosol Medicated Soap",
+            "stock": 40,
+            "price": 71,
+            "discount": 10,
+            "total_price": null,
+            "status": null,
+            "rating_count":1107,
+            "reviews":219,
+            "rating": "4.3",
+            "description": "Tetmosol Medicated Soap is a Grade 1 medicated soap that helps cleanse the skin and relieves skin problems like itching, irritation, rashes and redness. It has a mild fragrance and can be used daily for adults and children."
+          }  
+    ]
   }
+}
+  
+}
