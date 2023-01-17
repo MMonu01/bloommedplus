@@ -19,28 +19,2034 @@
       "customers": [],
       "orders": []
 }],
-      "products": [{
-      "id":1,
-      "name":"skin care",
-      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/d31e6bfc-9848-47c5-bc45-a9268270ddc7.png",
-        "product_list": [
+     
+      
+        "products": [
           {
             "id": "sc1",
             "adminId": "mdmonu",
             "image": "https://onemg.gumlet.io/images/w_150,c_fit,q_auto,h_150,f_auto/963edfc93b2f4f319f6f6d08df1cece8/tetmosol-medicated-soap.jpg",
             "name": "Tetmosol Medicated Soap",
             "stock": 40,
-            "price": 71,
-            "discount": 10,
+            "packs":"packet of 100 gm Soap",
+            "mrp":92,
+            "price": 80,
+            "discount": 13,
             "total_price": null,
             "status": null,
             "rating_count":1107,
             "reviews":219,
             "rating": "4.3",
-            "description": "Tetmosol Medicated Soap is a Grade 1 medicated soap that helps cleanse the skin and relieves skin problems like itching, irritation, rashes and redness. It has a mild fragrance and can be used daily for adults and children."
-          }  
+            "description": "Tetmosol Medicated Soap is a Grade 1 medicated soap that helps cleanse the skin and relieves skin problems like itching, irritation, rashes and redness. It has a mild fragrance and can be used daily for adults and children.",
+            "key_ingredients":["Sodium tallowate","Sodium Cocoate","Water (Aqua)","Glycerin"],
+            "key_benefits":[
+              "Provides effective relief against itching and rashes",
+              "Provides relief against infections caused by parasites",
+              "Relieves sores and crusting of the skin",
+              "Helps fight skin infections and diseases"
+            ],
+            "safety_information":[
+              "Read the label carefully before use",
+              "Keep out of the reach of children",
+              "https://us06web.zoom.us/j/85817378497"
+            ],
+            "product_highlight":[
+                "Helps relieve skin infections",
+                "Protects the skin from irritation",
+                "Relieves itching and rashes",
+                "Keeps the skin clean and healthy"
+            ]
+          } 
+
+,
+
+{
+  "id": "sc2",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/h_150,c_fit,f_auto,q_auto,w_150/lr1qvaffxz9ldjqks6rn/cetaphil-gentle-skin-cleanser-dry-to-normal-sensitive-skin.jpg",
+  "name": "Cetaphil Gentle Skin Cleanser Dry to Normal, Sensitive Skin",
+  "stock": 50,
+  "packs":"bottle of 500 ml Cleanser",
+  "mrp":850,
+  "price": 765,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count":766,
+  "reviews":164,
+  "rating": "4.5",
+  "description": "Cetaphil Gentle Skin Cleanser Dry to Normal, Sensitive Skin has a creamy formula clinically proven to provide continuous hydration to protect against dryness. The cleanser is formulated with Micellar Technology that gently and effectively removes dirt, makeup, and impurities.",
+
+  "key_ingredients":["Hydrating Glycerin","Niacinamide (Vitamin B3)","Panthenol (Vitamin B5)"],
+  "key_benefits":[
+    "Helps remove dirt, makeup, and impurities",
+    "Blend of niacinamide, panthenol, and hydrating glycerin protect the skin’s natural moisture barrier",
+    "RDefends against 5 signs of skin sensitivity, including dryness, irritation, roughness, tightness, and weak skin barrier",
+    "Does not irritate and strip the skin of the natural protective oils or emollients"
+  ],
+  "safety_information":[
+    "Read the label carefully before use",
+    "Keep out of the reach of children"
+  ],
+  "product_highlight":[
+      "Mild, non-irritating formulation that soothes skin",
+      "Suitable for all skin types",
+      "Moisturizes without leaving residue that can clog pores",
+      "Does not remove the natural oils and emollients the skin",
+      "Gentle enough for a baby's delicate skin"
+  ]
+} 
+,
+
+
+{
+  "id": "sc3",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/c_fit,w_150,h_150,f_auto,q_auto/uasrztrr4pej8lyoj9lq/plum-mandarin-vitamin-c-15-face-serum.jpg",
+  "name": "Plum Mandarin & Vitamin C 15% Face Serum",
+  "stock": 78,
+  "packs":"bottle of 30 ml Serum",
+  "mrp":790,
+  "price": 672,
+  "discount": 15,
+  "total_price": null,
+  "status": null,
+  "rating_count":25,
+  "reviews":1,
+  "rating": "4.4",
+  "description": "Plum Mandarin & Vitamin C 15% Face Serum is infused with the natural element of vitamin C and mandarin extracts that provides your skin with adequate hydration and makes it glow. Vitamin C absorbs impurities and excess oil from the skin and restores the suppleness and youthfulness of your skin. It gently exfoliates and improves the texture of your skin. It shields the skin from UV damage and supports numerous well-known functions, including promoting collagen production and aiding in antioxidant defence against UV-induced photodamage. This product is paraben-free, dye-free, cruelty-free, vegan and dermatologist-tested.",
+
+  "key_ingredients":["Vitamin C","Mandarin peel extract"],
+  "key_benefits":[
+    "This serum improves skin texture and brightens up your skin",
+    "Vitamin C accelerates cell regeneration and boosts collagen, helping the skin shed dead cells",
+    "it is skin firming, retains skin's elasticity and improves fine lines and wrinklesr",
+    "Does not irritate and strip the skin of the natural protective oils or emollients",
+    "It helps control oil, prevents UV-induced pigmentation, boosts hydration, and normalises skin pH"
+  ],
+  "safety_information":[
+    "Read the label carefully before use",
+    "Keep out of the reach of children",
+    "For external use only"
+  ],
+  "product_highlight":[
+      "Helps fight sun damage",
+      "100% vegan, paraben-free, phthalate-free",
+      "Boosts the natural glow of your skin",
+      "Promotes skin rejuvenation and maximizes hydration"
+  ]
+} 
+,
+
+{
+  "id": "sc4",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/c_fit,w_150,h_150,f_auto,q_auto/tmcl9ndskbiezitxdy5y/ahaglow-advanced-skin-rejuvenating-face-wash.jpg",
+  "name": "Ahaglow Advanced Skin Rejuvenating Face Wash",
+  "stock": 90,
+  "packs":"tube of 200 gm Face Wash",
+  "mrp":710,
+  "price": 604,
+  "discount": 15,
+  "total_price": null,
+  "status": null,
+  "rating_count":1522,
+  "reviews":410,
+  "rating": "4.4",
+  "description": "Ahaglow Advanced Skin Rejuvenating Face Wash cleanses the skin with its natural foaming ingredients and helps improve skin texture. The gel is made with more than 80% purified water and contains plant-based natural surfactants that help moisturise the skin. The face wash is enriched with Aloe Vera and Vitamin E, which rejuvenates dry and dull skin and keeps the skin soft and hydrated.",
+
+  "key_ingredients":["VPurified Water, Acrylate Copolymer, Sodium Laureth Sulphate, Aloe Vera, Polysorbate 80, Sodium Cocoyl, Apple Amino Acid, Decyl Glucoside, Coloured Milicapsules, Glycolic Acid, Phenoxyethanol, Fragrance, Vitamin E Acetate, Potassium Hydroxide"],
+
+  "key_benefits":[
+    "Rejuvenates the skin by encouraging the shedding of dead skin cells",
+    "Reduces the appearance of the number of wrinkles",
+    "Improves skin tone and texture",
+    "Unblocks and cleanses the pores"
+  ],
+  "safety_information":[
+    "Read the label carefully before use",
+    "Keep out of the reach of children"
+  ],
+  "product_highlight":[
+      "Balances the pH level of the skin",
+      "Keeps the skin hydrated",
+      "Reduces the appearance of wrinkles",
+      "Rejuvenates the skin by removing dead and dull skin",
+      "Improves skin texture by clearing the pores"
+  ]
+} 
+
+,
+
+
+           {
+            "id": "sc5",
+            "adminId": "mdmonu",
+            "image": "https://onemg.gumlet.io/images/c_fit,w_150,h_150,f_auto,q_auto/kryuwtbpvmsceejdkni2/physiogel-hypoallergenic-daily-moisture-therapy-body-lotion.jpg",
+            "name": "Physiogel Hypoallergenic Daily Moisture Therapy Body Lotion",
+            "stock": 67,
+            "packs":"bottle of 100 ml Lotion",
+            "mrp":600,
+            "price": 510,
+            "discount": 15,
+            "total_price": null,
+            "status": null,
+            "rating_count":103,
+            "reviews":15,
+            "rating": "4.5",
+            "description": "Physiogel Hypoallergenic Daily Moisture Therapy Lotion helps to repair the moisture barrier of the skin and promotes a longer lasting protection to the skin.It is free from preservatives, perfumes and colorants.",
+
+            "key_ingredients":["Caprylic/Capric Triglyceride","Glycerin","Pentylene Glycol","Cocos Nucifera Oil","Elaeis Guineensis Oil"],
+
+            "key_benefits":[
+              "Promotes long lasting moisture to protect against reoccurring dryness",
+              "Hypoallergenic in nature makes the skin less sensitive and dry",
+              "Relieves dryness from the tight and itchy skin"
+            ],
+            "safety_information":[
+              "Read the label carefully before use",
+              "Keep out of the reach of children",
+              "Do not exceed the recommended dosage"
+            ],
+            "product_highlight":[
+                "Makes the skin less sensitive and more healthy",
+                "Provides daily moisture therapy to the dry and sensitive skin",
+                "Helps repair the skin's moisture barrier making it soft and healthy"
+               
+            ]
+          }
+,
+
+
+{
+  "id": "sc6",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/c_fit,w_150,h_150,f_auto,q_auto/qsxil3u8tp1rljohhkun/mamaearth-vitamin-c-face-wash.jpg",
+  "name": "Mamaearth Vitamin C Face Wash",
+  "stock": 77,
+  "packs":"tube of 100 bottle Face Wash",
+  "mrp":259,
+  "price": 243,
+  "discount": 6,
+  "total_price": null,
+  "status": null,
+  "rating_count":825,
+  "reviews":151,
+  "rating": "4.2",
+  "description": "Mamaearth Face Wash Vitamin C is useful in cleaning and exfoliating the skin to remove impurities like dead skin cells. It is gentle on the skin and does not make it dry. Along with fighting sun damage and providing radiance, Vitamin C also helps in smoothing and firming the skin by encouraging the regeneration of new skin cells.",
+
+  "key_ingredients":["Glycerin","Sodium PCA","Cocamidopropyl Betaine","Turmeric Extract","Castor Oil"],
+
+  "key_benefits":[
+    "Vitamin C and Turmeric present in the mask help achieve that radiant glow",
+    "It helps delay the appearance of signs of ageing",
+    "A strong antioxidant, Vitamin C not just combats dark spots, but also helps in preventing melanin production; thus, promoting an even skin tone",
+    "It is useful in promoting the regeneration of new cells"
+  ],
+  "safety_information":[
+    "Read the label carefully before use",
+    "Keep out of the reach of children"
+  ],
+  "product_highlight":[
+      "It removes uneven sun tan, repairs damage and brightens skin tone",
+      "It is enriched with the goodness of turmeric and saffron that helps rejuvenate your skin",
+      "It helps to reduce the effects of tan, pollution, dirt, harmful UV rays and harsh weather conditions",
+      "It revives the skin by bringing out its natural glow while delaying premature ageing"
+     
+  ]
+}
+,
+
+
+{
+  "id": "sc7",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/cropped/rt5oa994frsh9ybbwemo/mederma-scar-gel.png",
+  "name": "Mederma Scar Gel",
+  "stock": 87,
+  "packs":"tube of 100 gm Gel",
+  "mrp":485,
+  "price": 448,
+  "discount": 7,
+  "total_price": null,
+  "status": null,
+  "rating_count":321,
+  "reviews":101,
+  "rating": "4.2",
+  "description": "Mederma Scar Gel is clinically shown to improve the colour, texture, and overall appearance of scars.It works for many types of scars, including acne scars, surgery scars, and scars from burns, stretch marks, cuts, and other injuries. You can start using Mederma gel as soon as new skin has formed, typically two or more weeks after the injury or surgery. Make sure the scab has come off naturally and any stitches have been removed. On older scars you may start using Mederma immediately. ",
+
+  "key_ingredients":["Allium cepa extract","Allantoin"],
+
+  "key_benefits":[
+    "Helps to make scars appear softer and smoother"
+  ],
+  "safety_information":[
+    "Use under medical supervision",
+    "Keep out of the reach of children",
+    "For external use only",
+    "Not intended for use on open wounds "
+  ],
+  "product_highlight":[
+      "Helps to reduce scars caused by acne, surgery, burns, cuts, and other injuries",
+      "Helps to improve the color, texture, and appearance of the scars"
+      
+  ]
+}
+,
+
+
+{
+  "id": "sc8",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/c2eac464265e488583204c45eea01e6d/acnestar-gel.jpg",
+  "name": "Acnestar Gel",
+  "stock": 67,
+  "packs":"tube of 22 gm Gel",
+  "mrp":110,
+  "price": 94,
+  "discount": 14,
+  "total_price": null,
+  "status": null,
+  "rating_count":181,
+  "reviews":14,
+  "rating": "4.3",
+  "description": "Acnestar Gel is useful for various reasons. This serum works by reducing the excessive production of sebum helping unclog pores and removing dead cells. It reduces the appearance of blackheads and whiteheads and prevents them from popping up. It also minimizes the appearance of pores and provides a radiant glow to the skin.",
+
+  "key_ingredients":["Clindamycin","Nicotinamide"],
+
+  "key_benefits":[
+    "It helps in clearing skin problems and makes the skin smooth and glowy",
+    "It works by seeping into the skin and keeping it texture-free",
+    "It helps reduce blackheads and whiteheads from the skin",
+    "It controls sebum production and helps unclog pores from the skin",
+    "It provides the skin with an arsenal to work against acne and blemishes"
+  ],
+  "safety_information":[
+    "Read the label carefully before use",
+    "Store in a cool and dry place away from direct sunlight",
+    "Keep out of the reach of children"
+    
+  ],
+  "product_highlight":[
+      "Helps clear extra sebum and impurities",
+      "Assists to provide blemish-free and hydrated skin",
+      "Heals the acne lesions and calms inflammation",
+      "Enhances glow and smoothness of the skin"
+      
+  ]
+}
+  ,
+
+
+  {
+    "id": "sc9",
+    "adminId": "mdmonu",
+    "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/nv9jtl907ldxbtkv88d6/biluma-cream.jpg",
+    "name": "Biluma Cream",
+    "stock": 63,
+    "packs":"tube of  15 gm Cream",
+    "mrp":570,
+    "price": 479,
+    "discount": 16,
+    "total_price": null,
+    "status": null,
+    "rating_count":514,
+    "reviews":174,
+    "rating": "4.1",
+    "description": "It is used to treat skin pigmentation and dark spots. It works as a skin lightening and depigmentation cream that helps in promoting fair and even skin tone. It also offers protection against the harmful ultraviolet(UV) rays of the sun. Sunlight consists of many rays, among these ultraviolet A (UV-A) and ultraviolet B (UV-B) rays are the ones that can have a negative impact on our skin. UV-A radiation can cause premature aging of the skin and pigmentation, whereas UV-B radiation can lead to the tanning of the skin and in the worst case can cause skin cancer.",
+
+    "key_ingredients":["Kojic Acid Dipalmitate","Arbutin","Liquorice","Mulberry extract","Tetrahydrocurcumin","Artocarpus extracts"],
+
+    "key_benefits":[
+      "Visibly lightens the skin tone",
+      "Reduces dark spots for a fairer looking skin",
+      "Blended with natural ingredients which help to make skin glow",
+      "Prevents pigmentation by UVB rays",
+      "Has an anti-inflammatory effect, thereby preventing skin inflammation",
+      "Acts as a powerful skin lightening cream due to its potent antioxidant and skin-lightening action"
+    ],
+    "safety_information":[
+      "Read the label carefully before use",
+      "Store in a cool and dry place away from direct sunlight",
+      "Keep out of the reach of children"
+      
+    ],
+    "product_highlight":[
+        "It is used as a skin lightening and depigmentation cream",
+        "It helps to reduce dark spots and pigmented skin",
+        "It is known to promote even skin tone",
+        "It can help to counter skin pigmentation caused by UVB rays"
+        
+    ]
+  }
+
+  ,
+
+  {
+    "id": "sc10",
+    "adminId": "mdmonu",
+    "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/uasrztrr4pej8lyoj9lq/plum-mandarin-vitamin-c-15-face-serum.jpg",
+    "name": "Plum Mandarin & Vitamin C 15% Face Serum",
+    "stock": 92,
+    "packs":"bottle of 30 ml serum",
+    "mrp":790,
+    "price": 672,
+    "discount": 15,
+    "total_price": null,
+    "status": null,
+    "rating_count":25,
+    "reviews":1,
+    "rating": "4.4",
+    "description": "Plum Mandarin & Vitamin C 15% Face Serum is infused with the natural element of vitamin C and mandarin extracts that provides your skin with adequate hydration and makes it glow. Vitamin C absorbs impurities and excess oil from the skin and restores the suppleness and youthfulness of your skin. It gently exfoliates and improves the texture of your skin. It shields the skin from UV damage and supports numerous well-known functions, including promoting collagen production and aiding in antioxidant defence against UV-induced photodamage. This product is paraben-free, dye-free, cruelty-free, vegan and dermatologist-tested.",
+
+    "key_ingredients":["Vitamin C","Mandarin peel extract"],
+
+    "key_benefits":[
+      "This serum improves skin texture and brightens up your skin",
+      "Vitamin C accelerates cell regeneration and boosts collagen, helping the skin shed dead cells",
+      "It is skin firming, retains skin's elasticity and improves fine lines and wrinkles",
+      "It helps control oil, prevents UV-induced pigmentation, boosts hydration, and normalises skin pH"
+    ],
+    "safety_information":[
+      "Read the label carefully before use",
+      "Store in a cool and dry place away from direct sunlight",
+      "Keep out of the reach of children",
+      "For external use only"
+      
+    ],
+    "product_highlight":[
+        "Helps fight sun damage",
+        "100% vegan, paraben-free, phthalate-free",
+        "Boosts the natural glow of your skin",
+        "Promotes skin rejuvenation and maximizes hydration"
+        
+    ]
+  }
+  ,
+
+
+  {
+    "id": "sc11",
+    "adminId": "mdmonu",
+    "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/ivkpicxnsldr0973lsyh/nycil-cool-gulabjal-prickly-heat-talcum-powder-with-nycil-cool-herbal-50gm-free.jpg",
+    "name": "Nycil Cool Gulabjal Prickly Heat Talcum Powder",
+    "stock": 30,
+    "packs":"bottle of 150 gm Soap",
+    "mrp":130,
+    "price": 80,
+    "discount": 10,
+    "total_price": null,
+    "status": null,
+    "rating_count":293,
+    "reviews":35,
+    "rating": "4.5",
+    "description": "Nycil Cool Gulabjal Prickly Heat Talcum Powder has a unique Germ* Fighter Formula which is clinically proven to provide instant germ kill and 3 visible results from summer skin problems such as sweat, body odour, itching, rashes and prickly heat",
+    "key_ingredients":["Talcum","Anti-bacterial formula","Fragrance"],
+    "key_benefits":[
+      "Absorbs sweat, fights body odour, calms rashes, soothes itching and prevents prickly heat",
+      "Nycil provides instant germ kill and 3 days visible results from summer skin problems",
+      "Nycil has a unique anti-bacterial formula that protects against summer skin problems arising from sweat and germs"
+    ],
+    "safety_information":[
+      "Read the label carefully before use",
+      "Keep out of reach of the children",
+      "Store in a cool dry place away from direct sunlight",
+      "For external use only"
+    ],
+    "product_highlight":[
+        "Treats microbes causing skin problems like rashes due to prickly heat and prickly heat",
+        "Provides instant germ kill and 3 days visible results from summer skin problems",
+        "Treats problems of body odour, itching, rashes, sweat and prickly heat",
+        "Nycil has unique anti-bacterial formula that protects against summer skin problems"
+    ]
+}
+,
+
+
+{
+  "id": "sc12",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/830c39007a734beb8580352a8eff6cb2/tata-1mg-multipurpose-germ-protection-wipes-72.jpg",
+  "name": "Tata 1mg Multipurpose Germ Protection Wipes - 72",
+  "stock": 30,
+  "packs":"bottle of 150 gm Soap",
+  "mrp":130,
+  "price": 80,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count":293,
+  "reviews":87,
+  "rating": "4.7",
+  "description": "Tata 1mg Multipurpose Germ Protection Wipes provide 99.9% protection from germs, viruses and It also helps wipe off dirt and dust from hands, body, and surfaces to maintain hygiene. These wipes are made with 100% biodegradable fabric and are environmentally friendly. Enriched with aloe vera extract and formulated with the right ph balance, these wipes are skin friendly and gentle on the skin and give a refreshed feeling after use.",
+  "key_ingredients":["Aloe Vera Extract"],
+  "key_benefits":[
+    "Provides 99.9% protection from germs, viruses and bacteria",
+    "Made with 100% biodegradable fabric",
+     "Size 15cm x 20cm",
+     "Alcohol-free"
+  ],
+  "safety_information":[
+    "For external use only",
+    "Avoid contact with eyes and sensitive areas",
+    "Chewing or swallowing caution – keep away from children and babies ",
+    "Do not expose it to temperatures exceeding 50°C"
+  ],
+  "product_highlight":[
+      "Provides 99.9% protection from germs, viruses and bacteria",
+      "100% biodegradable and environment friendly",
+      "These are alcohol-free, paraben free and skin-friendly wipes",
+      "Gentle on the skin"
+  ]
+},
+
+
+
+{
+  "id": "sc13",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/cropped/zjnx1eww9mai4njchife/wow-skin-science-brighitening-vitamin-c-face-wash.jpg",
+  "name": "WOW Skin Science Brighitening Vitamin C Face Wash",
+  "stock": 40,
+  "packs":"tube of 100ml Facewash",
+  "mrp":249,
+  "price": 229,
+  "discount": 8,
+  "total_price": null,
+  "status": null,
+  "rating_count":293,
+  "reviews":42,
+  "rating": "4.3",
+  "description": "WOW Skin Science Brightening Vitamin C Face Wash is made of vitamin C, which can help nourish and rejuvenate the skin. It moisturizes the skin and can suit all skin types, helping you enhance natural radiance.",
+  "key_ingredients":["Lemon essential oil","Orange essential oil","Mulberry extract"],
+  "key_benefits":[
+    "The formula can help maintain the natural moisture level of the skin, hydrating and brightening",
+    "It can help in managing the ageing process of the skin, helping you enhance soft skin texture",
+     "The composition can aid in managing the process of skin repair, assuaging damage",
+     "It is rich in antioxidants and assists in achieving an even tone by dealing with patchy pigmentation"
+  ],
+  "safety_information":[
+   "Store in a cool, dry place, away from direct sunlight",
+    "Keep out of the reach and sight of children"
+  ],
+  "product_highlight":[
+      "The formula can help hydrate and brighten",
+      "It can help in managing the ageing process",
+      "Aids in managing the process of skin repair",
+      "It is rich in antioxidants"
+  ]
+},
+
+
+{
+  "id": "sc14",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/nookeu7k5dqnoeroz53e/luciara-anti-stretch-marks-cream.jpg",
+  "name": "Luciara Anti Stretch Marks Cream",
+  "stock": 50,
+  "packs":"tube of 50gm Cream",
+  "mrp":595,
+  "price": 448,
+  "discount": 18,
+  "total_price": null,
+  "status": null,
+  "rating_count":198,
+  "reviews":45,
+  "rating": "4.1",
+  "description": "Luciara Cream is an emollient that smoothens and softens the skin and safeguards against the  of stretch marks during pregnancy. Its formula includes only 13 ingredients in order to maximise skin tolerance and reduce the risk of irritation, being safe to apply even on sensitive skin. It does not contain superfluous cosmetics (fragrances, colouring, etc.). Its ingredients are safe to use during pregnancy and breastfeeding. The application of Luciara during pregnancy increases abdominal skin hydration and improves skin elasticity. This effectively safeguards against developing stretch marks at term.Luciara is the No. 1 prescribed brand for stretch marks**SMSRC Gyn Rx response trend for anti-stretch mark prescriptions for Nov-Dec’20",
+  "key_ingredients":["Medium-Chain Triglycerides","Polyglyceryl-3 Diisostearate","White Soft Paraffin (Petrolatum)"],
+  "key_benefits":[
+    "It smoothens and softens the skin",
+    "It can help in managing the ageing process of the skin, helping you enhance soft skin texture",
+     "It safeguards against the development of stretch marks during pregnancy",
+     "It is safe to apply even on sensitive skin"
+  ],
+  "safety_information":[
+   "Do not exceed the recommended dose",
+    "Keep out of the reach and sight of children",
+     "Store in a cool‚ dry and dark place",
+    "Protect from the direct sunlight"
+  ],
+  "product_highlight":[
+      "It safeguards against the development of stretch marks during pregnancy",
+      "It reduces the chances of developing pregnancy-related stretch marks by 57%",
+      "It is safe to apply even on sensitive skin"
+   ]
+}
+,
+
+
+{
+  "id": "sc15",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/nookeu7k5dqnoeroz53e/luciara-anti-stretch-marks-cream.jpg",
+  "name": "Luciara Anti Stretch Marks Cream",
+  "stock": 50,
+  "packs":"tube of 50gm Cream",
+  "mrp":595,
+  "price": 448,
+  "discount": 18,
+  "total_price": null,
+  "status": null,
+  "rating_count":198,
+  "reviews":45,
+  "rating": "4.1",
+  "description": "Luciara Cream is an emollient that smoothens and softens the skin and safeguards against the  of stretch marks during pregnancy. Its formula includes only 13 ingredients in order to maximise skin tolerance and reduce the risk of irritation, being safe to apply even on sensitive skin. It does not contain superfluous cosmetics (fragrances, colouring, etc.). Its ingredients are safe to use during pregnancy and breastfeeding. The application of Luciara during pregnancy increases abdominal skin hydration and improves skin elasticity. This effectively safeguards against developing stretch marks at term.Luciara is the No. 1 prescribed brand for stretch marks**SMSRC Gyn Rx response trend for anti-stretch mark prescriptions for Nov-Dec’20",
+  "key_ingredients":["Medium-Chain Triglycerides","Polyglyceryl-3 Diisostearate","White Soft Paraffin (Petrolatum)"],
+  "key_benefits":[
+    "It smoothens and softens the skin",
+    "It can help in managing the ageing process of the skin, helping you enhance soft skin texture",
+     "It safeguards against the development of stretch marks during pregnancy",
+     "It is safe to apply even on sensitive skin"
+  ],
+  "safety_information":[
+   "Do not exceed the recommended dose",
+    "Keep out of the reach and sight of children",
+     "Store in a cool‚ dry and dark place",
+    "Protect from the direct sunlight"
+  ],
+  "product_highlight":[
+      "It safeguards against the development of stretch marks during pregnancy",
+      "It reduces the chances of developing pregnancy-related stretch marks by 57%",
+      "It is safe to apply even on sensitive skin"
+   ]
+}
+,
+
+
+{
+  "id": "sc16",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/nookeu7k5dqnoeroz53e/luciara-anti-stretch-marks-cream.jpg",
+  "name": "C-Vit Facial Liposomal Serum",
+  "stock": 46,
+  "packs":"bottle of 50gm serum",
+  "mrp":2850,
+  "price": 2565,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count":17,
+  "reviews":64,
+  "rating": "4.3",
+  "description": "C-Vit Facial Liposomal Serum is a facial serum to help boost the skin’s radiance and promote luminously and revitalised skin. It hydrates the skin and helps restore skin vitality.",
+  "key_ingredients":["Ascorbyl Encapsulated In Liposomes","Mulberry Extract","Hyaluronic Acid Syncoll And Panthenol"],
+  "key_benefits":[
+    "Given an even and luminous glow to the skin",
+    "Helps improve complexion and skin tone",
+     "Brightens the under eyes and rejuvenates the skin",
+     "Reduces the appearance of fine lines and wrinkles"
+  ],
+  "safety_information":[
+   "Read the label carefully before use",
+    "Keep out of the reach of children",
+    "Store in a cool and dry place"
+  ],
+  "product_highlight":[
+      "Makes the skin radiant and luminous",
+      "Provides antioxidant effect against radicals",
+      "Fights signs of ageing and fatigue",
+      "Improves skin tone and complexion"
+   ]
+}
+,
+
+{
+  "id": "sc17",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/cropped/tjkchcq5uqhqh2eyrr3b/ahaglow-s-foaming-face-wash.jpg",
+  "name": "Ahaglow S Foaming Face Wash",
+  "stock": 81,
+  "packs":"bottle of 100ml Face wash ",
+  "mrp":695,
+  "price":591,
+  "discount": 15,
+  "total_price": null,
+  "status": null,
+  "rating_count":17,
+  "reviews":64,
+  "rating": "4.3",
+  "description": "Ahaglow S Foaming Face Wash is a foaming face wash with salicylic and glycolic acid that helps cleanse the skin and unclog pores. It is non-comedogenic and suited for oily, acne-prone skin.",
+  "key_ingredients":["Salicylic acid","Mulberry Extract","Glycolic acid"],
+  "key_benefits":[
+    "Deep cleanses the skin to remove dirt and impurities",
+    "Removes dead skin cells and unclogs pores",
+     "Improves skin tone and texture",
+     "Helps fight breakouts and acne"
+  ],
+  "safety_information":[
+   "Read the label carefully before use",
+    "Keep out of the reach of children",
+    "Store in a cool and dry place"
+  ],
+  "product_highlight":[
+      "Helps fight breakouts and acne",
+      "Cleanses the skin and removes dead skin cells",
+      "Non-comedogenic and non-irritating on the skin",
+      "Improves skin texture"
+   ]
+}
+,
+
+{
+  "id": "sc18",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/dfe1a76018ac43e1b4f4df6e46dee742/skineasi-comfoot-anti-shoe-bite-gel-20gm-each.jpg",
+  "name": "SkinEasi Comfoot Anti-Shoe Bite Gel (20gm Each)",
+  "stock": 52,
+  "packs":"combo pack of two tubes ",
+  "mrp":739,
+  "price":513,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count":17,
+  "reviews":64,
+  "rating": "4.3",
+  "description": "Ahaglow S Foaming Face Wash is a foaming face wash with salicylic and glycolic acid that helps cleanse the skin and unclog pores. It is non-comedogenic and suited for oily, acne-prone skin.",
+  "key_ingredients":["Silicone elastomers","Polysiloxanes","Starch"],
+  "key_benefits":[
+    "The gel can help reduce friction and prevent blisters",
+    "The thin film formed by the gel is invisible",
+     "It is long-lasting, non-allergenic, water-repellent and breathable",
+     "It can also work in the presence of water, sweat, or moisture"
+  ],
+  "safety_information":[
+    "Do not apply on blisters or oozing skin",
+    "Please consult a doctor if a shoe bite, soreness, or rubbing extends beyond seven days",
+    "Read the label carefully before use"
+  ],
+  "product_highlight":[
+      "The gel is sweat and water-resistant",
+      "It can last for up to 8 hours",
+      "It is made for Indian conditions"
+   ]
+}
+,
+
+
+{
+  "id": "sc19",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/b8b64c7d29664c97a886444f8648cd20/bioderma-atoderm-intensive-baume-ultra-soothing-balm.jpg",
+  "name": "Bioderma Atoderm Intensive Baume Ultra-Soothing Balm",
+  "stock": 19,
+  "packs":"tube of 200ml Balm",
+  "mrp":1375,
+  "price":1233,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count":54,
+  "reviews":6,
+  "rating": "4.8",
+  "description": "Bioderma Atoderm Intensive Baume Ultra-Soothing Balm rapidly relieves itching and reduces the urge to scratch. Enriched with soothing agents, this balm calms irritations and durably reconstructs the skin barrier. Unfragranced. Non-sticky. Instant absorption.",
+  "key_ingredients":["Aqua/Water/Eau","Glycerin","Paraffinum Liquidum"],
+  "key_benefits":[
+    "Soothes and reduces the urge to scratch",
+    "Intensely nourishes and restores lipids",
+     "Makes the skin feel more comfortable and becomes stronger. In a lasting way",
+     "Very good tolerance - Non-oily texture"
+  ],
+  "safety_information":[
+    "Read the label carefully before use",
+    "Store in a cool and dry place away from direct sunlight",
+    "Keep out of reach of the children"
+  ],
+  "product_highlight":[
+      "Soothes and reduces the urge to scratch",
+      "Intensely nourishes and restores lipids",
+      "Makes the skin feel more comfortable and become stronger"
+   ]
+}
+,
+
+{
+  "id": "sc20",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/w_150,f_auto,c_fit,h_150,q_auto/pbdvgnjzzecoexmcryzs/plum-green-tea-pore-cleansing-face-wash.jpg",
+  "name": "Plum Green Tea Pore Cleansing Face Wash",
+  "stock": 19,
+  "packs":"tube of 75ml Face Wash",
+  "mrp":249,
+  "price":217,
+  "discount": 13,
+  "total_price": null,
+  "status": null,
+  "rating_count":27,
+  "reviews":2,
+  "rating": "4.8",
+  "description": "Plum Green Tea Pore Cleansing Face Wash is a specially formulated face wash that deeply cleanses the skin. It deep cleanses your skin while freeing it from dirt and environmental toxins. It is a rich source of antioxidants and lightens scars effectively. It does not contain SLS and parabens. It helps in removing excess oil and dirt from deep within.",
+  "key_ingredients":["Green tea extract","Glycolic acid","Natural cellulose beads"],
+  "key_benefits":[
+    "It removes the excess oil and dirt, which are the primary reasons for pimples and their related issues",
+    "It preserves moisture in the skin and offers a smooth, soft and supple feeling",
+     "This face wash contributes to removing sunburn and suntan",
+     "It is enriched with natural ingredients that hydrate and revitalise the skin"
+  ],
+  "safety_information":[
+    "Protect it from direct sunlight, heat and moisture",
+    "Do not use if seal is broken",
+    "Keep out of reach of children"
+  ],
+  "product_highlight":[
+      "Made with natural ingredients",
+      "Deep cleanses the skin and removes dirt",
+      "Available in different variants"
+   ]
+},
+
+
+{
+  "id": "sc21",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/udvui669qqvium77njrk/boroplus-antiseptic-cream.jpg",
+  "name": "Boroplus Antiseptic Cream",
+  "stock": 30,
+  "packs": "tube of 120 ml Cream",
+  "mrp": 185,
+  "price": 167,
+  "discount": 15,
+  "total_price": null,
+  "status": null,
+  "rating_count": 1045,
+  "reviews": 268,
+  "rating": "4.6",
+  "description": "Boroplus Soft Antiseptic Cream It is suitable for the face, hands and body and is all year round cream for the whole family.",
+  "key_ingredients": [
+    "Contains (in w/w): Extracts of hedychium spicatum (kapoor kachari) RZ. 0.3%",
+    "Santalum album (sandalwood) HT.WD 0.5%",
+    "Azadirachta indica (neem) LF. 0.3%",
+    "Aloe barbadensis (aloe vera) LF. 1.0%",
+    "Pavonia odorata (hriber) RT. 0.2%",
+    "Ocimum sanctum (tulsi) WH.PL. 0.2%",
+    "Curcuma longa (turmeric) RZ. 0.1%",
+    "Acacia catechu (khadir) HT.WD. 0.15%",
+    "Nymphaea alba (kumud) FL. 0.20",
+    "Glycyrrhiza glabra (yastimadhu) RT. 0.1%",
+    "Phenoxyethanol, DMDM hydantoin"
+  ],
+  "key_benefits": [
+    "It has a light texture, is non-sticky, and non-oily",
+    "It can easily get absorbed in the skin",
+    "It is enriched with fruit water + vitamin E + 10 super herbs",
+    "It can provide 24-hour moisturation",
+    "It is suitable for the face, hands and body",
+    "It is ideal for all seasons",
+    "It is a highly efficacious, ayurvedic and antiseptic skincare solution",
+    "It can heal from deep within to give soft and fresh skin",
+    "It is from India’s no. 1 antiseptic cream brand",
+    "It is suitable for all skin types",
+    "It is gentle and safe for babies",
+    "It is all year-round cream for the whole family"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Store in a cool and dry place, away from sunlight"
+  ],
+  "product_highlight": [
+    "This cream has antiseptic properties",
+    "It helps heal and moisturise the skin",
+    "It can soothe irritated skin",
+    "It purifies the skin and reduces scarring"
+  ]
+}
+,
+
+
+{
+  "id": "sc22",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/lqzdkuwo6ore3eiqfwd7/mamaearth-ubtan-face-wash.jpg",
+  "name": "Mamaearth Ubtan Face Wash",
+  "stock": 30,
+  "packs": "tube of 100 ml Face Wash",
+  "mrp": 259,
+  "price": 243,
+  "discount": 6,
+  "total_price": null,
+  "status": null,
+  "rating_count": 825,
+  "reviews": 151,
+  "rating": "4.2",
+  "description": "Mamaearth Face Wash Ubtan is an amalgamation of ingredients that are brought together to remove sun tan while restoring the skin’s natural glow.",
+  "key_ingredients": ["Turmeric powder", "Saffron "],
+  "key_benefits": [
+    "With anti-inflammatory and antiseptic properties, Turmeric protects the skin naturally",
+    "It revives the skin by bringing out its natural glow while delaying premature ageing",
+    "Excellent to exfoliate and scrub off dead cells from the upper layer of the skin",
+    "Protects the skin from harmful UV rays while providing hydration"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Keep out of reach of the children",
+    "Store in a cool dry place away from direct sunlight",
+    "For external use only"
+  ],
+  "product_highlight": [
+    "It removes uneven sun tan, repairs damage and brightens skin tone",
+    "It is enriched with the goodness of turmeric and saffron that helps rejuvenate your skin",
+    "It helps to reduce the effects of tan, pollution, dirt, harmful UV rays and harsh weather conditions",
+    "It revives the skin by bringing out its natural glow while delaying premature ageing"
+  ]
+}
+,
+
+
+{
+  "id": "sc23",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/lr1qvaffxz9ldjqks6rn/cetaphil-gentle-skin-cleanser-dry-to-normal-sensitive-skin.jpg",
+  "name": "Cetaphil Gentle Skin Cleanser Dry to Normal, Sensitive Skin",
+  "stock": 34,
+  "packs": "bottle of 500 ml Cleanser",
+  "mrp": 850,
+  "price": 765,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count": 766,
+  "reviews": 164,
+  "rating": "4.5",
+  "description": "Cetaphil Gentle Skin Cleanser Dry to Normal, Sensitive Skin has a creamy formula clinically proven to provide continuous hydration to protect against dryness. The cleanser is formulated with Micellar Technology that gently and effectively removes dirt, makeup, and impurities.",
+  "key_ingredients": [
+    "Hydrating Glycerin",
+    "Niacinamide (Vitamin B3)",
+    "Panthenol (Vitamin B5)"
+  ],
+  "key_benefits": [
+    "Helps remove dirt, makeup, and impurities",
+    "Blend of niacinamide, panthenol, and hydrating glycerin protect the skin’s natural moisture barrier",
+    "Defends against 5 signs of skin sensitivity, including dryness, irritation, roughness, tightness, and weak skin barrier",
+    "Does not irritate and strip the skin of the natural protective oils or emollients"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Store in a cool and dry place",
+    "Keep out of reach of children"
+  ],
+  "product_highlight": [
+    "It removes uneven sun tan, repairs damage and brightens skin tone",
+    "It is enriched with the goodness of turmeric and saffron that helps rejuvenate your skin",
+    "It helps to reduce the effects of tan, pollution, dirt, harmful UV rays and harsh weather conditions",
+    "It revives the skin by bringing out its natural glow while delaying premature ageing"
+  ]
+}
+,
+
+
+{
+  "id": "sc24",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/yrfcinqkjbr7gxqatrs5/dettol-intense-cool-bathing-soap-bar-75gm-buy-3-get-1-free.jpg",
+  "name": "Dettol Intense Cool Bathing Soap Bar 75gm (Buy 3 Get 1 Free)",
+  "stock": 36,
+  "packs": "combo pack of 4 soaps",
+  "mrp": 150,
+  "price": 143,
+  "discount": 4,
+  "total_price": null,
+  "status": null,
+  "rating_count": 347,
+  "reviews": 164,
+  "rating": "4.4",
+  "description": "Dettol Intense Cool Bathing Soap Bar gives protection against germs. Dettol soap contains nourishing moisturisers and efficiently cleanses and protects your skin, helping you stay healthy daily.",
+  "key_ingredients": [
+    "Sodium Palmate",
+    "Sodium Palm Kernelate",
+    "Palm Acid, Glycerin",
+    "Palm Kernel Acid, Menthol"
+  ],
+  "key_benefits": [
+    "It gives an extra layer of protection, minimises your risk of infection and improves your overall health",
+    "The soap has a blend of more than 80% natural ingredients",
+    "It gives you a refreshing feel and leaves the skin hygienically clean and soft",
+    "It acts as a barrier between your skin and the germs",
+    "The glycerine-rich formula of the soap gives you moisturised and healthy-looking skin"
+  ],
+  "safety_information": [
+    "Keep out of reach of children",
+    "Avoid direct contact with eyes",
+    "Only for external use"
+  ],
+  "product_highlight": [
+    "Germ Protection: Dettol soap protects from 99.9% of germs, including viruses and bacteria. Recommended by Indian Medical Association (IMA)",
+    "Intense Cooling: Contains 2X menthol for an intense cooling effect",
+    "Natural cleansers: Contains more than 85% naturally derived ingredients and plant-derived cleansers",
+    "New Pack: Now with 2x menthol"
+  ]
+}
+,
+
+
+
+{
+  "id": "sc25",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/cropped/cnndmskfmcldpwhljwcp/himalaya-herbals-purifying-neem-face-wash.jpg",
+  "name": "Himalaya Herbals Purifying Neem Face Wash",
+  "stock": 46,
+  "packs": "tube of 100 ml Face Wash",
+  "mrp": 150,
+  "price": 140,
+  "discount": 6,
+  "total_price": null,
+  "status": null,
+  "rating_count": 863,
+  "reviews": 164,
+  "rating": "4.44",
+  "description": "Himalaya Herbals Purifying Neem Face Wash is a soap-free, herbal formulation that cleans impurities and helps clear pimples. Neem and turmeric have antibacterial and antifungal properties that help prevent acne recurrence over time. The face wash is suitable for all skin types and is best suited for acne-prone skin.",
+  "key_ingredients": ["Neem", "Turmeric"],
+  "key_benefits": [
+    "Neem has antibacterial properties that improve general health and immunity and reduce bacterial infections like acne, boils, and ulcers",
+    "Neem tackles bacteria from the root and prevents the recurrence of pimples and blemishes",
+    "Turmeric has antiseptic properties and aids in healing",
+    "Turmeric helps to even out the skin tone and complexion and increases skin elasticity",
+    "Turmeric also has anti-inflammatory properties that soothe the skin"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Store in a cool and dry place",
+    "Keep out of reach of children"
+  ],
+  "product_highlight": [
+    "Encompasses antibacterial and anti-inflammatory properties",
+    "Provides relief in the case of acne, boils, and ulcers",
+    "Natural cleansers: Contains more than 85% naturally derived ingredients and plant-derived cleansers",
+    "Assists in improving general skin health and immunity"
+  ]
+}
+,
+
+
+{
+  "id": "sc26",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/kegp2hkid1dtylm5ekr0/biluma-advance-skin-brightening-lotion.jpg",
+  "name": "Biluma Advance Skin Brightening Lotion",
+  "stock": 35,
+  "packs": "bottle of 45 gm Lotion",
+  "mrp": 835,
+  "price": 710,
+  "discount": 15,
+  "total_price": null,
+  "status": null,
+  "rating_count": 43,
+  "reviews": 6,
+  "rating": "4.44",
+  "description": "Biluma Advance Skin Brightening Lotion gives you visibly clear and glowing skin with natural brightening ingredients in just three weeks",
+  "key_ingredients": [
+    "Rumex Occidentalis",
+    "Licorice",
+    "Kojic Acid",
+    "Vitamin E"
+  ],
+  "key_benefits": [
+    "Decreases dark spots and fades fine lines and wrinkles",
+    "It is enriched with skin brightening agents and powered with micro emulsion luminous technology",
+    "It helps moisturise and hydrate your skin"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Keep out of the reach of children",
+    "Store in a cool and dry place"
+  ],
+  "product_highlight": [
+    "Decreases dark spots and fades fine lines and wrinkles",
+    "It is enriched with skin brightening agents and powered with micro emulsion luminous technology",
+    "It helps moisturise and hydrate your skin"
+  ]
+}
+,
+
+
+{
+  "id": "sc27",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/qz6ecewryas05x7gnv33/physiogel-hypoallergenic-calming-relief-a.i.-lotion.jpg",
+  "name": "Physiogel Hypoallergenic Calming Relief A.I. Lotion",
+  "stock": 30,
+  "packs": "bottle of 100 ml Lotion",
+  "mrp": 660,
+  "price": 561,
+  "discount": 15,
+  "total_price": null,
+  "status": null,
+  "rating_count": 235,
+  "reviews": 44,
+  "rating": "4.44",
+  "description": "Physiogel Hypoallergenic Calming Relief A.I. Lotion helps to protect the skin from excess moisture, redness, itchiness and even dryness. It protected and provides the skin with essential nutrients required by the skin to make it less irritant and healthy. It is suitable for atopic eczema-prone skin, babies and children.",
+  "key_ingredients": [
+    "Caprylic/Capric Triglyceride",
+    "Glycerin",
+    "Pentylene Glycol",
+    "Butyrospermum Parkii Butter",
+    "Hydrogenated Lecithin",
+    "Palmitamide MEA",
+    "Hydroxyethylcellulose",
+    "Caprylyl Glycol",
+    "Xanthan Gum",
+    "Betaine",
+    "Squalane",
+    "Sarcosine",
+    "Acetamide MEA",
+    "Carbomer",
+    "Sodium Carbomer",
+    "Ceramide 3"
+  ],
+  "key_benefits": [
+    "Protects the skin from free radicals and regenerates the skin",
+    "Gives instant relief from dry, sensitive, itchy and red skin",
+    "Makes the skin appear smoother,calmer and healthier looking",
+    "Feels comfortable Non-comedogenic free of colorants perfume and preservatives"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Store in a cool dry place away from direct sunlight",
+    "Keep out of reach of the children"
+  ],
+  "product_highlight": [
+    "Provides immediate and long-lasting moisture relief skin",
+    "Helps to sooth dry, red and itchy skin",
+    "Strengthens and repairs skin moisture barrier"
+  ]
+},
+
+
+{
+  "id": "sc28",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/lr1qvaffxz9ldjqks6rn/cetaphil-gentle-skin-cleanser-dry-to-normal-sensitive-skin.jpg",
+  "name": "Cetaphil Gentle Skin Cleanser Dry to Normal, Sensitive Skin",
+  "stock": 35,
+  "packs": "bottle of 500 ml Cleanser",
+  "mrp": 765,
+  "price": 850,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count": 766,
+  "reviews": 164,
+  "rating": "4.5",
+  "description": "Cetaphil Gentle Skin Cleanser Dry to Normal, Sensitive Skin has a creamy formula clinically proven to provide continuous hydration to protect against dryness. The cleanser is formulated with Micellar Technology that gently and effectively removes dirt, makeup, and impurities.",
+  "key_ingredients": [
+    "Hydrating Glycerin",
+    "Niacinamide (Vitamin B3)",
+    "Panthenol (Vitamin B5)"
+  ],
+  "key_benefits": [
+    "Helps remove dirt, makeup, and impurities",
+    "Blend of niacinamide, panthenol, and hydrating glycerin protect the skin’s natural moisture barrier",
+    "Defends against 5 signs of skin sensitivity, including dryness, irritation, roughness, tightness, and weak skin barrier",
+    "Does not irritate and strip the skin of the natural protective oils or emollients"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Store in a cool dry place away from direct sunlight",
+    "Keep out of reach of the children"
+  ],
+  "product_highlight": [
+    "Mild, non-irritating formulation that soothes skin",
+    "Suitable for all skin types",
+    "Moisturizes without leaving residue that can clog pores",
+    "Does not remove the natural oils and emollients the skin",
+    "Gentle enough for a baby's delicate skin"
+  ]
+},
+
+
+
+{
+  "id": "sc29",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/061d1bd1ccff41a7bb6c575166985a61/vaseline-intensive-care-body-deep-moisture-lotion.jpg",
+  "name": "Vaseline Intensive Care Body Deep Moisture Lotion",
+  "stock": 25,
+  "packs": "pump bottle of 400 ml Lotion",
+  "mrp": 338,
+  "price": 338,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count": 197,
+  "reviews": 24,
+  "rating": "4.5",
+  "description": "Vaseline Intensive Care Body Deep Moisture Lotion is designed to penetrate the outermost layer of the skin to help heal dry skin for long periods, not just to provide temporary, superficial relief.  Its deeply moisturizing formula provides effective, long-lasting moisturization. It has a  smart pump that unlocks with just a 90˚ turn. With quick-lock technology, the pump locks in the raised position after a quarter turn, for easier use and no mess. ",
+  "key_ingredients": [
+    "Oat Extracts",
+    "Soyabean Oil "
+  ],
+  "key_benefits": [
+    "Vaseline Intensive Care Deep Restore Body Lotion moisturizes dry skin from the first application ",
+    "It is fast-absorbing for a non-greasy feel",
+    "It contains pure oat extracts and micro-droplets of Vaseline Jelly to lock in moisture",
+    "It is clinically proven to restore dry skin"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Store in a cool dry place away from direct sunlight",
+    "Keep out of reach of the children"
+  ],
+  "product_highlight": [
+    "It helps to moisturise and nourish the skin",
+    "It has a fast-absorbing and non-greasy formula",
+    "This body lotion is dermatologically tested",
+    "It provides deep moisturisation and nourishment"
+  ]
+},
+
+
+{
+  "id": "sc30",
+  "adminId": "mdmonu",
+  "image": "https://onemg.gumlet.io/images/q_auto,f_auto,c_fit,h_150,w_150/cropped/lop6op3bngi576w4noc5/vicco-turmeric-skin-cream.jpg",
+  "name": "Vicco Turmeric Skin Cream",
+  "stock": 45,
+  "packs": "tube of 70 gm Cream",
+  "mrp": 255,
+  "price": 247,
+  "discount": 10,
+  "total_price": null,
+  "status": null,
+  "rating_count": 1300,
+  "reviews": 353,
+  "rating": "4.6",
+  "description": "Vicco Turmeric Skin Cream is formulated with a blend of sandalwood and turmeric to make your skin spotless, radiant and clear. It can help protect against various skin infections, soothe painful inflammations, and eliminate skin blemishes",
+  "key_ingredients": [
+    "Turmeric extracts",
+    "Sandalwood oil"
+  ],
+  "key_benefits": [
+    "Turmeric gives your skin a boost and helps remove toxins",
+    "Sandalwood oil contains antioxidants that retain moisture and help give your skin a soothing touch",
+    "It helps lighten blemishes, wounds and dark spots",
+    "It helps reduce inflammation, rashes, skin infections, pimples, boils, dermatitis, allergic eruption and other skin disorders",
+    "Helps remove dead skin cells and accelerate skin cell renewal",
+    "t helps make your skin spotless, radiant and clear"
+  ],
+  "safety_information": [
+    "Read the label carefully before use",
+    "Store in a cool dry place away from direct sunlight",
+    "Keep out of reach of the children"
+  ],
+  "product_highlight": [
+    "It is a lightweight and absorbent cream that helps make your skin spotless, radiant and clear",
+    "It gives your skin a boost and helps remove toxins",
+    "It helps lighten blemishes, wounds and dark spots"
+  ]
+}
+  ]
+
   
-        ]
+,
+
+
+"topbrands":[ {
+  "id":"tp1",
+ "name":"Cetaphil",
+ "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/vlga7qgs0bzf1n7r3tog.png"
+},
+{
+  "id":"tp2",
+  "name":"Venusia",
+  "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/pargpqdp47ul7bvfiwlu.png"
+},
+{
+  "id":"tp3",
+  "name":"Bioderma",
+  "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/y3v2ahvxerpyaz11mzab.png"
+},
+{
+  "id":"tp4",
+  "name":"Plum",
+  "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/bzttnhs8ifn4o65qkgoo.png"
 }
-      ]
+,
+{
+  "id":"tp5",
+  "name":"Mamaearth",
+  "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/kd6gjexpbgejvvaf8znb.png"
 }
+,
+{
+  "id":"tp6",
+  "name":"Sesderma",
+  "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/wzpjscxdar9leojyqd9o.png"
+}
+]  
+
+        ,
+        "face_car":[{
+          "id":"tp1",
+          "name":"Venusia",
+          "image":"https://onemg.gumlet.io/a_ignore,c_fit,f_auto,q_auto,h_150,w_150/pargpqdp47ul7bvfiwlu.png"
+        },
+        {
+          "id":"tp2",
+          "name":"Face Moisturisers",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/ohyqfcecxeognqhkmdgj.jpg"
+        },
+        {
+          "id":"tp3",
+          "name":"Cleanser",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/zxa5rixbwvtzqf5bke8a.jpg"
+        },
+        {
+          "id":"tp4",
+          "name":"Lip Balm",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/hlkvlotpxk7hrmcg8zw1.jpg"
+        }
+        ,
+        {
+          "id":"tp5",
+          "name":"Face Scrub & exfoliator",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/ptsemi6kg6ydl0nabccn.jpg"
+        }
+        ,
+        {
+          "id":"tp6",
+          "name":"Facial Kit & sheet mask",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/yyihalgh5p3rjvbnwabf.jpg"
+        },
+       {
+          "id":"tp7",
+          "name":"Face Serum & oil",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/paghtigvxu9kelikidn0.jpg"
+        },
+
+        {
+          "id":"tp8",
+          "name":"Makeup remover & wipes",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/nwvutntklydciaxoxehr.jpg"
+        }
+        ,
+        {
+          "id":"tp9",
+          "name":"toners & Astringents",
+          "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/zvlx06xo7alrkpufufk3.jpg"
+        }
+      ]   
+        ,
+        
+        "body_care":[ {
+          "id":"bc1",
+          "name":"Body Lotions",
+          "image":"https://onemg.gumlet.io/a_ignore,c_fit,f_auto,q_auto,h_150,w_150/fvvarkb5vw2tojetokfd.png"
+      },
+          {
+            "id":"bc2",
+            "name":"Talcum Powder",
+            "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/pfrrlkegx3vkeuhptrqs.png"
+          },
+          {
+            "id":"bc3",
+            "name":"Body Washes,Soaps",
+            "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/gb6uzlqa9z70s0imfmga.png"
+          },
+          {
+            "id":"bc4",
+            "name":"Body Oils",
+            "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/gnsxzm5uqmgyryzfeslv.png"
+          }
+          ,
+          {
+            "id":"bc5",
+            "name":"Face Scrub & exfoliator",
+            "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/se741wxfmldxjhy5norm.png"
+          }
+          ,
+          {
+            "id":"bc6",
+            "name":"Sanitizers & HandWash",
+            "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/yyihalgh5p3rjvbnwabf.jpg"
+          },
+         {
+            "id":"bc7",
+            "name":"Sunscreen Products",
+            "image":"https://onemg.gumlet.io/f_auto,q_auto,w_150,a_ignore,h_150,c_fit/kgghrqdchuzdd02iccyi.png"
+          }
+        ]  
+
+,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"Landing_page":[
+  {
+    "featured_brands":[
+{
+  "id":"fb1",
+  "name":"Zandu",
+"image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/6dbc627e-901f-47c0-9915-02a1536d063f.png"
+},
+{
+  "id": "fb2",
+  "name": "J&J Baby",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/e15f2fac-5e41-4e78-8554-1863313e642c.png"
+},
+{
+  "id": "fb3",
+  "name": "HealthKart",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/ae2de174-0bbe-48f8-b2ae-902c84fba5db.png"
+},
+{
+  "id": "fb4",
+  "name": "Zandu",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit…o,f_auto/3e371a6d-e3de-447f-aedc-c0e3d8a1d9c9.png"
+},
+{
+  "id": "fb5",
+  "name": "Detol",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/6dbc627e-901f-47c0-9915-02a1536d063f.png"
+},
+{
+  "id": "fb6",
+  "name": "Dr.Morphen",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit…o,f_auto/89856dcd-48cb-49f8-bf52-9f7ceaf0bbec.png"
+},
+{
+  "id": "fb7",
+  "name": "Bournvita",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit…o,f_auto/0d4b38c2-6327-41ce-bdc8-af0cd46a1817.jpg"
+},
+{
+  "id": "fb8",
+  "name": "Veet",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit…o,f_auto/0d4b38c2-6327-41ce-bdc8-af0cd46a1817.jpg"
+},
+{
+  "id": "fb9",
+  "name": "Tejasya",
+  "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit…o,f_auto/57686ffd-2e05-417e-bf36-1e9fbd464eb5.png"
+}
+    ]
+  }
+  ,
+
+{
+
+  "popular_categories":[
+    {
+     "id":"C1",
+     "name":"Top Deals",
+     "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/488e9116-bb49-4842-a1e6-e9cd02765fec.png"
+    },
+   {
+     "id":"C2",
+     "name":"WINTER CARE",
+     "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/3f3b45d1-4bc3-45a8-a6e5-aa875d8d4011.png"
+    },
+    {
+    "id":"C3",
+    "name":"VITAMINS & SUPPLEMENTS",
+    "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/2e793215-c4be-4509-97fe-17bfdf32a7ec.png"
+    },
+    {
+     "id":"C4",
+     "name":"AYURVEDA",
+     "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/7dbe0971-a8a4-4846-9369-5cca132d219c.png"
+    },
+    {
+    "id":"C5",
+    "name":"NUTRITIONAL DRINKS",
+    "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/56ad3298-1c41-442d-9bfe-2b6068a1cffc.png"
+    },
+    {
+    "id":"C6",
+     "name":"SKIN CARE",
+     "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/d31e6bfc-9848-47c5-bc45-a9268270ddc7.png"
+    },
+    {
+    "id":"C7",
+    "name":"Pain Relief",
+    "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/a60911a0-abca-4f13-9f3d-de036403ea75.png"
+    },
+   { "id":"C8",
+    "name":"HOMEOPATHY",
+    "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/20410ec2-e9b6-4a3b-a29f-c263cf857e5c.png"
+    }
+  ]
+}
+,
+{
+  "popular_Combo_Deals":[
+    {
+      "id":"pc1",
+      "name":"Tata 1mg Diabetes Care Combo Pack for Cholesterol & Blood Sugar Management",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/38b86c6a33f744afac80ed36d4bb87ba.jpg",
+      "packs":"Combo pack of 3 Packs",
+      "mrp":1085,
+      "discount":50,
+      "price":539
+    },
+   {
+      "id":"pc2",
+      "name":"Accu-Chek Combo Pack of Active 50 Test Strip & 2 Pack of Softclix Lancet",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/c2sw0gi2dw4cwdf1ecjp.jpg",
+      "packs":"Combo pack of 2 Packs",
+      "mrp":1299,
+      "discount":8,
+      "price":1194
+    },
+   {
+      "id":"pc3",
+      "name":"Immunity Care Combo of 1mg Panch Tulsi 30ml Drops and Patanjali Ayurveda Giloy Ghanvati 60 Tablet",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/38b86c6a33f744afac80ed36d4bb87ba.jpg",
+      "packs":"Combo pack of 4 Packs",
+      "mrp":335,
+      "discount":26,
+      "price":248
+    },
+   {
+      "id":"pc4",
+      "name":"Immunity Care Combo of 1mg Panch Tulsi 30ml Drops and Patanjali Ayurveda Giloy Ghanvati 60 Tablet",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qir6i2zlhzeddxa4mqt0.jpg",
+      "packs":"Combo pack of 5 Packs",
+      "mrp":1085,
+      "discount":10,
+      "price":539
+    },
+   {
+      "id":"pc5",
+      "name":"Pain Relief Combo of Dr Ortho Oil 120ml and Organic India Turmeric Formula 60 Veg Capsule",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qdkxnbhl24dgn02m7fc4.jpg",
+      "packs":"Combo pack of 2 bottles",
+      "mrp":599,
+      "discount":10,
+      "price":531
+    },
+   {
+      "id":"pc6",
+      "name":"Anti-oxidants Combo of Organic India Lemon Ginger Tulsi Green Tea 25 Tea Bag and Dabur Honey 1kg",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qdkxnbhl24dgn02m7fc4.jpg",
+      "packs":"Combo pack of 2 bottles",
+      "mrp":669,
+      "discount":11,
+      "price":539
+    },
+   {
+      "id":"pc7",
+      "name":"Oral Care Combo of Listerine Mouth Wash Cool Mint 500ml and Sensodyne Repair & Protect Toothpaste 100gm",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qdkxnbhl24dgn02m7fc4.jpg",
+      "packs":"Combo pack of 2 bottles",
+      "mrp":550,
+      "discount":10,
+      "price":496
+    },
+   {
+      "id":"pc8",
+      "name":"Revital Combo Pack of Revital H 30 Capsule and Revital H Woman 30 Tablet",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hkivk33molknvlppjtkg.jpg",
+      "packs":"Combo pack of 2 packs",
+      "mrp":670,
+      "discount":10,
+      "price":599
+    },
+   {
+      "id":"pc8",
+      "name":"Dr. Reckeweg Hair Care Combo Pack of Lycopodium Dilution 30CH 11ml & R89 Hair Care Drop 30ml",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/yjf3zipjv3bzx1xdv4xo.jpg",
+      "packs":"Combo pack of 2 bottles",
+      "mrp":445,
+      "discount":10,
+      "price":394
+    },
+   {
+      "id":"pc9",
+      "name":"Bayer Combo Pack of Supradyn Daily Multivitamin 15 Tablet & Saridon 10 Tablet",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ylfuylfxrh0cvzrxopf3.jpg",
+      "packs":"Combo pack of 2 strips",
+      "mrp":97,
+      "discount":8,
+      "price":89
+    },
+   {
+      "id":"pc10",
+      "name":"Combo Pack of Zincovit Tablet & Limcee Chewable Tablet Orange (15 Each)",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qehyx880yecto35fwmen.jpg",
+      "packs":"Combo pack of 2 strips",
+      "mrp":130,
+      "discount":41,
+      "price":112
+    }
+    ]
+  
+},
+
+{
+  "Biotin":[
+    {
+      "id":"B1",
+      "name":"Perfectil Skin, Hair, Nail Supplement Tablet",
+      "packs":"strip of 30 tablets",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/r33qnfrme9xfozrw5gwk.jpg",
+      "mrp":625,
+      "discount":25,
+      "price":469
+    },
+    {
+        "id":"B2",
+        "name":"HealthKart HK Vitals Biotin Tablet",
+        "packs":"bottle of 90 tablets",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/twpuzix7nrwivbtg0n80.jpg",
+        "mrp":699,
+        "discount":28,
+        "price":499
+      },
+      {
+        "id":"B3",
+        "name":"Tata 1mg Hair, Skin & Nails Supreme Biotin Capsule with Collagen, Zinc, Iron and Vitamin B",
+        "packs":"bottle of 60 capsules",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit…_auto,f_auto/73c2b656962348769f7f93a72090dcaa.jpg",
+        "mrp":699,
+        "discount":41,
+        "price":409
+      },
+      {
+        "id":"B4",
+        "name":"Power Gummies - Hair & Nail Vitamins with Biotin",
+        "packs":"bottle of 60 gummies",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit…_auto,f_auto/5a34b45b7f284dd5ae17710100f5b0fa.jpg",
+        "mrp":1200,
+        "discount":25,
+        "price":900
+      },
+      {
+        "id":"B5",
+        "name":"Wellwoman Hairfollic Hair Supplement Tablet",
+        "packs":"box of 30 tablets",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/da53ml3uc1gpctmhanfm.jpg",
+        "mrp":708,
+        "discount":25,
+        "price":531
+      },  {
+        "id":"B6",
+        "name":"Carbamide Forte Biotin 10,000mcg Tablet",
+        "packs":"bottle of 120 tablets",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/g8sutaon3j3kmg9eeipv.jpg",
+        "mrp":795,
+        "discount":31,
+        "price":549
+      },
+      {
+        "id":"B7",
+        "name":"Follihair AMPM Tablet Gluten Free",
+        "packs":"strip of 20 tablets",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/x5rhcay5vmkz4ii9o786.jpg",
+        "mrp":399,
+        "discount":9,
+        "price":360
+      },
+       {
+        "id":"B8",
+        "name":"H-Vit Biotin Tablet",
+        "packs":"strip of 10 tablets",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/nw5drim4tiztqzkp6dz8.jpg",
+        "mrp":52,
+        "discount":15,
+        "price":44
+      },  {
+        "id":"B9",
+        "name":"Dr. Morepen Biotin+ Advanced Tablet for Healthy Hair, Skin & Nails Tablet",
+        "packs":"bottle of 60 tablets",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit…_auto,f_auto/8d5cadb9e1b148cb84e525ce8be40e76.jpg",
+        "mrp":999,
+        "discount":45,
+        "price":549
+      }, {
+        "id":"B10",
+        "name":"Power Gummies - Hair & Nail Vitamins with Biotin",
+        "packs":"box of 120 gummies",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit…_auto,f_auto/87761c9a93604ea4a778884faaa65713.jpg",
+        "mrp":2300,
+        "discount":25,
+        "price":1725
+      }
+  ]
+},
+
+{
+  "Personal_care": [
+    {
+      "id": "pcr1",
+      "name": "Skin Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/n8ocwaqoerqke0nbrtrr.png"
+    },
+    {
+      "id": "pcr2",
+      "name": "Sexual Wellness",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/myhagyzdangsd1ibwotm.png"
+    },
+    {
+      "id": "pcr3",
+      "name": "Hair Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/kgdli04gm2hcjgel553r.png"
+    },
+    {
+      "id": "pcr4",
+      "name": "Baby Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/u5awkf56gidlnhuybvqh.png"
+    },
+    {
+      "id": "pcr5",
+      "name": "Women Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/yuam4evyvw7adyhqixzv.png"
+    },
+    {
+      "id": "pcr6",
+      "name": "Elderly Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/d7ocpsrtehsla83kbxqs.png"
+    },
+    {
+      "id": "pcr7",
+      "name": "Men Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/pa32gmnhdlk0ownn9b7p.png"
+    },
+    {
+      "id": "pcr8",
+      "name": "Oral Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/et2g6nylqsdndeutxloi.png"
+    },
+    {
+      "id": "pcr9",
+      "name": "Pet Care",
+      "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jmdy8kha8pnlrjz9veue.png"
+    }
+  ]
+},
+{
+  "Trending_now":[
+    {
+      "id":"tn1",
+      "name":"Dr. Morepen Great Gut Pre & Probiotic Laxative Sachet (6.25gm Each)",
+      "packs":"box of 4 Sachets",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/41517e1d72cb4536bc98132a13970fda.jpg",
+      "mrp":238,
+      "discount":5,
+      "price":226
+    },
+   {
+      "id":"tn2",
+      "name":"Hamdard Joshina Syrup",
+      "packs":"bottle of 200ml Syrup",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ilivtrnqcgvfavninb00.jpg",
+      "mrp":130,
+      "discount":7,
+      "price":120
+    },
+  {
+      "id":"tn3",
+      "name":"Dolo 650 Tablet",
+      "packs":"bottle of 200ml Syrup",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/mu5bahqxfrp28cut6que.jpg",
+      "mrp":29,
+      "discount":18,
+      "price":24
+    },
+   {
+      "id":"tn4",
+      "name":"Keraglo Men Tablet",
+      "packs":"bottle of 30 tablets",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/ic22szqv5mq6pow4iqlu.png",
+      "mrp":642,
+      "discount":15,
+      "price":546
+    },
+  {
+      "id":"tn5",
+      "name":"Boroline Cream",
+      "packs":"tube of 20 gm cream",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/kgbk3tvgjvcgjmqws6cp.jpg",
+      "mrp":42,
+      "discount":2,
+      "price":41
+    },
+   {
+      "id":"tn6",
+      "name":"Revital H Men Multivitamin",
+      "packs":"bottle of 60 capsules",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/jmuuryvgit6mwwolt0ea.jpg",
+      "mrp":550,
+      "discount":15,
+      "price":468
+    },
+    {
+      "id":"tn7",
+      "name":"Dettol Antiseptic Disinfectant Liquid",
+      "packs":"bottle of 60 capsules",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/mhxjvzj7mwka2epq1mg3.jpg",
+      "mrp":364,
+      "discount":6,
+      "price":343
+    },
+   {
+      "id":"tn8",
+      "name":"Seven Seas Original Cod-Liver Oil Capsule",
+      "packs":"bottle of 60 capsules",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hruygy5lw0ivyqenv9ev.jpg",
+      "mrp":351,
+      "discount":11,
+      "price":310
+    },
+   {
+      "id":"tn9",
+      "name":"Dr Morepen BG 03 Gluco One Glucose Monitoring System",
+      "packs":"box of 1 kit",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/mhxjvzj7mwka2epq1mg3.jpg",
+      "mrp":1164,
+      "discount":6,
+      "price":500
+    },
+   {
+      "id":"tn10",
+      "name":"Tata 1mg Vaporizer Steam Inhaler",
+      "packs":"box of 1 unit",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/59a0b3650352424ab1244ac830a5fbf5.jpg",
+      "mrp":595,
+      "discount":52,
+      "price":285
+    }
+  ]
+},
+
+
+{
+  "Breakfast":[
+    {
+      "id":"bt1",
+      "name":"GAIA Crunchy Muesli Nutty Delight",
+      "packs":"jar of 1kg Muesli",
+      "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/efwitrii0sjwvdgekbbx.jpg",
+      "mrp":238,
+      "discount":5,
+      "price":226
+    },
+    {
+        "id":"bt2",
+        "name":"True Elements No Added Sugar Muesli",
+        "packs":"box of 1000 gm Muesli",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit…_auto,f_auto/d85851166f594187a67174499a222eec.jpg",
+        "mrp":595,
+        "discount":18,
+        "price":488
+      },
+      {
+        "id":"bt3",
+        "name":"Saffola Masala Oats Classic Masala",
+        "packs":"packet of 500 gm Oats",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/wf4epamdbrwhyus9oz6f.jpg",
+        "mrp":207,
+        "discount":12,
+        "price":182
+      },
+      {
+        "id":"bt4",
+        "name":"Bagrry's Protein Muesli with Whey Protein, Almonds & Oats Chocolate",
+        "packs":"box of 500 gm Muesli",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/qhx74omy5xngtvrrzeqm.png",
+        "mrp":425,
+        "discount":11,
+        "price":377
+      },  {
+        "id":"bt5",
+        "name":"Tata Soulfull Ragi Bites Fills Choco",
+        "packs":"box of 250 gm Snacks",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/lhq5hsn6pp7c1xzgpsvr.jpg",
+        "mrp":199,
+        "discount":5,
+        "price":189
+      },  {
+        "id":"bt6",
+        "name":"Bagrry's Crunchy No Added Sugar Muesli",
+        "packs":"jar of 1000 gm Muesli",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/opj6r4zzusf5654ubggc.jpg",
+        "mrp":599,
+        "discount":6,
+        "price":563
+      },  {
+        "id":"bt7",
+        "name":"Saffola Masala Oats Peppy Tomato",
+        "packs":"packet of 500 gm Oats",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/oxerorszcvlk29l5o80z.jpg",
+        "mrp":207,
+        "discount":12,
+        "price":182
+      },  {
+        "id":"bt8",
+        "name":"Bagrry's Crunchy Fruit and Nut with Cranberries Muesli",
+        "packs":"jar of 1 kg Muesli",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/xmxwitpnxovukwp1mtqm.jpg",
+        "mrp":525,
+        "discount":11,
+        "price":467
+      },  {
+        "id":"bt9",
+        "name":"True Elements Fruit and Nut Muesli",
+        "packs":"box of 1000 gm Muesli",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit…_auto,f_auto/bc042477100447a38bd7c1506d5728ae.jpg",
+        "mrp":595,
+        "discount":14,
+        "price":512
+      },  {
+        "id":"bt7",
+        "name":"Saffola Masala Oats Peppy Tomato",
+        "packs":"packet of 500 gm Oats",
+        "image":"https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/oxerorszcvlk29l5o80z.jpg",
+        "mrp":207,
+        "discount":12,
+        "price":182
+      }
+    ]
+},
+
+
+
+
+{
+  "homeopathy":[
+    {
+      "id":"mm1",
+      "name":"Dr Reckeweg",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/iy3hwyaywbcqhrrqxdv6.png"
+    },
+     {
+      "id":"mm2",
+      "name":"SBL homeopathy",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/otbucp1ifveqrjvfd65j.png"
+    },
+     {
+      "id":"mm3",
+      "name":"BJAIN homeopathy",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/n4uo5xa4vxadylucybu1.png"
+    },
+    {
+      "id":"mm4",
+      "name":"DR WILLMAR SCHWABE INDIA",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/nksym712wf4y4b9p1k6j.png"
+    },
+    {
+      "id":"mm5",
+      "name":"ADELhomeopathy",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/b6fcbfc4-40ec-47b6-9837-c44819a5ba54.png"
+    },
+    {
+      "id":"mm6",
+      "name":"Baksons",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/kl9hlgtqytfgfqb6baa5.png"
+    },
+    {
+      "id":"mm7",
+      "name":"Baksons",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/izx9mv71op8u479tjb2h.png"
+     },
+    {
+      "id":"mm8",
+      "name":"Dr Batra's homeopathy",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/izx9mv71op8u479tjb2h.png"
+     },
+    {
+      "id":"mm9",
+      "name":"HAPDCO",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jcnry9ai50sxgttj3rdq.png"
+     },
+    {
+      "id":"mm10",
+      "name":"Wheezaal",
+      "image":"https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/pujzqz0sfqkfezbb7x3o.png"
+     }
+  ]
+},
+
+
+
+{
+  "Ayurveda_concern": [
+    {
+      "id": "ac1",
+      "name": "Stomach_care",
+      "image": "https://onemg.gumlet.io/iib15dp5axmwwvwcpu0i.jpg",
+      "details": "Atis, also known as Ativisha, is a tall herb mainly grown in the Himalayan region. It..."
+    },
+    {
+      "id": "ac2",
+      "name": "Masoor Dal",
+      "image": "https://onemg.gumlet.io/ofmkkvaiqida4rcpa7bi.jpg",
+      "details": "Masoor Dal, known as Lentil in English, is one of the most ancient legume crops. It h..."
+    },
+    {
+      "id": "ac3",
+      "name": "Shankhpushpi",
+      "image": "https://onemg.gumlet.io/kf52rw6a5ua5idcio0db.jpg",
+      "details": "Shankhpushpi or Shyamaktanta is a perennial herb that is used for its medicinal benef..."
+    },
+    {
+      "id": "ac4",
+      "name": "Lotus",
+      "image": "https://onemg.gumlet.io/yna6tpk9ntcgvwedtbjh.jpg",
+      "details": "Lotus, the national flower of India, is also known as “Kamal” or “Padmini”. It is a s..."
+    },
+    {
+      "id": "ac5",
+      "name": "Anantamul",
+      "image": "https://onemg.gumlet.io/o0sxobkxrkxyezigfvyc.jpg",
+      "details": "Anantamul, meaning ‘Eternal Root’ in Sanskrit, is generally found near seashores and ..."
+    },
+    {
+      "id": "ac6",
+      "name": "Vidarikand",
+      "image": "https://onemg.gumlet.io/fvxb3hj2tmjgxqjq1vmm.jpg",
+      "details": "Vidarikand a perennial herb which is commonly known as Indian Kudzu. The tubers (root..."
+    },
+    {
+      "id": "ac7",
+      "name": "Kulthi",
+      "image": "https://onemg.gumlet.io/s2t8nvptjeel5htyzmzc.jpg",
+      "details": "Kulthi, commonly known as Horse gram, is a bean used in hilly regions of India. It is..."
+    },
+    {
+      "id": "ac8",
+      "name": "Kalonji",
+      "image": "https://onemg.gumlet.io/cbpbnwbt6hqzzav8vdrk.jpg",
+      "details": "Kalonji or Kalajeera is also known as Upakunci in Ayurveda. It has a characteristic t..."
+    },
+    {
+      "id": "ac9",
+      "name": "Ajwain",
+      "image": "https://onemg.gumlet.io/warfsmkefwmcz7ztbg31.jpg",
+      "details": "Ajwain is an Indian spice commonly used as a remedy for gastrointestinal problems lik..."
+    },
+    {
+      "id": "ac10",
+      "name": "Bhumi Amla",
+      "image": "https://onemg.gumlet.io/s5dhki2agjnndyqgz0eb.jpg",
+      "details": "Bhumi Amla (Phyllanthus niruri) is also known as Dukong anak and as Bhumi Amalaki..."
+    }
+  ]
+}
+
+]
+
+
+       
+}
+
+     
