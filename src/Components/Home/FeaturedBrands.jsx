@@ -32,6 +32,7 @@ export const FeaturedBrands = () => {
    }, []);
     
    
+   
 
 
   return (
