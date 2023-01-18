@@ -1,0 +1,27 @@
+ *{
+    margin: 0px;
+    padding: 0px;
+   
+ }
+ /* body{
+    background-color: whitesmoke;
+ } */
+ .featureb{
+    background-color: white;
+   }
+
+.fbtitle{
+    text-align: left;
+    background-color: whitesmoke;
+    padding: 10px;
+ }
+
+ .fbtitle h2 {
+   color: black;
+   margin-left: 2%;
+ }
+
+ .custom-dot-list-style button{
+   border: none;
+   background:black;
+   }
