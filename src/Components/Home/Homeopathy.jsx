@@ -30,7 +30,7 @@ const InGetData = ()=>{
         setLoading(false)
     })
 }
-let box = document.querySelector(".one")
+let box = document.querySelector("#c2")
 console.log("box",box)
 const buttonPressRev = ()=>{
 let width =  box.clientWidth
@@ -47,7 +47,7 @@ return(
     <div className={styles.box}>
         <div onClick={buttonPressRev}><FontAwesomeIcon  className={styles.icon} icon={faChevronLeft}/></div>
     <div className={styles.container} style={{width:"100%"}}>
-        <div className="one" style={{scrollBehavior:"smooth",background:"white"}}>
+        <div className="one" id="c2"  style={{scrollBehavior:"smooth",background:"white"}}>
         {
             loading===false ? data.map((el)=>(
                 <div key={el.id}>

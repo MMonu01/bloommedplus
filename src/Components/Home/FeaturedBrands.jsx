@@ -1,7 +1,10 @@
+
 import  React,{ useEffect, useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+
+// import { Slider } from 'react-carousel-npm';
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
 import styles from "../../Styles/FeauturedBrands.module.css"
 
 import { Box, Text, Image } from "@chakra-ui/react";
@@ -21,11 +24,13 @@ export const FeaturedBrands = () => {
       const   getdata = async () => {
         let  res = await  fetch(`http://localhost:1010/Landing_page`)
         let data = await res.json();
-        console.log("feat",data)
+    
+        console.log("murali",data)
         setAllbrands(data[0].featured_brands)
      };
       getdata();
    }, []);
+    
    
 
 
@@ -36,7 +41,7 @@ export const FeaturedBrands = () => {
           <div className={styles.fbtitle}> 
              <h2> Featured brands</h2>
           </div>
-         <Slider {...settings}>
+         {/* <Slider {...settings}>
          {allbrands.map((elem) => (
          <Box key={elem.id}>
           <Box style={{ cursor: "pointer" ,scrollBehavior:"smooth",background:"transparent"} } className="one">
@@ -50,12 +55,22 @@ export const FeaturedBrands = () => {
           </Box>
           </Box>
          ))}
-         </Slider>
+         </Slider> */}
+     
        
        </div>
          {/* ****feature brands completed*** */}
 
-
+   {/* <Slider
+        sliderResource={allbrands}
+        imageKeyToAccess='image'
+        backgroundColor='#333C19'
+        dotColor='#735C19'
+        arrowsColor='#126C20'
+        arrowHoverColor='#64DF18'
+        imageHeight='50vh'
+        size={{ height: 2.5, width: 2.5 }}
+         /> */}
 
     </>
   )
