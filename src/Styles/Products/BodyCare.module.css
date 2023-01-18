@@ -1,0 +1,47 @@
+.box{display:flex; align-items: center; background-color: white; width:100%; position: relative;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; margin-top: 20px;}
+.box>div:nth-child(1), .box>div:nth-child(3){
+    
+    margin:4px; position: absolute;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding:5px 10px;
+    border-radius: 50%;
+}
+.box>div:nth-child(3){
+    right:10px;
+}
+
+
+.box>div:nth-child(3):hover .icon,.box>div:nth-child(3):hover,.box>div:nth-child(1):hover .icon,.box>div:nth-child(1):hover{
+    background-color: red;
+    color:white; cursor: pointer;
+}
+/* .icon:hover{background-color: red;color:white} */
+
+.container{width:100%;background:white; overflow:hidden;}
+
+.container>div{
+    display:flex;
+    overflow: hidden;
+    background-color: white;
+  
+width:100%
+}
+ .container>div>div{
+    padding:50px 15px 0 15px;
+    margin:0 1%;
+    cursor: pointer;
+ width:200px
+} 
+.container>div>div,.container p{
+    background-color: white;
+
+    text-align: center;
+    
+}
+.container p {padding:7px  0px 15px 0px}
+
+
+
+.container>div>div:hover{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+border-radius: 10px;}
