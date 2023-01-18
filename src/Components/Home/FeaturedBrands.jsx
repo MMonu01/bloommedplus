@@ -6,6 +6,7 @@ import styles from "../../Styles/FeauturedBrands.module.css"
 
 import { Box, Text, Image } from "@chakra-ui/react";
 
+
 export const FeaturedBrands = () => {
       
     const [allbrands, setAllbrands] = React.useState([]);
