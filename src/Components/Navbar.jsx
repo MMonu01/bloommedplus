@@ -1,10 +1,16 @@
 
 import { Link } from "react-router-dom"
 
-const Navbar = ()=>{
+
+export const Navbar = ()=>{
+
     return (
-        <nav>
-      Navbar
-        </nav>
+      <div>
+           <div >  
+             <Link to="/">Logo1mg</Link> 
+            
+           </div>
+              
+      </div>
     )
 }

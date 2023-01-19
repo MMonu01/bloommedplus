@@ -20,14 +20,17 @@
     "mdb-react-ui-kit": "^5.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
+    "react-carousel-npm": "^2.1.4",
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
