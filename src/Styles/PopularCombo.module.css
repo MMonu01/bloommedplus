@@ -1,3 +1,4 @@
+
 .box{display:flex; align-items: center; background-color: white; width:95%; 
     position: relative;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;margin: auto ; }
 .box>div:nth-child(1), .box>div:nth-child(3){
@@ -33,5 +34,17 @@ width:100%
     text-align: center;
 }
 .container p {padding:7px  0px 15px 0px}
-.container>div>div:hover{box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.container>div>div:hover{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 border-radius: 10px;}
+
+
+.mrpdis{
+    display: flex;
+}
+
+.murali{
+ 
+ background-color: red;
+ border: 10px red;
+
+}
