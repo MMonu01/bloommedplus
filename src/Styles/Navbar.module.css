@@ -1,0 +1,75 @@
+
+.navbar{background-color: white;width:100%;}
+.laptop{background-color: white;}
+.logo{width:90px; height:40px; background-color: white;}
+.top{height:50px;
+    display:flex;
+    justify-content: space-between;
+    margin-right:20px;margin-left:20px;
+    align-items: center;
+    background-color: white;
+}
+.top>div{background-color: white;}
+.medicine{font-weight:bold;color:#ff6f61;font-size: 18px;cursor: pointer;}
+.head{font-weight: bold;font-size: 16px; background-color: white;cursor: pointer;}
+.safe{background-color: #ff6f61; font-size: 11px;padding:0px 4px 1px 4px; color:white; font-weight: bold;}
+.signup, .login{background-color: white;}
+
+/* middle---------------------------------------- */
+
+.middle{display:flex; margin-top: 5px; justify-content: space-between; margin-right:20px; margin-left:20px; background-color: white;margin-bottom: 5px;}
+
+.left{display:flex; background-color: white;width:60%;}
+.delhi{display:flex; justify-content: space-between; width:200px; padding:3px 10px; align-items: center; height:30px;}
+.dot{color:rgb(141, 141, 141); font-size: 15px;}
+.cross{color:rgb(141, 141, 141); font-size: 14px;}
+
+.Search{ height:36px; margin-left:3px;  display: flex; align-items: center; justify-content: space-between;width:60%; padding:0 6px;}
+.input{ padding:0 0 0px 5px;width:90%; font-size: 15px; height:100%;border:none;outline:none;}
+.glass{font-size: 14px; width:20px;color:rgb(141, 141, 141);cursor: pointer; }
+
+.right{display:flex;background-color: white; align-items: center;}
+.order{background-color: #ff6f61;color:white;outline:none; border:none; border-radius:5px; font-size: 16px; padding:6px 0px;margin-left:10px; width:120px;}
+.quick{background-color: white; font-size: 14px;}
+
+.hr{border:.5px solid rgb(230, 230, 230);}
+/* ----------------------------------------------- */
+
+
+.bottom{display:flex; flex-wrap: wrap;  background-color: white; margin:5px 20px 20px 20px; }
+.down{color:black; font-size: 9px;background-color: white;}
+.bottom>div{margin: 5px 15px;background-color: white; display: flex; align-items: center; gap:7px;cursor: pointer;}
+.bottom span{background-color: white;}
+
+
+/* ----------------------------------------------------------------smallSizeWindowNav------------ */
+.newNav{background-color: white;padding-bottom: 10px;margin-bottom: 30px;display: none;}
+.newTop{display:flex; justify-content: space-between; align-items: center; padding-right:40px;padding-left:40px; background-color: white; height:50px;}
+.newNav hr{border:.5px solid rgb(207, 207, 207);}
+.newTop img {height:40px; width:90px; background-color: white;}
+.newTop>div:nth-child(1){display: flex;  align-items: center; background-color: white; gap:20px;}
+
+.newMiddle{ height:34px; background-color: white; display: flex; padding-left:40px; margin-top: 5px;}
+.newMiddle div,.newMiddle span{background-color: white;}
+.newdown{background-color: white;color:rgb(122, 120, 120); font-weight: lighter;}
+
+.newbottom{padding-left:40px; padding-right:40px; background-color: white;}
+.newSearch{width:100%; background-color: white;}
+.newSearch input{border:1px solid black; width:90%;}
+
+
+@media screen and (min-width:500px) and (max-width:1100px){
+    .laptop{display:none}
+    .newNav{display: block;}
+}
+
+
+@media screen and (min-width:100px) and (max-width:500px){
+    .laptop{display:none}
+    .newNav{display: block;}
+
+    .menu{margin-right: -5px;}
+    .newTop{padding-right:20px; padding-left:20px;}
+    .newMiddle{padding-right:20px; padding-left:20px;}
+    .newbottom{padding-right:20px; padding-left:20px;}
+}
