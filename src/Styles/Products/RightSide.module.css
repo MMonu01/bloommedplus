@@ -1,0 +1,18 @@
+.productHead {
+    margin-top: 40px;margin-left:20px;font-size: 20px;
+}
+
+.header{
+    display:flex; margin-top: 40px;margin-left:20px;  justify-content: space-between; align-items: center;
+}
+
+.header p {font-size: 20px;}
+.sort{margin-right:15px;}
+
+.header select{
+    padding:8px 10px;
+    outline:none;
+    background-color: white;
+    border:1px solid rgb(227, 227, 227);
+    border-radius:5px;
+}

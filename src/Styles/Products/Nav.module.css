@@ -1,0 +1,9 @@
+.container{
+    display:flex; gap:5px; align-items: center;
+    font-size: 13px;
+    flex-wrap: wrap;
+}
+.color{
+    color: #fe8276;
+    text-decoration: none;
+}

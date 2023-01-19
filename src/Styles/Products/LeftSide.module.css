@@ -1,0 +1,70 @@
+
+.LeftSide_container{
+    /* width:190px; */
+    background-color: white;
+    padding-bottom:20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.LeftSide_container hr{border:1px solid rgb(234, 234, 234);}
+.LeftSide_container div, .LeftSide_container h3, .LeftSide_container h2, .LeftSide_container input, .LeftSide_container span {background-color: white;}
+
+.head{
+    display:flex; flex-direction: column; gap:10px;
+    font-size: 13px;
+    background-color: white;
+    padding-right:20px;
+}
+
+
+.head>div>div{
+    display: flex; justify-content: space-between;
+    /* style={{display:"flex", justContent:"space-between"}} */
+}
+
+.head>div>div>input {
+    margin-right:10px;
+}
+
+.head>div{display:flex; justify-content: space-between;}
+.category{
+    display:flex; flex-direction: column; gap:10px;
+    font-size: 13px;
+    background-color: white;
+}
+.category>div{display:flex; justify-content: space-between;}
+
+
+.header{
+    font-size: 15px; background-color: white; margin-bottom:7px;
+
+}
+
+.head{
+    max-height:245px;
+    overflow:auto;
+}
+
+.LeftSide_container input[type=checkbox]{
+padding:20px;
+height: 15px;
+width:15px;
+border:1px solid rgb(107, 107, 107);
+background-color: white;
+}
+
+.LeftSide_container input[type=text]{
+    border:1px solid rgb(117, 117, 117); padding:8px 8px; width:150px;
+    border-radius: 5px;
+}
+
+.skin_care{
+    color:rgb(111, 111, 111);
+    margin-left:15px;
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    gap:5px;
+}
+/* .cat{margin-left:"100px"} */
