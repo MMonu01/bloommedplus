@@ -11,7 +11,7 @@ const GetData = ()=>{
         baseURL:"http://localhost:1010/Landing_page"
     })
 }
-export const Homeopathy = ()  =>{
+export const PopularCategories = ()  =>{
 const [data,setData]=useState([])
 const [loading,setLoading] = useState(false)
 React.useEffect(()=>{
@@ -23,7 +23,7 @@ const InGetData = ()=>{
     GetData()
     .then((res)=>{
         console.log("array of object",res)
-        setData(()=>res.data[7].homeopathy)
+        setData(()=>res.data[1].popular_categories)
         setLoading(false)
     })
     .catch((err)=>{
@@ -31,7 +31,7 @@ const InGetData = ()=>{
         setLoading(false)
     })
 }
-let box = document.querySelector("#homeo1")
+let box = document.querySelector("#h2")
 // console.log("box",box)
 const buttonPressRev = ()=>{
 let width =  box.clientWidth
@@ -44,11 +44,11 @@ const buttonPressNext =()=>{
 return(
     <div>
         <h3 style={{background:"whitesmoke" ,textAlign:"left", width:"95%",margin: "auto",
-        color:"black" }} > Homeopathy </h3>
+        color:"black" }} > Popular categories </h3>
     <div className={styles.box}>
         <div onClick={buttonPressRev}><FontAwesomeIcon  className={styles.icon} icon={faChevronLeft}/></div>
     <div className={styles.container} style={{width:"100%"}}>
-        <div className="one" id="homeo1"  style={{scrollBehavior:"smooth",background:"white"}}>
+        <div className="one" id="h2"  style={{scrollBehavior:"smooth",background:"white"}}>
         {
             loading===false ? data.map((el)=>(
                 <div key={el.id}>

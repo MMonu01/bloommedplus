@@ -22,6 +22,7 @@ const InGetData = ()=>{
     setLoading(true)
     GetData()
     .then((res)=>{
+        // console.log( "raja",res)
         setData(()=>res.data[4].Personal_care)
         setLoading(false)
     })
@@ -30,7 +31,7 @@ const InGetData = ()=>{
         setLoading(false)
     })
 }
-let box = document.querySelector("#c1")
+let box = document.querySelector("#c2")
 console.log("box",box)
 const buttonPressRev = ()=>{
 let width =  box.clientWidth
@@ -41,11 +42,13 @@ const buttonPressNext =()=>{
     box.scrollLeft += width
 }
 return(
-    <>
+    <div>
+        <h3 style={{background:"whitesmoke" ,textAlign:"left", width:"95%",margin: "auto",
+        color:"black" }} > Personal care </h3>
     <div className={styles.box}>
         <div onClick={buttonPressRev}><FontAwesomeIcon  className={styles.icon} icon={faChevronLeft}/></div>
     <div className={styles.container} style={{width:"100%"}}>
-        <div className="one" id="c1" style={{scrollBehavior:"smooth",background:"white"}}>
+        <div className="one" id="c2"  style={{scrollBehavior:"smooth",background:"white"}}>
         {
             loading===false ? data.map((el)=>(
                 <div key={el.id}>
@@ -58,7 +61,7 @@ return(
     </div>
     <div onClick={buttonPressNext}><FontAwesomeIcon className={styles.icon} icon={faChevronRight}/></div>
     </div>
-    </>
+    </div>
 )
 }
 
