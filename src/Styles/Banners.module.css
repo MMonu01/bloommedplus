@@ -1,0 +1,26 @@
+
+.careplanb{
+    background-color: transparent;
+    margin: 5px auto;
+    padding: 1px ;
+    width: 95%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.careplanb > img{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+.banner1{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    padding: 1px ;
+    width: 95%;
+    background-color: red;
+}
