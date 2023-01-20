@@ -1,12 +1,47 @@
-import { Link } from "react-router-dom"
+import { Link,Navigate,useSearchParams } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 import { faCartShopping, faLocationDot,faLocationCrosshairs,faMagnifyingGlass,faChevronDown,faBars } from '@fortawesome/free-solid-svg-icons'
 import styles from '../Styles/Navbar.module.css'
 import { Input,InputRightElement,Button,InputGroup } from '@chakra-ui/react'
 import Sidebar from "./Sidebar"
-
-
+import React,{ useState,useContext } from "react"
+import { CartContext } from "../Contexts/CartContext"
+import { SearchContext } from "../Contexts/SearchContext"
 export const Navbar = ()=>{
+
+  
+  const [searchParams,setSearchParams] = useSearchParams()
+  const All = searchParams.get("sort")
+  // const getSearched = searchParams.get("q")
+  const{search,setSearch} = useContext(SearchContext)
+  // const [search,setSearch] = useState(getSearched || "")
+const {userCart} = useContext(CartContext)
+const [cartItem,setCartItem] = useState(0)
+
+
+React.useEffect(()=>{
+setCartItem(userCart.cart.length)
+},[userCart])
+
+
+  React.useEffect(()=>{
+    setSearchParams({sort:All,q:search})
+},[search])
+
+  const HandleSearchKey = (e)=>{
+    if(e.keyCode==13){
+  // return <Navigate to='/products'/>
+  // console.log("this is enter button")
+}
+// console.log(e)
+  }
+
+  const HandleSearchChange = (e)=>{
+setSearch(e.target.value)
+
+  }
+
 
     return (
      <nav className={styles.navbar}>
@@ -24,7 +59,8 @@ export const Navbar = ()=>{
 <div><span className={styles.head}>CARE PLAN  </span> <span className={styles.safe}>SAVE MORE</span></div>
 <div><span className={styles.login}>Login</span> | <span className={styles.signup}>Signup</span></div>
 <div>Offers</div>
-<div style={{width:"35px",cursor:"pointer"}}><FontAwesomeIcon icon={faCartShopping}/><sup style={{background:"white"}}>0</sup></div>
+<div style={{width:"35px",cursor:"pointer"}}><Link to='/cart' style={{background:'white',textDecoration:"none"}}>
+  <FontAwesomeIcon style={{color:"black",background:"white"}} icon={faCartShopping}/><sup style={{background:"white"}}>{cartItem}</sup></Link></div>
 <div>Need Help?</div>
 </div>
 
@@ -45,8 +81,10 @@ export const Navbar = ()=>{
 </div>
 
 <div className={styles.Search}>
-  <input className={styles.input} type="text" placeholder="Search for Medicines and Health Products"/>
+  <input className={styles.input} onKeyUp={HandleSearchKey} onChange={HandleSearchChange} value={search} type="text" placeholder="Search for Medicines and Health Products"/>
+  <Link to='/products/skincare' >
   <FontAwesomeIcon className={styles.glass} icon={faMagnifyingGlass}/>
+  </Link>
 </div> 
 
 
@@ -107,8 +145,10 @@ QUICK BUY! Get 25% off on
 </div>
 
 <div style={{background:"white"}}>
-<FontAwesomeIcon icon={faCartShopping}/>
-<sup style={{background:"white"}}>0</sup>
+<Link to='/cart' style={{background:'white',textDecoration:"none"}}>
+<FontAwesomeIcon icon={faCartShopping} style={{background:"white",textDecoration:"none",color:"black"}} />
+<sup style={{background:"white"}}>{cartItem}</sup>
+</Link>
 </div>
 </div>
 <hr />
@@ -124,11 +164,13 @@ QUICK BUY! Get 25% off on
       style={{background:"white",padding:"10px 20px",marginLeft:"5px",outline:"none",border:"none",}}
         pr='4.5rem'
         type="text"
+        onKeyUp={HandleSearchKey} onChange={HandleSearchChange} value={search}
         placeholder='Search for Medicines and Health Products'
       />
-      <InputRightElement  style={{background:"white",width:"20px",marginRight:"15px"}}>
-       
+      <InputRightElement   style={{background:"white",width:"20px",marginRight:"15px"}}>
+       <Link to="/products/skincare" style={{background:"white"}}>
   <FontAwesomeIcon style={{color:"black",background:"white",marginRight:"5px",outline:"none",paddingLeft:"5px",cursor:"pointer",marginTop:"9px"}}  icon={faMagnifyingGlass}/>
+       </Link>
 
    
       </InputRightElement>

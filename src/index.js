@@ -6,13 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import {store} from './Redux/store'
+import SearchContextProvider from './Contexts/SearchContext';
+import CartContextProvider from './Contexts/CartContext';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+    <CartContextProvider>
+    <SearchContextProvider>
     <App />
+  </SearchContextProvider>
+    </CartContextProvider>
     </BrowserRouter>
   </Provider>
  

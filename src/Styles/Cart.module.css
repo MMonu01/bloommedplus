@@ -1,0 +1,86 @@
+.container{width:90%;  margin:auto; margin-bottom: 100px; display: grid; grid-template-columns: 1.4fr 1fr; gap:30px;}
+/* .left,.right{height: 400px; background-color: white;} */
+.right{margin-right: 20px;}
+.list{background-color: white;}
+.child{background-color: white;padding:20px;}
+.flx{display:flex; justify-content: space-between;background-color: white;}
+.trash{
+    background-color: white;
+    margin-right:5px;
+    color:rgb(163, 162, 162);
+}
+.circle{font-size: 22px;color: #ff6f61}
+
+.name{font-size: 14px;font-weight: 660;background-color: white;margin-right: 10px;}
+.packs{font-size: 11px;color:rgb(155, 155, 155);font-weight:500;background-color: white;}
+.mrp{font-size: 11px; font-weight: 400;color: rgb(155, 155, 155);background-color: white;}
+.mrp span{background-color: white;}
+.price{font-size: 13px; font-weight: 500;background-color: white;}
+
+
+
+.plan{padding:20px;background-color: white;}
+.corePlan{font-size: 17px;font-style: italic;background-color: #933f39;color:white; padding-top:0px;padding-bottom:2px; border-radius: 5px; width:80px;padding-left:10px; padding-right:10px;}
+.extra{font-size: 17px;font-weight: 600;color:#64aba9;background-color: white;margin-top:5px;margin-bottom: 7px;}
+.member{font-size: 14px;font-weight: 600;background-color: white;}
+.care{font-size: 14px;background-color: white;color:rgb(94, 94, 94);margin-bottom: 15px;}
+
+
+.cartmore{display:flex; background-color: green; align-items: center; background-color: white; justify-content: space-between;width:100%;}
+.cartmore>button:nth-child(1){
+    cursor: pointer;
+    background-color: white; margin-right: 10px;
+    padding:7px 35px; border-radius: 5px; font-weight: 600; color:#ff8485; border:2px solid #ff8485;
+}
+
+.cartmore>button:nth-child(1):hover{border:2px solid #ff8485; color:white; background-color: #ff8485;}
+.cartmore>button:nth-child(2){
+    color: white; cursor: pointer;
+    padding:7px 35px; border-radius: 5px; font-weight: 600; background-color:#ff8485; border:2px solid #ff8485;
+}
+.cartmore>button:nth-child(2):hover{
+    border:2px solid #ff8485;color:#ff8485; background-color: white;
+}
+.couponBox{display: flex; background-color: white; margin-top: 15px; align-items: center; justify-content: space-between;}
+.coupon{background-color: white; display: flex; align-items: center;gap:10px}
+.coupon span{background-color: white; font-weight:500}
+
+
+.check{background-color: white;margin-top: 20px;}
+.vital{display: flex;padding:15px 20px 15px 20px; background-color: #fffcf8; align-items: center; justify-content: space-between;  margin-bottom: 10px;}
+.health{display: grid; grid-template-columns: 20px 1fr; padding:5px 20px 5px 20px;  gap:15px;background-color: white;}
+.health input{background-color: white;}
+.remaining{margin-left: 35px;margin-top: 4px;padding-bottom:20px;padding-right: 20px;padding-left:20px;}
+.remaining,.remaining p{background-color: white;}
+.remaining>p:nth-child(1){font-size: 13px;color:rgb(105, 105, 105);}
+.remaining>p:nth-child(2){font-size: 14px; color:#7eb330;margin-top: 5px;}
+
+.bill{background-color: white;margin-top: 20px;}
+.bill>div{display: grid; background-color: white; margin-top: 12px; margin-bottom: 12px; grid-template-columns: auto auto; gap:10px; align-items: center;justify-content: space-between;}
+.bill>div{padding-right:20px; padding-left:20px; background-color: white;}
+.bill>div:nth-child(1){padding-top: 20px;}
+.bill>div:nth-child(7){padding-bottom: 20px;}
+.bill p,.bill span {background-color: white;}
+
+.bill>div:nth-child(1),.bill>div:nth-child(2),.bill>div:nth-child(4) {font-size: 14px;color:rgb(88, 87, 87)}
+
+.bill>div:nth-child(6){font-weight: 700;color: rgb(104, 102, 102);}
+
+.bill>div:nth-child(7),.bill>div:nth-child(7) p, .bill>div:nth-child(7) span {font-size: 14px;color:rgb(88, 87, 87);padding-top:10px;background-color: #e4f6e7;}
+.newhr{
+    margin-right:20px; margin-left:20px; border:1px solid rgb(196, 196, 196);
+}
+
+.checkout{padding:20px;background-color: white;margin-top: 20px;}
+.checkout button {width:100%;padding-top:12px; font-size: 16px; background-color: #ff6f61; border:1px solid #ff6f61; color:white; padding-bottom:12px;cursor: pointer;}
+.checkout button:hover {background-color: #f75748;}
+
+
+@media screen and (min-width:650px)  and (max-width:980px){
+   .container{width:90%;gap:15px}
+}
+
+@media screen and (min-width:100px)  and (max-width:650px){
+    .container{width:80%;grid-template-columns: 1fr;}
+    .right{margin-right:0%;}
+ }

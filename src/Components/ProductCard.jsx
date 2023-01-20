@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Text,
   Box,
@@ -14,13 +15,85 @@ import styles from "../Styles/SingleProduct.module.css";
 import { FaRegStar } from "react-icons/fa";
 import { BsStarFill } from "react-icons/bs";
 import Form from "react-bootstrap/Form";
+import {CartContext} from '../Contexts/CartContext'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+
+
+
 const ProductCard = ({ product, loader }) => {
   const [value, setValue] = useState("1");
+
+
+
+  const {userCart,setUserCart} = React.useContext(CartContext)
+  const [quantity,setQuantity] = useState(1)
+  const [bag,setBag] = useState( {
+      // id: product.id,
+      // adminId: product.adminId,
+      // name: product.name,
+      // quantity: product.quantity,
+      // price: product.price,
+      // total_price: product.price*quantity,
+      status: "placed"
+    })
+   
+
+    const HandleBag = ()=>{
+  
+  
+  // ----------------------------------------------------
+  
+  let x = userCart.cart
+  
+      let arr = []
+      let matid = []
+      for(let i=0; i<x.length; i++){
+  if(x[i].id!==bag.id){
+      arr.push(x[i])
+      matid.push(x[i].id)
+  }else{
+      let obj = []
+      for(let j=0; j<arr.length; j++){
+          if(bag.id!==arr[j].id){
+              obj.push(arr[j])
+          }
+      }
+  arr = obj
+  }
+  }
+  arr.push(bag)
+  // ------------------------------------
+  
+  
+  
+  
+  
+  
+  setUserCart({...userCart,cart:arr})
+    }
+  
+  const HandleQuantity = (val)=>{
+    setBag({...bag,quantity:val.target.value,total_price:val.target.value*product.price,id:product.id, adminId: product.adminId,
+    name: product.name,
+    price: product.price,packs:product.packs,mrp:product.mrp,discount:product.discount})        
+  }
+  
+
+
+
+
+
+
+
+
+
 
   return (
     <div key={product.id} className={styles.sp}>
       <div className={styles.container}>
-        <p className={styles.head}>{`Home>${product.name}`}</p>
+        <p className={styles.head}>Home {'>'} <Link style={{background:'white',border:"none",color:"black",textDecoration:"none"}} to="/products/skincare">Skin Care</Link> {'>'} {product.name}</p>
+      
         <Flex className={styles.algn}>
           <div className={styles.imgDiv}>
             <img
@@ -73,7 +146,7 @@ const ProductCard = ({ product, loader }) => {
             <Box className={styles.sideDiv}>
               <div className={styles.people}>
                 <img src="https://www.1mg.com/images/social_cue.svg" />
-                <Text>509 people bought this recently</Text>
+                <Text >509 people bought this recently</Text>
               </div>
 
               <Form className={styles.mrp_prc_dscnt}>
@@ -102,7 +175,7 @@ const ProductCard = ({ product, loader }) => {
                         name={"radio"}
                         label={`₹ ${product.price}`}
                         id={`disabled-default-${type}`}
-                        className={styles.chk2}
+                        className={styles.chk2} style={{width:"87px",marginRight:"5px"}}
                       />
                       <div style={{ backgroundColor: "#ffffff" }}>
                         <div className={styles.corePlan}>
@@ -118,25 +191,31 @@ const ProductCard = ({ product, loader }) => {
               </Form>
               <Text className={styles.incl}>Inclusive of all taxes</Text>
               <Flex className={styles.slct_txt}>
-                <select placeholder="Select option" className={styles.slct}>
-                  <option value="option1" className={styles.optn}>
+                <select placeholder="Select option" onChange={(e)=>HandleQuantity(e)}  className={styles.slct}>
+                <option   className={styles.optn}>
+                    select
+                  </option> 
+                  <option value={1} className={styles.optn}>
                     1 Quantity
                   </option>
-                  <option value="option2" className={styles.optn}>
+                  <option value={2} className={styles.optn}>
                     2 Quantities
                   </option>
-                  <option value="option3" className={styles.optn}>
+                  <option value={3} className={styles.optn}>
                     3 Quantities
                   </option>
-                  <option value="option3" className={styles.optn}>
+                  <option value={4} className={styles.optn}>
                     4 Quantities
                   </option>
+                  
+                 
+              
                 </select>
                 <Text
                   className={styles.stck}
                 >{`of ${product.stock} ${product.name}`}</Text>
               </Flex>
-              <Button className={styles.addToCart}>Add To Cart</Button>
+              <Button onClick={HandleBag} className={styles.addToCart}>ADD TO CART</Button>
             </Box>
             <Box className={styles.ear}>
               <Text className={styles.del}>
@@ -232,7 +311,7 @@ const ProductCard = ({ product, loader }) => {
                 <img
                   src="../../Images/book_lab_test.jpg"
                   alt="lab"
-                  class={styles.labTest}
+                  className={styles.labTest}
                 />
               </Box>
             </div>
@@ -240,7 +319,7 @@ const ProductCard = ({ product, loader }) => {
               <img
                 src="../../Images/doctor_consult.jpg"
                 alt="doctor"
-                class={styles.docCons}
+                className={styles.docCons}
               />
             </div>
             <div>
@@ -251,7 +330,7 @@ const ProductCard = ({ product, loader }) => {
                 <img
                   src="../../Images/contentDetails.jpg"
                   alt=""
-                  class={styles.cdt}
+                  className={styles.cdt}
                 />
               </Box>
             </div>

@@ -11,8 +11,8 @@ const AllRoutes = ()=>{
 return(
     <Routes>
 <Route path='/' element={<Home/>}/>
-<Route path='/products' element={<Products/>}/>
-<Route path='/products/:id' element={<SingleProduct/>}/>
+<Route path='/products/skincare' element={<Products/>}/>
+<Route path='/products/skincare/:id' element={<SingleProduct/>}/>
 <Route path='/cart' element={<Cart/>}/>
 </Routes>
 )

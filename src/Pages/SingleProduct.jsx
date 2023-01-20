@@ -9,7 +9,6 @@ const SingleProducts = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loader, setLoader] = useState(true);
-  console.log(id);
   // fetch request
   // store
 
@@ -21,7 +20,6 @@ const SingleProducts = () => {
       .then(({ data }) => {
         setProduct(data);
         setLoader(false);
-        console.log(data);
       })
       .catch((err) => {
         setLoader(false);
@@ -31,7 +29,7 @@ const SingleProducts = () => {
 
   return (
     <div>
-      <ProductCard loader={loader} product={product} />
+      <ProductCard loader={loader}  product={product} />
     </div>
   );
 };

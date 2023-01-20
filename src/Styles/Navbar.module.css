@@ -1,7 +1,7 @@
 
 .navbar{background-color: white;width:100%;}
 .laptop{background-color: white;}
-.logo{width:90px; height:40px; background-color: white;}
+.logo{width:50px; height:20px; background-color: white;}
 .top{height:50px;
     display:flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@
 .middle{display:flex; margin-top: 5px; justify-content: space-between; margin-right:20px; margin-left:20px; background-color: white;margin-bottom: 5px;}
 
 .left{display:flex; background-color: white;width:60%;}
-.delhi{display:flex; justify-content: space-between; width:200px; padding:3px 10px; align-items: center; height:30px;}
+.delhi{display:flex; justify-content: space-between; margin-left:10%; width:200px; padding:3px 10px; align-items: center; height:30px;}
 .dot{color:rgb(141, 141, 141); font-size: 15px;}
 .cross{color:rgb(141, 141, 141); font-size: 14px;}
 
