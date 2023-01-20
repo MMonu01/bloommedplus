@@ -6,7 +6,8 @@ display:flex; flex-direction: column; gap:5px; margin-left:20px;
 .list span{margin-left:20px}
 
 .tbody span{margin-left: 20px;}
-.tbody td{padding-bottom:5px; padding-top:5px}
+.tbody td{padding-bottom:5px; padding-top:5px;cursor:pointer}
+.tbody td:nth-child(2):hover {color:#ff6f61}
 /* .container{width:250px;} */
 .box{display:grid; grid-template-columns: 250px 1fr;}
 .close{margin-top: 20px; display: flex; justify-content: space-between;width:250px;}

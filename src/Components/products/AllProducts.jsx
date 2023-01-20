@@ -1,18 +1,26 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../../Styles/Products/AllProducts.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar,faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons'
+import { SearchContext } from '../../Contexts/SearchContext'
+
+
+
+
+
 
 const AllProducts = ({data})=>{
-console.log(data,"AllProducts")
+// console.log(data,"AllProducts")
+
+
 return (
     <div className={styles.container}>
 
 {data.map((el)=>(
     <div key={el.id} className={styles.box}>
 <div className={styles.image}>
-<Link to={`/products/${el.id}`}>
+<Link to={`/products/skincare/${el.id}`}>
 <img src={el.image} alt={el.image}/>
 </Link>
 </div>

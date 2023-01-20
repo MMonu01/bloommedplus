@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router-dom"
 import axios from "axios"
 import React, { useState } from "react"
 import styles from '../../Styles/Homeopathy.module.css'
@@ -50,11 +50,20 @@ return(
     <div className={styles.container} style={{width:"100%"}}>
         <div className="one" id="h2"  style={{scrollBehavior:"smooth",background:"white"}}>
         {
-            loading===false ? data.map((el)=>(
-                <div key={el.id}>
+            loading===false ? data.map((el,index)=>(
+
+                index==5?(
+                    <div key={el.id}>
+    <Link to="/products/skincare">
                     <img src={el.image} alt={el.image}/>
+                    </Link>
                     <p>{el.name}</p>
                     </div>
+                ):(<div key={el.id}>
+                    <img src={el.image} alt={el.image}/>
+                    <p>{el.name}</p>
+                    </div>)
+                
             )):null
         }
         </div>

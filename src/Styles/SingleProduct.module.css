@@ -98,7 +98,7 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   height: 30px;
-  width: 393px;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 2%;
@@ -120,10 +120,11 @@
 
 .chk1 {
   background-color: #ffffff;
-  width: 18%;
+  width: 21%;
   transform: scale(1.5);
   margin-top: 3%;
   margin-left: 5%;
+  margin-right: 5px;
 }
 
 .mrp1 {
@@ -142,10 +143,11 @@
 
 .chk2 {
   background-color: #ffffff;
-  width: 20%;
+  width: 21%;
   transform: scale(1.5);
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 3%;
+  /* margin-right: 0px; */
 }
 
 .flx1 {
@@ -163,7 +165,7 @@
 .corePlan {
   background-color: #ffffff;
   position: absolute;
-  margin-left: 8%;
+  margin-left: 9%;
   margin-top: 3.5%;
 }
 
@@ -215,13 +217,23 @@ option:hover {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border: none;
-  height: 14%;
+
   width: 90%;
   color: #ffffff;
-  font-size: 14px;
-  margin-left: 5%;
-  margin-top: 10%;
+  font-size: 17px;
+  padding-top:12px;
+  padding-bottom:12px;
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-bottom:20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
 }
+
+
+.addToCart:hover{background-color: #fc5647;}
+
 
 .ear {
   background-color: #ffffff;

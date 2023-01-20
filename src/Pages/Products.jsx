@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState,useContext } from "react"
 import { useSearchParams } from "react-router-dom"
 import axios from "axios"
 import LeftSide from "../Components/products/LeftSide"
 import styles from '../Styles/Products/products.module.css'
 import RightSide from "../Components/products/RightSide"
 import Pagination from "../Components/products/Pagination"
+import { SearchContext } from "../Contexts/SearchContext"
 
 
-const GetData = (page,sort)=>{
+
+
+
+const GetData = (page,sort,q)=>{
     let sortby= null
     let order = null
     if(sort=="rating"){
@@ -36,7 +40,9 @@ const GetData = (page,sort)=>{
         params:  {_page:page,
                _limit:12,
                _sort:sortby,
-               _order:order}
+               _order:order,
+            q
+        }
     })
 }
 
@@ -46,9 +52,17 @@ const [data,setData] = useState([])
 const [isLoading,setIsLoading] = useState(false)
 const [page,setPage]  = useState(1)
 const [totalPages,setTotalPages] = useState(0)
-const [searchParams,setSearchParams] = useSearchParams()
-const initialState = searchParams.get("sort")
-const [sort,setSort] = useState(initialState || "")
+
+const {search,setSearch,sort,setSort} = useContext(SearchContext)
+
+
+// const [searchParams,setSearchParams] = useSearchParams()
+// const initialState = searchParams.get("sort")
+// const All = searchParams.get("q")
+// console.log(All,"this is All")
+// const [sort,setSort] = useState(initialState || "")
+
+
 
 const HandlePage = (val)=>{
     setPage((prev)=>prev+val)
@@ -56,11 +70,11 @@ const HandlePage = (val)=>{
 
 useEffect(()=>{
 InGetData()
-},[page,sort])
+},[page,sort,search])
 
 const InGetData = ()=>{
     setIsLoading(true)
-    GetData(page,sort)
+    GetData(page,sort,search)
     .then((res)=>{
         setIsLoading(false)
     
@@ -81,16 +95,17 @@ setIsLoading(false)
 const HandleSort = (e)=>{
     setSort(e.target.value)
 }
-console.log(sort)
+// console.log(sort)
 
 
-useEffect(() => {
-    const params = {
-        sort
-    };
+// useEffect(() => {
+//     const params = {
+//         sort,
+      
+//     };
     
-    setSearchParams(params);
-  }, [sort]);
+//     setSearchParams(params);
+//   }, [sort]);
 
 
     return (
@@ -102,7 +117,7 @@ useEffect(() => {
 <div>
 <RightSide data={data} HandleSort={HandleSort}/>
 
-<Pagination HandlePage={HandlePage} totalPages={totalPages} page={page}/>
+<Pagination HandlePage={HandlePage}  totalPages={totalPages} page={page}/>
 </div>
 
 </div>
