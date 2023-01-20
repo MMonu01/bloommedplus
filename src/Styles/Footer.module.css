@@ -1,0 +1,17 @@
+
+.each-box-footer{
+    display: flex;
+    flex-direction: column;
+    
+    background-color: aqua;
+}
+
+.footerStamp {
+    display: flex;
+    align-items: flex-start;
+    background-color: transparent;
+  }
+  
+  .knowbox{
+    background-color: aqua;
+  }

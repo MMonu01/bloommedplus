@@ -63,7 +63,7 @@ return(
         }
         </div>
     </div>
-    <div onClick={PressNext}><FontAwesomeIcon className={styles.icon} icon={faChevronRight}/></div>
+       <div onClick={PressNext}><FontAwesomeIcon className={styles.icon} icon={faChevronRight}/></div>
     </div>
     </>
 )
