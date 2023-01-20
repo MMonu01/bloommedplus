@@ -1,0 +1,17 @@
+.head {
+  border: 1px solid red;
+  height: 500px;
+  width: 50%;
+  margin: auto;
+  position: absolute;
+  margin-left: 24%;
+  margin-top: 1%;
+}
+
+.banner {
+  height: 530px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
