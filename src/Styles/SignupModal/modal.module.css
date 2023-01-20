@@ -1,0 +1,188 @@
+.mainMod {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 70%;
+  width: 60%;
+  vertical-align: middle;
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+}
+.pharma {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 117%;
+  width: 100%;
+}
+
+.leftForm {
+  height: 80%;
+  width: 60%;
+  text-align: center;
+  margin-left: 2%;
+}
+
+.title {
+  margin-top: 3%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nm,
+.unique,
+.mail,
+.mob {
+  background-color: #ffffff;
+  border: none;
+  height: 45px;
+  width: 83%;
+  padding-left: 3%;
+  margin-top: 3%;
+  color: rgb(81, 75, 75);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pwd {
+  background-color: #ffffff;
+  border: none;
+  height: 45px;
+  width: 83%;
+  padding-left: 3%;
+  color: rgb(81, 75, 75);
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn {
+  background-color: #ffffff;
+  border: none;
+  position: absolute;
+  margin-bottom: -60px;
+  margin-left: 70%;
+  cursor: pointer;
+  transform: scale(1.5);
+}
+
+.create {
+  background-color: #c9e0fc;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  height: 45px;
+  width: 85%;
+  padding-left: 3%;
+  margin-top: 3%;
+  color: rgb(81, 75, 75);
+}
+
+.close,
+.login {
+  background-color: #c9e0fc;
+  border: none;
+  height: 25px;
+  width: 20%;
+  margin-top: 3%;
+  color: rgb(81, 75, 75);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1100px) {
+  .pharma {
+    display: none;
+  }
+  .leftForm {
+    display: block;
+    max-width: 150%;
+    max-height: 150%;
+  }
+  .mainMod {
+    width: 40%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    margin-left: 50%;
+  }
+  .nm,
+  .unique,
+  .mail,
+  .mob,
+  .pwd {
+    width: 156%;
+  }
+  .btn {
+    margin-left: 145%;
+  }
+
+  .create {
+    margin-top: 10%;
+    width: 156%;
+  }
+  .close {
+    margin-top: 15%;
+    margin-left: 50%;
+    width: 156%;
+  }
+  .login {
+    margin-top: 15%;
+    width: 156%;
+  }
+}
+
+@media screen and (min-width: 100px) and (max-width: 500px) {
+  .pharma {
+    display: none;
+  }
+  .leftForm {
+    display: block;
+    max-width: 150%;
+    max-height: 150%;
+  }
+  .mainMod {
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+  .title {
+    margin-left: 50%;
+  }
+  .nm,
+  .unique,
+  .mail,
+  .mob,
+  .pwd {
+    width: 156%;
+  }
+  .btn {
+    margin-left: 145%;
+  }
+
+  .create {
+    margin-top: 10%;
+    width: 156%;
+  }
+  .close {
+    margin-top: 15%;
+    margin-left: 50%;
+    width: 156%;
+  }
+  .login {
+    margin-top: 15%;
+    width: 156%;
+  }
+}
+
+.pharmaLogin{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 125.6%;
+  width: 100%;
+}
