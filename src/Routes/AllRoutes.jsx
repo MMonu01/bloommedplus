@@ -3,7 +3,7 @@ import Cart from '../Pages/Cart'
 import Home from '../Pages/Home'
 import Products from '../Pages/Products'
 import SingleProduct from '../Pages/SingleProduct'
-
+import OrderSummary from "../Pages/Address";
 
 
 
@@ -14,6 +14,7 @@ return(
 <Route path='/products/skincare' element={<Products/>}/>
 <Route path='/products/skincare/:id' element={<SingleProduct/>}/>
 <Route path='/cart' element={<Cart/>}/>
+<Route path="/address" element={<OrderSummary />} />
 </Routes>
 )
 }
