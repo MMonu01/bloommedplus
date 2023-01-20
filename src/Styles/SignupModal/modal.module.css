@@ -13,6 +13,7 @@
   left: 50%;
   top: 54%;
   transform: translate(-50%, -50%);
+  position: absolute
 }
 .pharma {
   border-top-left-radius: 10px;
