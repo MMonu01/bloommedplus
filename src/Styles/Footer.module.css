@@ -2,7 +2,6 @@
 .each-box-footer{
     display: flex;
     flex-direction: column;
-    
     background-color: aqua;
 }
 
@@ -13,5 +12,49 @@
   }
   
   .knowbox{
-    background-color: aqua;
+    background-color: rgb(202, 171, 171);
+  }
+
+     /* ***************** */
+  .Rsadiv {
+      display: flex;
+      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+      width: 98%;
+      margin: auto;
+      border-bottom: 1px solid #eaeaea;
+      border: 1px solid transparent;
+      padding-bottom: 20px;
+   }
+  
+  .reliable {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+  .reliabletitle {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 20px;
+  
+  }
+  
+  .reliablePara {
+      color: rgb(170, 170, 170);
+      font-size: 12px;
+      line-height: 20px;
+  }
+  
+  @media (max-width: 1000px) {
+      .Rsadiv {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+      }
+  
+      .Rsadiv > div:nth-child(2), .Rsadiv > div:nth-child(3) {
+          margin-top: 20px;
+      }
   }
