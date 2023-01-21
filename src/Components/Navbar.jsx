@@ -17,6 +17,10 @@ import { CartContext } from "../Contexts/CartContext";
 import { SearchContext } from "../Contexts/SearchContext";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
+import { useDispatch, useSelector } from "react-redux";
+import { LogoutSuccessAction } from "../Redux/Authentication/action";
+
+
 
 export const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -33,6 +37,17 @@ export const Navbar = () => {
   // const [search,setSearch] = useState(getSearched || "")
   const { userCart } = useContext(CartContext);
   const [cartItem, setCartItem] = useState(0);
+
+  const dispatch = useDispatch()
+const {isAuth,token} = useSelector((store)=>{
+  return {isAuth:store.authReducer.isAuth,token:store.authReducer.token}
+})
+
+
+const HandleLogout = ()=>{
+dispatch(LogoutSuccessAction())
+}
+
 
   React.useEffect(() => {
     setCartItem(userCart.cart.length);
@@ -83,13 +98,18 @@ export const Navbar = () => {
               <span className={styles.safe}>SAVE MORE</span>
             </div>
             <div>
-              <span className={styles.login} onClick={handleLoginShow}>
+              {isAuth?(<span onClick={HandleLogout} className={styles.login}>Logout</span>):
+                <span className={styles.login} onClick={handleLoginShow}>
                 Login
-              </span>{" "}
+              </span>
+              }
+              {" "}
               |{" "}
-              <span className={styles.signup} onClick={handleShow}>
+              {isAuth?(<span className={styles.signup}>{token.name}</span>):(
+                <span className={styles.signup} onClick={handleShow}>
                 Signup
               </span>
+                )}
             </div>
             <div>Offers</div>
             <div style={{ width: "35px", cursor: "pointer" }}>

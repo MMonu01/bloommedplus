@@ -3,6 +3,9 @@ import styles from '../Styles/Cart.module.css'
 import {CartContext} from '../Contexts/CartContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGear,faChevronRight,faCircleInfo,faTrashCan,faCirclePlus,faCircleMinus } from '@fortawesome/free-solid-svg-icons'
+import { saveData } from '../Utils/accessLocalstorage'
+import Empty from '../Components/Cart/Empty'
+import { Navbar } from '../Components/Navbar'
 
 const Cart = () => {
 
@@ -10,23 +13,27 @@ const {userCart,setUserCart}  = useContext(CartContext)
 const [faceValue,setFaceValue]  = React.useState(0)
 const [discount,setDiscount]  = React.useState(0)
 const [payment,setPayment]  = React.useState(0)
+const [save,setSave] = React.useState(0)
 
 React.useEffect(()=>{
 let m = userCart.cart
 let x = 0
 let d =0
 let p =0
+let s= 0
 if(m.length>0){
   for(let i=0; i<m.length;i++){
     x += Number(m[i].quantity)*Number(m[i].mrp)
     d += Number(m[i].quantity)*Number(m[i].mrp)-Number(m[i].quantity)*Number(m[i].price)
     p += Number(m[i].quantity)*Number(m[i].price)
+s+= Math.floor((Number(m[i].quantity)*Number(m[i].mrp))/20)
   }
 }
 
 setFaceValue(x)
 setDiscount(d)
 setPayment(p)
+setSave(s)
 // -------------
 
 
@@ -43,6 +50,7 @@ newCart.push(x[i])
   }
 }
 setUserCart({...userCart,cart:newCart})
+saveData("Cart",{...userCart,cart:newCart})
 }
 
 
@@ -53,12 +61,14 @@ let x = userCart.cart
 
 for(let i=0; i<x.length;i++){
   if(x[i].id===id){
-    if(Number(x[i].quantity)<4){
+    // if(Number(x[i].quantity)<4){
       x[i].quantity = Number(x[i].quantity) + 1
-    }
+    // }
   }
 }
 setUserCart({...userCart,cart:x})
+saveData("Cart",{...userCart,cart:x})
+
 }
 
 const QuantityMinus = (id)=>{
@@ -72,12 +82,18 @@ const QuantityMinus = (id)=>{
     }
   }
   setUserCart({...userCart,cart:x})
+saveData("Cart",{...userCart,cart:x})
+
 }
 
 
 
 
-  return (
+  return (<>
+    <Navbar/>
+    <>{userCart.cart.length==0?<Empty/>:(
+
+ 
     <div className={styles.container}>
       
       <div className={styles.left}>
@@ -118,9 +134,9 @@ const QuantityMinus = (id)=>{
 {/* ---------------------------------------------- */}
 <div className={styles.plan}>
 <p className={styles.corePlan}>Care Plan</p>
-<p className={styles.extra}>You can save extra 149 on this order</p>
+<p className={styles.extra}>You can save extra ₹{save} on this order</p>
 <p className={styles.member}>Become a member</p>
-<p className={styles.care}>Care plan membership ₹165 ₹549 / 3 months</p>
+<p className={styles.care}>Care plan membership ₹165 ₹<span style={{textDecoration:"line-through",background:"white",color:"rgb(155, 155, 155)"}}>549</span>  / 3 months</p>
 <div className={styles.cartmore}>
   <button>Know More</button>
   <button>Add to Cart</button>
@@ -201,6 +217,9 @@ const QuantityMinus = (id)=>{
       </div>
       
     </div>
+       )}
+       </>
+    </>
   )
 }
 

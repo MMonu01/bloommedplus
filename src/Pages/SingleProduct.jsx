@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductCard from "../Components/ProductCard";
 import { Link } from "react-router-dom";
+import {Navbar} from '../Components/Navbar'
 
 const SingleProducts = () => {
   const { id } = useParams();
@@ -27,10 +28,12 @@ const SingleProducts = () => {
       });
   }, [id]);
 
-  return (
+  return (<>
+    <Navbar/>
     <div>
       <ProductCard loader={loader}  product={product} />
     </div>
+  </>
   );
 };
 

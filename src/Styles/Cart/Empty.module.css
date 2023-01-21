@@ -1,0 +1,18 @@
+.container {width:300px; margin:auto;text-align: center;}
+.container img{height:200px;width:160px;}
+.container div{text-align: center;}
+.oop{font-size: 16px; font-weight: bold; text-align: center;}
+.looks{margin-top: 13px;margin-bottom: 10px;font-size: 14px;}
+.container button{background-color: #ff6f61;font-size: 16px; color: white;border:2px solid #ff6f61;outline:none;padding:7px 8px;border-radius: 5px;}
+.container button:hover{border: 2px solid #ff6f61; color:#ff6f61; background-color: #f6f6f6;cursor: pointer;}
+
+@media screen and (min-width:300px) and (max-width:500px){
+    .container button{padding:6px 15px; font-size: 14px;}
+
+}
+
+
+@media screen and (min-width:100px) and (max-width:300px){
+    .container{width:200px;}
+    .container button{padding:6px 15px; font-size: 14px;}
+}

@@ -41,16 +41,44 @@ import styles from "../Styles/Sidebar.module.css";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
+import { useDispatch, useSelector } from "react-redux";
+import { LogoutSuccessAction } from "../Redux/Authentication/action";
+
+
+
+
+
+
+
+
+
 
 const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("left");
   const [show, setShow] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-
+  const handleClose = () => setShow(false);
+  const handleLoginClose = () => setShowLogin(false);
   const handleShow = () => setShow(true);
-
   const handleLoginShow = () => setShowLogin(true);
+
+  const dispatch = useDispatch()
+  const {isAuth,token} = useSelector((store)=>{
+    return {isAuth:store.authReducer.isAuth,token:store.authReducer.token}
+  })
+  
+  
+  const HandleLogout = ()=>{
+  dispatch(LogoutSuccessAction())
+  }
+
+
+
+
+
+
+
   return (
     <>
       <RadioGroup defaultValue={placement} onChange={setPlacement}>
@@ -78,9 +106,19 @@ const Sidebar = () => {
           <DrawerBody>
             <div className={styles.box}>
               <div className={styles.container}>
+
+
                 <div>
-                  <span onClick={handleLoginShow}>Login</span> |{" "}
-                  <span onClick={handleShow}>Signup</span>
+                {isAuth?(<span onClick={HandleLogout} className={styles.login}>Logout</span>):
+                <span className={styles.login} onClick={handleLoginShow}>
+                Login
+              </span>
+              }{" "}
+                   |{" "}
+                   {isAuth?(<span className={styles.signup}>{token.name}</span>):(
+                 <span onClick={handleShow}>Signup</span>
+                )}
+                 
                 </div>
                 <hr style={{ marginTop: "10px" }} />
 
@@ -212,8 +250,8 @@ const Sidebar = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-      <Signup show={show} handleShow={handleShow} />
-      <Login showLogin={showLogin} handleLoginShow={handleLoginShow} />
+      <Signup show={show} handleClose={handleClose} handleShow={handleShow} />
+      <Login showLogin={showLogin} handleLoginClose={handleLoginClose} handleLoginShow={handleLoginShow} />
     </>
   );
 };
