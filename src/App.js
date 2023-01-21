@@ -7,7 +7,7 @@ import SingleProducts from "./Pages/SingleProduct";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <AllRoutes />
     </div>
   );

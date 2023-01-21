@@ -6,7 +6,7 @@ import styles from '../Styles/Products/products.module.css'
 import RightSide from "../Components/products/RightSide"
 import Pagination from "../Components/products/Pagination"
 import { SearchContext } from "../Contexts/SearchContext"
-
+import  {Navbar} from '../Components/Navbar'
 
 
 
@@ -109,6 +109,8 @@ const HandleSort = (e)=>{
 
 
     return (
+        <>
+        <Navbar/>
         <main>
 <div className={styles.container}>
 <div >
@@ -125,6 +127,7 @@ const HandleSort = (e)=>{
 
 
         </main>
+        </>
     )
 }
 

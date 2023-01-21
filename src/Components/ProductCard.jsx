@@ -18,6 +18,7 @@ import Form from "react-bootstrap/Form";
 import {CartContext} from '../Contexts/CartContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { saveData } from "../Utils/accessLocalstorage";
 
 
 
@@ -71,6 +72,7 @@ const ProductCard = ({ product, loader }) => {
   
   
   setUserCart({...userCart,cart:arr})
+  saveData("Cart",{...userCart,cart:arr})
     }
   
   const HandleQuantity = (val)=>{
