@@ -37,11 +37,13 @@ const AddProducts = ({el})=>{
   }
   // ----------------------------------------------------
   
-  let x = userCart.cart
-  
+  let arr = []
+  if(userCart.cart!=undefined){
+
+    let x = userCart.cart
+    
   let y = true
-      let arr = []
-      let matid = []
+  let matid = []
      
      
       for(let j=0; j<x.length; j++){
@@ -56,10 +58,11 @@ const AddProducts = ({el})=>{
 
   
   
-  if(y){
-      arr.push(bag)
-  }
-  // ------------------------------------
+      if(y){
+        arr.push(bag)
+      }
+      // ------------------------------------
+    }
   
   
   

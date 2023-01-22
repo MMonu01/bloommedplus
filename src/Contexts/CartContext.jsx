@@ -23,7 +23,7 @@ function  CartContextProvider({children}){
     const [userCart,setUserCart] = useState(loadData("Cart") || initialState)
 const [locationDetails,setLocationDetails] =  useState(loadData("locationDetails") || {})
 
-const [paymentDetails,setPaymentDetails] =  useState({})
+const [paymentDetails,setPaymentDetails] =  useState(loadData("paymentDetails") || {})
 
 console.log(paymentDetails)
 

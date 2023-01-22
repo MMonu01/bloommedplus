@@ -3,10 +3,8 @@ import Pin from "./Pin"
 import PropTypes from 'prop-types'
 
 
-const PinInput = ({length,maxChar,HandleCardNumber})=>{
-
-    const [inputLength] = useState(new Array(length).fill(null))
-
+const PinInput = ({HandleCardNumber,inputLength,maxChar})=>{
+let length = 4
     
  const [otp,setOtp] = useState("")
 
@@ -18,7 +16,7 @@ const PinInput = ({length,maxChar,HandleCardNumber})=>{
         inputRef.current[index+1].focus()
     }
 setOtp(()=>inputLength.join(""))
-// HandleCardNumber(inputLength)
+HandleCardNumber(inputLength.join(""))
 }
 
 
@@ -29,7 +27,7 @@ if(index>0 && e.target.value.length==0){
 }
 setOtp(()=>inputLength.join(""))
 
-// HandleCardNumber(inputLength)
+HandleCardNumber(inputLength.join(""))
 
     }
 
@@ -60,7 +58,7 @@ if(inputLength[index]){
     if(e.target.value.length===maxChar && index<length-1){
         inputRef.current[index+1].focus()
     }
-    // HandleCardNumber(inputLength)
+    HandleCardNumber(inputLength.join(""))
 
 }
 

@@ -1,11 +1,16 @@
-import React,{useContext} from "react";
-import styles from '../Styles/Payment.module.css'
+import React,{useContext,useState} from "react";
 import { Link } from "react-router-dom";
+import styles from '../Styles/Payment.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGear ,faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import {CartContext} from '../Contexts/CartContext'
 import  PinInput  from "../Components/Payment/PinInput"
-
+import { saveData,loadData } from "../Utils/accessLocalstorage";
+import axios from "axios";
+import { useSelector } from "react-redux";
+import Button from 'react-bootstrap/Button';
+import {Alert} from '../Components/Payment/Alert'
+import { useDisclosure } from "@chakra-ui/react";
 
 const initialState = {
 cardNumber:"",
@@ -15,16 +20,41 @@ securityCode:"",
 nameOnCard:""
 }
 
+const PostOrder = (user,cart,location,card)=>{
+  return axios({
+    method:"post",
+    baseURL:"http://localhost:1010/order",
+    data:{user,cart,location,card}
+
+  })
+}
+
+
 
 const Payment = () => {
 
-  const {userCart,setUserCart,paymentDetails,setPaymentDetails}  = useContext(CartContext)
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+
+  const {userCart,setUserCart,paymentDetails,setPaymentDetails,locationDetails}  = useContext(CartContext)
   const [faceValue,setFaceValue]  = React.useState(0)
   const [discount,setDiscount]  = React.useState(0)
   const [saving,setSaving]  = React.useState(0)
   const [payment,setPayment]  = React.useState(0)
-const [formData,setFormData] = React.useState(initialState)
-  
+const [formData,setFormData] = React.useState(loadData(paymentDetails) || initialState)
+const [inputLength] = useState(new Array(4).fill(null))
+
+
+const token = useSelector((store)=>store.authReducer.token)
+const InPostOrder = ()=>{
+PostOrder({...token,order:userCart.cart,locationDetails,paymentDetails})
+console.log("Order is Placed")
+saveData("PaymentDetails",{})
+saveData("locationDetails",{})
+saveData("Cart",{})
+setUserCart({})
+
+}
 
 
 
@@ -32,15 +62,22 @@ const HandleFormData = (e)=>{
 
   setFormData({...formData,[e.target.name]:e.target.value})
 }
-
+// console.log(inputLength)
 const HandleCardNumber = (e)=>{
-  setFormData({...formData,cardNumber:e})
+  setFormData({...formData,cardNumber:inputLength.join("")})
 }
-
 
 
 const HandleSubmit = ()=>{
 setPaymentDetails(formData)
+saveData("PaymentDetails",formData)
+for(let i=0; i<4; i++){
+    inputLength[i] = null
+  
+}
+// setFormData(initialState)
+
+
 }
 
 
@@ -77,7 +114,6 @@ React.useEffect(()=>{
   },[userCart])
 
 
-console.log(saving)
 
 
 
@@ -100,6 +136,7 @@ console.log(saving)
 
   return (
     <>
+  
     <nav className={styles.navbar}>
       <Link to="/" style={{background:"white"}}>
 <img src="../Images/bloommedplus.png"/>
@@ -151,7 +188,7 @@ console.log(saving)
 {/* <input type="text" className={styles.cardNumber} style={{boxShadow:"none",borderBottom:"2px solid rgb(201, 201, 201)"}} placeholder="XXXX XXXX XXXX XXXX"/> */}
 
 <div className={styles.PinInput}>
-<PinInput HandleCardNumber={HandleCardNumber} length={4} className={styles.cardNumber}  maxChar={4}/>
+<PinInput inputLength={inputLength} HandleCardNumber={HandleCardNumber} length={4} className={styles.cardNumber}  maxChar={4}/>
 </div>
 <div className={styles.security}>
 <div>
@@ -173,7 +210,9 @@ console.log(saving)
 <p className={styles.future}>Your card details will be saved securely for future transactions, based on the industry standards.</p>
 
 <div className={styles.makePayment}>
-  <button onClick={HandleSubmit}>MAKE PAYMENT</button>
+<Alert onClick={HandleSubmit} head={"MAKE PAYMENT"} message={"Payment Successfull"}/>
+
+  {/* <button onClick={HandleSubmit}>MAKE PAYMENT</button> */}
 </div>
 
 <p className={styles.domestic}>We Support domestic credit and debit cards of following brands</p>
@@ -240,9 +279,12 @@ console.log(saving)
 </div>
 </div>
 <div className={styles.placeOrder}>
-  <button >
+  <Link to='/'>
+
+  <button onClick={InPostOrder} >
     PLACE ORDER
   </button>
+  </Link>
 </div>
 
 </div>

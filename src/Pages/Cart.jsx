@@ -17,25 +17,28 @@ const [payment,setPayment]  = React.useState(0)
 const [save,setSave] = React.useState(0)
 
 React.useEffect(()=>{
-let m = userCart.cart
-let x = 0
-let d =0
-let p =0
-let s= 0
-if(m.length>0){
-  for(let i=0; i<m.length;i++){
-    x += Number(m[i].quantity)*Number(m[i].mrp)
-    d += Number(m[i].quantity)*Number(m[i].mrp)-Number(m[i].quantity)*Number(m[i].price)
-    p += Number(m[i].quantity)*Number(m[i].price)
-s+= Math.floor((Number(m[i].quantity)*Number(m[i].mrp))/20)
-  }
-}
+  if(userCart.cart!=undefined){
 
-setFaceValue(x)
-setDiscount(d)
-setPayment(p)
-setSave(s)
-// -------------
+    let m = userCart.cart
+    let x = 0
+    let d =0
+    let p =0
+    let s= 0
+    if(m.length>0){
+      for(let i=0; i<m.length;i++){
+        x += Number(m[i].quantity)*Number(m[i].mrp)
+        d += Number(m[i].quantity)*Number(m[i].mrp)-Number(m[i].quantity)*Number(m[i].price)
+        p += Number(m[i].quantity)*Number(m[i].price)
+        s+= Math.floor((Number(m[i].quantity)*Number(m[i].mrp))/20)
+      }
+  }
+  
+  setFaceValue(x)
+  setDiscount(d)
+  setPayment(p)
+  setSave(s)
+  // -------------
+}
 
 
 
@@ -92,7 +95,7 @@ saveData("Cart",{...userCart,cart:x})
 
   return (<>
     <Navbar/>
-    <>{userCart.cart.length==0?<Empty/>:(
+    <>{userCart.cart===undefined ?<Empty/>:userCart.cart.length==0?<Empty/>:(
 
  
     <div className={styles.container}>
@@ -221,6 +224,7 @@ saveData("Cart",{...userCart,cart:x})
       
     </div>
        )}
+
        </>
     </>
   )
