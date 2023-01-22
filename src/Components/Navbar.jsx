@@ -19,6 +19,7 @@ import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { LogoutSuccessAction } from "../Redux/Authentication/action";
+import { saveData } from "../Utils/accessLocalstorage";
 
 
 
@@ -46,11 +47,15 @@ const {isAuth,token} = useSelector((store)=>{
 
 const HandleLogout = ()=>{
 dispatch(LogoutSuccessAction())
+saveData("PaymentDetails",{})
+saveData("locationDetails",{})
 }
 
 
   React.useEffect(() => {
-    setCartItem(userCart.cart.length);
+    if(userCart.cart){
+      setCartItem(userCart.cart.length);
+    }
   }, [userCart]);
 
   React.useEffect(() => {
