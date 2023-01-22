@@ -21,20 +21,14 @@ let initialState = {
 function  CartContextProvider({children}){ 
 
     const [userCart,setUserCart] = useState(loadData("Cart") || initialState)
+const [locationDetails,setLocationDetails] =  useState(loadData("locationDetails") || {})
 
-const token = useSelector((store)=>store.authReducer.token)
+const [paymentDetails,setPaymentDetails] =  useState({})
 
-// useEffect(()=>{
-// let obj ={...userCart,...token}
-//     saveData("Cart",obj)
-// const data =  loadData("Cart")
-// setUserCart(data)
-// },[token])
-// console.log(userCart,"this is token")
-
+console.log(paymentDetails)
 
 return(
-    <CartContext.Provider value={{userCart,setUserCart}} >
+    <CartContext.Provider value={{userCart,setUserCart,locationDetails,setLocationDetails,paymentDetails,setPaymentDetails}} >
         {children}
     </CartContext.Provider>
 )

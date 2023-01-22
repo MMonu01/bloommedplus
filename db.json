@@ -2,6 +2,7 @@
   "user": [
     {
       "id": "mdmonu",
+      "name":"Monu",
       "full_name": "Md Monu",
       "mobile": "9315238455",
       "email": "mdmonu2021@gmail.com",
@@ -12,6 +13,7 @@
   ],
   "admin":   [ {
       "id": "mdmonu",
+      "username":"Monu",
       "full_name": "Md Monu",
       "mobile": "9315238455",
       "email": "mdmonu2021@gmail.com",
