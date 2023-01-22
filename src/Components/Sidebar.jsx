@@ -39,29 +39,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../Styles/Sidebar.module.css";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
-import Signup from "../Pages/Signup";
-import Login from "../Pages/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { LogoutSuccessAction } from "../Redux/Authentication/action";
-
-
-
-
-
-
-
-
-
-
 const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("left");
-  const [show, setShow] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleLoginClose = () => setShowLogin(false);
-  const handleShow = () => setShow(true);
-  const handleLoginShow = () => setShowLogin(true);
+  
 
   const dispatch = useDispatch()
   const {isAuth,token} = useSelector((store)=>{
@@ -110,13 +93,13 @@ const Sidebar = () => {
 
                 <div>
                 {isAuth?(<span onClick={HandleLogout} className={styles.login}>Logout</span>):
-                <span className={styles.login} onClick={handleLoginShow}>
+                <span className={styles.login} >
                 Login
               </span>
               }{" "}
                    |{" "}
                    {isAuth?(<span className={styles.signup}>{token.name}</span>):(
-                 <span onClick={handleShow}>Signup</span>
+                 <span >Signup</span>
                 )}
                  
                 </div>
@@ -250,8 +233,7 @@ const Sidebar = () => {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
-      <Signup show={show} handleClose={handleClose} handleShow={handleShow} />
-      <Login showLogin={showLogin} handleLoginClose={handleLoginClose} handleLoginShow={handleLoginShow} />
+     
     </>
   );
 };
