@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 const Login = ({ showLogin, handleLoginShow, handleLoginClose }) => {
   const [showLoginPassword, setShowLoginPassword] = useState(false);
 
+  
 const [alertShow,setAlertShow] = React.useState(null)
 
 const [formData,setFormData] = React.useState({
@@ -26,7 +27,7 @@ const HandleLogin = async(e)=>{
 e.preventDefault()
 
 try{
-let res = await fetch(`http://localhost:1010/user`)
+let res = await fetch(`https://bloodmedplus-server.onrender.com/user`)
 res = await res.json()
 let x = false
 for(let i=0; i<res.length; i++){

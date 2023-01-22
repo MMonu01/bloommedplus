@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import ProductCard from "../Components/ProductCard";
 import { Link } from "react-router-dom";
 import {Navbar} from '../Components/Navbar'
+import { Footer } from "../Components/Footer";
 
 const SingleProducts = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const SingleProducts = () => {
   useEffect(() => {
     setLoader(true);
     axios
-      .get(`http://localhost:1010/products/${id}`)
+      .get(`https://bloodmedplus-server.onrender.com/products/${id}`)
       .then(({ data }) => {
         setProduct(data);
         setLoader(false);
@@ -33,6 +34,7 @@ const SingleProducts = () => {
     <div>
       <ProductCard loader={loader}  product={product} />
     </div>
+    <Footer/>
   </>
   );
 };

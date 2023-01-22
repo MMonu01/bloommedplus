@@ -1,115 +1,108 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import styles from "../../Styles/Login.module.css";
-import { Center } from "@chakra-ui/react";
+import styles from '../../Styles/Login.module.css'
+import React from 'react'
+import { Link,useNavigate,Navigate,useLocation } from 'react-router-dom'
 
-const theme = createTheme();
+import { AuthSuccessAction,AuthFailureAction,AuthRequestAction } from "../../Redux/Authentication/action";
+import { useDispatch,useSelector } from "react-redux";
 
-export default function Login() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
+const Login = ()=>{
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
-        <CssBaseline />
+  const isAuth  = useSelector((store)=>store.authReducer.isAuth)
+  const navigate = useNavigate()
+ const location = useLocation()
+  const [alertShow,setAlertShow] = React.useState(null)
 
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: "url(../../../Images/banner6.jpg)",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography component="h1" variant="h5" paddingTop="20px" fontWeight={"bold"}>
-              Sign in
-            </Typography>
-            <Box
-              component="form"
-              noValidate
-              onSubmit={handleSubmit}
-              sx={{ mt: 1 }}
-              paddingTop="20px"
-              marginBottom={"20px"}
-            >
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
+  const [formData,setFormData] = React.useState({
+  email:"",password:""
+  })
+  console.log(formData)
+  const dispatch = useDispatch()
+  
+  
+  
+  const HandleLogin = async(e)=>{
+    e.preventDefault()
+    dispatch(AuthRequestAction())
+  
+  try{
+  let res = await fetch(`https://bloodmedplus-server.onrender.com/user`)
+  res = await res.json()
+  let x = false
+  for(let i=0; i<res.length; i++){
+  if((res[i].email===formData.email && res[i].password===formData.password)){
+  x = true
+  // loginUser(res[i])
+  console.log("loginDataMatched")
+  dispatch(AuthSuccessAction(res[i]))
+  }
+  }
+  
+  
+  
+  if(x===false){
+  console.log("Alert is not working")
+  setAlertShow("False")
+  dispatch(AuthFailureAction())
+  alert("Either email or password is incorrect")
+  }
+  else{
+  setAlertShow("True")
+  }
+    
+  }
+  
+  catch(err){
+  console.log(err)
+  }
+  setFormData({
+  email:"",password:""
+  })
+  }
+  
+  
+  const HandleFormData = (e)=>{
+    setFormData({...formData,[e.target.name]:e.target.value})
+      }
+  
+      if(isAuth){
+        return <Navigate to="/"/>
+    }
 
-              <Center>
-                {" "}
-                <button className={styles.signinbtn}>Sign In</button>
-              </Center>
 
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2" marginTop={"15px"}>
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
-    </ThemeProvider>
-  );
+  return(
+    <>
+    
+    <div className={styles.container}>
+
+<div className={styles.formContainer}>
+  <h1>Welcome Back!</h1>
+<form>
+<input type="email" name="email" value={formData.email} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Enter your E-mail"/>
+
+
+<input type="password" name="password" value={formData.password} onChange={HandleFormData} style={{boxShadow:"none"}} placeholder="Enter password"/>
+<button onClick={HandleLogin}>Login</button>
+</form>
+
+<div className={styles.have}>
+Need a Bloommedplus account? <Link to='/signup'>Create an account</Link>
+</div>
+</div>
+
+
+
+
+<div className={styles.sideImage}>
+  <img src='../../../Images/registration.png'/>
+
+</div>
+
+
+    </div>
+    </>
+  )
+
+
 }
+
+export default Login

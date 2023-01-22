@@ -41,6 +41,11 @@ import styles from "../Styles/Sidebar.module.css";
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { LogoutSuccessAction } from "../Redux/Authentication/action";
+import { saveData } from "../Utils/accessLocalstorage";
+import { Link } from "react-router-dom";
+
+
+
 const Sidebar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("left");
@@ -54,6 +59,8 @@ const Sidebar = () => {
   
   const HandleLogout = ()=>{
   dispatch(LogoutSuccessAction())
+  saveData("PaymentDetails",{})
+saveData("locationDetails",{})
   }
 
 
@@ -93,13 +100,22 @@ const Sidebar = () => {
 
                 <div>
                 {isAuth?(<span onClick={HandleLogout} className={styles.login}>Logout</span>):
-                <span className={styles.login} >
+              <Link style={{color:'black',textDecoration:"none"}} to="/login">
+
+                <span className={styles.login}>
                 Login
               </span>
-              }{" "}
-                   |{" "}
-                   {isAuth?(<span className={styles.signup}>{token.name}</span>):(
-                 <span >Signup</span>
+              </Link>
+              }
+              {" "}
+              |{" "}
+              {isAuth?(<span className={styles.signup}>{token.name}</span>):(
+                <Link style={{color:'black',textDecoration:"none"}} to="/signup">
+
+                <span className={styles.signup}>
+                Signup
+              </span>
+                </Link>
                 )}
                  
                 </div>
@@ -226,9 +242,7 @@ const Sidebar = () => {
                 </tbody>
               </div>
 
-              {/* <div style={{background:"red",height:"100%"}}> */}
-
-              {/* </div> */}
+ 
             </div>
           </DrawerBody>
         </DrawerContent>

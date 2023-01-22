@@ -20,11 +20,12 @@ securityCode:"",
 nameOnCard:""
 }
 
-const PostOrder = (user,cart,location,card)=>{
+const PostOrder = (user)=>{
+
   return axios({
     method:"post",
-    baseURL:"http://localhost:1010/order",
-    data:{user,cart,location,card}
+    baseURL:"https://bloodmedplus-server.onrender.com/order",
+    data:{user}
 
   })
 }
@@ -46,14 +47,15 @@ const [inputLength] = useState(new Array(4).fill(null))
 
 
 const token = useSelector((store)=>store.authReducer.token)
+
 const InPostOrder = ()=>{
-PostOrder({...token,order:userCart.cart,locationDetails,paymentDetails})
+  let pay = loadData("PaymentDetails") || {}
+PostOrder({...token,order:userCart.cart,locationDetails})
 console.log("Order is Placed")
 saveData("PaymentDetails",{})
 saveData("locationDetails",{})
 saveData("Cart",{})
 setUserCart({})
-
 }
 
 

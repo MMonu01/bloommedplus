@@ -14,6 +14,7 @@ const dispatch = useDispatch()
 
 const [allDetails,setAllDetails]  = React.useState("")
 
+
   const [formData,setFormData] = React.useState({
     name:"",username:"",email:"",mobile:"",password:"",order:[]
   })
@@ -21,7 +22,7 @@ const [allDetails,setAllDetails]  = React.useState("")
   const InSignUp = async()=>{
 
     try{
-      let res = await fetch(`http://localhost:1010/user`,{
+      let res = await fetch(`https://bloodmedplus-server.onrender.com/user`,{
     method:"POST",
     body:JSON.stringify(formData),
     headers:{
@@ -57,7 +58,7 @@ setAllDetails("False")
 }
 else{
   let signupStatus = ''
-  fetch(`http://localhost:1010/user`)
+  fetch(`https://bloodmedplus-server.onrender.com/user`)
   .then((res)=>res.json())
 .then((res)=>{signupStatus = res
   for(let i=0; i<signupStatus.length; i++){

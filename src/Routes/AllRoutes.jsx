@@ -8,19 +8,20 @@ import Address from "../Pages/Address";
 import Payment from "../Pages/Payment";
 import Signup from "../Components/Sidebar_signup/Signup";
 import Login from "../Components/Sidebar_signup/Login";
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/products/skincare" element={<Products />} />
       <Route path="/products/skincare/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
-      <Route path="/checkout/address" element={<Address />} />
+      <Route path="/checkout/address" element={<PrivateRoute><Address /> </PrivateRoute>} />
       <Route path="/payment" element={<Payment />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

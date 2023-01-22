@@ -10,7 +10,7 @@ import { background } from "@chakra-ui/react";
 const GetData = () => {
   return axios({
     method: "get",
-    baseURL: "http://localhost:1010/Landing_page",
+    baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
   });
 };
 export const PopularCombo = () => {

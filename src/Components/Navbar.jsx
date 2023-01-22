@@ -15,8 +15,10 @@ import Sidebar from "./Sidebar";
 import React, { useState, useContext } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import { SearchContext } from "../Contexts/SearchContext";
-import Signup from "../Pages/Signup";
-import Login from "../Pages/Login";
+import Signup from "./Sidebar_signup/Signup"
+import Login from './Sidebar_signup/Login'
+// import Signup from "../Pages/Signup";
+// import Login from "../Pages/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { LogoutSuccessAction } from "../Redux/Authentication/action";
 import { saveData } from "../Utils/accessLocalstorage";
@@ -104,16 +106,22 @@ saveData("locationDetails",{})
             </div>
             <div>
               {isAuth?(<span onClick={HandleLogout} className={styles.login}>Logout</span>):
+              <Link style={{color:'black',textDecoration:"none"}} to="/login">
+
                 <span className={styles.login} onClick={handleLoginShow}>
                 Login
               </span>
+              </Link>
               }
               {" "}
               |{" "}
               {isAuth?(<span className={styles.signup}>{token.name}</span>):(
-                <span className={styles.signup} onClick={handleShow}>
+                <Link style={{color:'black',textDecoration:"none"}} to="/signup">
+
+                <span className={styles.signup}>
                 Signup
               </span>
+                </Link>
                 )}
             </div>
             <div>Offers</div>
@@ -333,12 +341,12 @@ saveData("locationDetails",{})
           </div>
         </div>
       </nav>
-      <Signup handleShow={handleShow} handleClose={handleClose} show={show} />
+      {/* <Signup handleShow={handleShow} handleClose={handleClose} show={show} />
       <Login
         handleLoginShow={handleLoginShow}
         handleLoginClose={handleLoginClose}
-        showLogin={showLogin}
-      />
+        showLogin={showLogin} */}
+      {/* /> */}
     </>
   );
 };
