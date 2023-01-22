@@ -1,152 +1,160 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import styles from "../../Styles/Login.module.css";
-import { Center } from "@chakra-ui/react";
+import styles from '../../Styles/Signup.module.css'
+import React from 'react'
+import { Link,Navigate,useLocation, useNavigate } from 'react-router-dom'
+import { SignupSuccessAction,SignupRequestAction,SignupFailureAction } from "../../Redux/Authentication/action";
+import { useDispatch,useSelector } from 'react-redux';
 
-const theme = createTheme();
 
-export default function Signup() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
 
-  return (
-    <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
-        <CssBaseline />
+const Signup = ()=>{
 
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: "url(../../../Images/banner6.jpg)",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              component="h1"
-              variant="h5"
-              paddingTop="20px"
-              fontWeight={"bold"}
-            >
-              Sign up
-            </Typography>
-            <Box
-              component="form"
-              noValidate
-              onSubmit={handleSubmit}
-              sx={{ mt: 1 }}
-              paddingTop="20px"
-              marginBottom={"20px"}
-            >
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="name"
-                label="Enter your name"
-                name="name"
-                autoComplete="name"
-                autoFocus
-              />
-             
-              <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="name"
-              label="Create a unique user name"
-              name="name"
-              autoComplete="name"
-              autoFocus
-            />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="mobile"
-              name="mobile"
-              autoComplete="name"
-              autoFocus
-              label="Enter your mobile number"
-              type="tel"
-            />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
+  const isAuth  = useSelector((store)=>store.authReducer.isAuth)
+const navigate = useNavigate()
+const location = useLocation()
 
-              <Center>
-                {" "}
-                <button className={styles.signinbtn}>Create an account</button>
-              </Center>
 
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2" marginTop={"15px"}>
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
-    </ThemeProvider>
-  );
+
+  const dispatch = useDispatch()
+  const [alertShow,setAlertShow] = React.useState(null)
+
+const [allDetails,setAllDetails]  = React.useState("")
+
+
+  const [formData,setFormData] = React.useState({
+    name:"",username:"",email:"",mobile:"",password:"",order:[]
+  })
+
+  const InSignUp = async()=>{
+
+    try{
+      let res = await fetch(`https://bloodmedplus-server.onrender.com/user`,{
+    method:"POST",
+    body:JSON.stringify(formData),
+    headers:{
+      "Content-Type":"application/json"
+    }
+      })
+    
+      res = await res.json()
+    if(res.name!=undefined){
+      console.log("signup Successful")
+      dispatch(SignupSuccessAction(res))
+      // loginUser(res)
+    }
+    
+    }
+    
+    catch(err){
+    console.log(err)
+    // console.log("NODAjjdss")
+    }
+    
+  }  
+
+  const HandleSignup = async(e)=>{
+    // console.log("Nothing is hapenig")
+dispatch(SignupRequestAction())
+e.preventDefault()
+// -------------------------------------------------------
+let status = true
+if(formData.name==""|| formData.username=="" || formData.email == "" || formData.mobile ==""|| formData.password==""){
+setAllDetails("False")
+alert("Please all the credentials")
+
 }
+else{
+  let signupStatus = ''
+  fetch(`https://bloodmedplus-server.onrender.com/user`)
+  .then((res)=>res.json())
+.then((res)=>{signupStatus = res
+  for(let i=0; i<signupStatus.length; i++){
+  if(signupStatus[i].email==formData.email || signupStatus[i].username == formData.username || signupStatus[i].mobile==formData.mobile){
+    status = false
+    dispatch(SignupFailureAction())
+    alert("Email, username, mobile should be unique")
+    break
+  }
+}
+
+if(status){
+  setAlertShow("False")
+  InSignUp()
+    
+  }else{
+    setAlertShow("True")
+  
+  }
+  setFormData({
+    name:"",username:"",email:"",mobile:"",password:"",order:[]
+  })
+})
+.catch((err)=>console.log(err))
+
+}
+
+// -----------------------------------------------
+  }
+
+  const HandleFormData = (e)=>{
+setFormData({...formData,[e.target.name]:e.target.value})
+  }
+
+
+
+
+  if(isAuth){
+    return <Navigate to='/'/>
+}
+
+
+
+
+  return(
+    <>
+    
+    <div className={styles.container}>
+
+<div className={styles.formContainer}>
+  <h1>Get started with a free account</h1>
+<form>
+<input  type="text" name="name" value={formData.name} onChange={HandleFormData} style={{boxShadow:"none"}} placeholder="Enter your full name"/>
+
+
+<input type="text" name="username" value={formData.username} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Create a unique username"/>
+
+
+
+<input type="email" name="email" value={formData.email} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Enter your E-mail"/>
+
+
+<input type="number" name="mobile" value={formData.mobile} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Enter your mobile number"/>
+
+
+<input type="password" name="password"  value={formData.password} onChange={HandleFormData} style={{boxShadow:"none"}} placeholder="Enter password"/>
+
+
+<button onClick={HandleSignup}> Create an account</button>
+</form>
+
+<div className={styles.have}>
+Already have a Bloommedplus account? <Link to='/login'>Login</Link>
+</div>
+</div>
+
+
+
+
+<div className={styles.sideImage}>
+  <img src='../../../Images/registration.png'/>
+
+</div>
+
+
+    </div>
+    </>
+  )
+
+
+}
+
+export default Signup

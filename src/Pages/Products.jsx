@@ -7,6 +7,7 @@ import RightSide from "../Components/products/RightSide"
 import Pagination from "../Components/products/Pagination"
 import { SearchContext } from "../Contexts/SearchContext"
 import  {Navbar} from '../Components/Navbar'
+import { Footer } from "../Components/Footer"
 
 
 
@@ -36,7 +37,7 @@ const GetData = (page,sort,q)=>{
     }
     return axios({
         method:"get",
-        baseURL:"http://localhost:1010/products",
+        baseURL:"https://bloodmedplus-server.onrender.com/products",
         params:  {_page:page,
                _limit:12,
                _sort:sortby,
@@ -127,6 +128,7 @@ const HandleSort = (e)=>{
 
 
         </main>
+        <Footer/>
         </>
     )
 }

@@ -56,6 +56,9 @@ export const Footer = () => {
                     color={"#1a1a1a"}
                     fontSize={"24px"}
                     marginTop={"3%"}
+                    marginRight={"10px"}
+                    marginLeft={"10px"}
+                    
                     className={styles.ind}
                   >
                     INDIAS LARGEST HEALTHCARE PLATFORM
@@ -249,6 +252,8 @@ export const Footer = () => {
               spacing={95}
               className={styles.footerStampWrapper}
             >
+              <div className={styles.secura}>
+
               {Data.map((el) => (
                 <Box className={styles.footerStamp}>
                   <Image src={el.img} />
@@ -261,12 +266,13 @@ export const Footer = () => {
                       lineHeight="1.81"
                       fontSize="10px"
                       color="#767676"
-                    >
+                      >
                       {el.desc}
                     </Text>
                   </Box>
                 </Box>
               ))}
+              </div>
             </Flex>
           </Container>
         </div>
@@ -310,7 +316,7 @@ export const Footer = () => {
                   bg="transparent"
                   border="none"
                 >
-                  Know more about Tata 1mg
+                  Know more about Bloommedplus
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
@@ -319,41 +325,49 @@ export const Footer = () => {
               <Text as="h6" fontWeight="bold" fontSize="18px">
                 Access medical and health information
               </Text>
-              Tata 1mg provides you with medical information which is curated,
+            <span style={{fontSize:"14px"}}>
+            Bloommedplus provides you with medical information which is curated,
               written and verified by experts, accurate and trustworthy. Our
               experts create high-quality content about medicines, diseases, lab
               investigations, Over-The-Counter (OTC) health products, Ayurvedic
               herbs/ingredients, and alternative remedies.
+            </span>
             </AccordionPanel>
             <AccordionPanel pb={4}>
               <Text as="h6" fontWeight="bold" fontSize="18px">
                 Order medicines online
               </Text>
+              <span style={{fontSize:"14px"}}>
               Get free medicine home delivery in over 1800 cities across India.
               You can also order Ayurvedic, Homeopathic and other
               Over-The-Counter (OTC) health products. Your safety is our top
-              priority. All products displayed on Tata 1mg are procured from
+              priority. All products displayed on Bloommedplus are procured from
               verified and licensed pharmacies.
+              </span>
             </AccordionPanel>
 
             <AccordionPanel pb={4}>
               <Text as="h6" fontWeight="bold" fontSize="18px">
                 Book lab tests
               </Text>
+              <span  style={{fontSize:"14px"}}>
               Get free medicine home delivery in over 1800 cities across India.
               You can also order Ayurvedic, Homeopathic and other
               Over-The-Counter (OTC) health products. Your safety is our top
-              priority. All products displayed on Tata 1mg are procured from
+              priority. All products displayed on Bloommedplus are procured from
               verified and licensed pharmacies.
+              </span>
             </AccordionPanel>
             <AccordionPanel pb={4}>
               <Text as="h6" fontWeight="bold" fontSize="18px">
                 Consult a doctor online
               </Text>
+              <span  style={{fontSize:"14px"}}>
               Got a health query? Consult doctors online from the comfort of
               your home for free. Chat privately with our registered medical
               specialists to connect directly with verified doctors. Your
               privacy is guaranteed.
+              </span>
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
@@ -362,12 +376,13 @@ export const Footer = () => {
           <Text
             as="h6"
             pt={"20px"}
-            fontSize={"15px"}
-            color="#536971"
-            background={"#fffcf8"}
-            textAlign="center"
+            // fontSize={"15px"}
+            // color="#536971"
+            // background={"#fffcf8"}
+            // textAlign="center"
+            className={styles.copy}
           >
-            © 2022 Tata 1mg. All rights reserved. In compliance with Drugs and
+            © 2022 Bloommedplus. All rights reserved. In compliance with Drugs and
             Cosmetics Act, 1940 and Drugs and Cosmetics Rules, 1945, we don't
             process requests for Schedule X and other habit forming drugs.
           </Text>

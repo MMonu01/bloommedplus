@@ -94,7 +94,7 @@ export const Banners = () => {
           color={"#666666"}
           bg='white'
          >
-           Tata 1mg: Indias Leading Online Pharmacy & Healthcare Platform
+           Bloommedplus: Indias Leading Online Pharmacy & Healthcare Platform
           </Text>
         </Box>
 
