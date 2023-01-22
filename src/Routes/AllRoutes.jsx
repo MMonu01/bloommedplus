@@ -5,7 +5,8 @@ import Products from '../Pages/Products'
 import SingleProduct from '../Pages/SingleProduct'
 import OrderSummary from "../Pages/Address";
 import NotFound from '../Pages/NotFound'
-
+import Address from '../Pages/Address'
+import Payment from '../Pages/Payment'
 
 const AllRoutes = ()=>{
 return(
@@ -15,7 +16,8 @@ return(
 <Route path='/products/skincare' element={<Products/>}/>
 <Route path='/products/skincare/:id' element={<SingleProduct/>}/>
 <Route path='/cart' element={<Cart/>}/>
-<Route path="/address" element={<OrderSummary />} />
+<Route path="/checkout/address" element={<OrderSummary />} />
+<Route path='/payment' element={<Payment/>}/>
 <Route path='*' element={<NotFound/>}/>
 </Routes>
 )

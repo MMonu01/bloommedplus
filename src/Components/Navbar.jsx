@@ -152,6 +152,7 @@ dispatch(LogoutSuccessAction())
 
               <div className={styles.Search}>
                 <input
+                style={{boxShadow:"none"}}
                   className={styles.input}
                   onKeyUp={HandleSearchKey}
                   onChange={HandleSearchChange}

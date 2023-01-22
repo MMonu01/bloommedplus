@@ -6,6 +6,7 @@ import { faGear,faChevronRight,faCircleInfo,faTrashCan,faCirclePlus,faCircleMinu
 import { saveData } from '../Utils/accessLocalstorage'
 import Empty from '../Components/Cart/Empty'
 import { Navbar } from '../Components/Navbar'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
 
@@ -209,7 +210,9 @@ saveData("Cart",{...userCart,cart:x})
 
 <div className={styles.checkout}>
 {/* <div> */}
+<Link to='/checkout/address'>
  <button>CHECKOUT</button>
+</Link>
 {/* </div> */}
 </div>
 
