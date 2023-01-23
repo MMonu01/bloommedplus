@@ -23,17 +23,16 @@ https://bloommedplus.vercel.app/
    
 ## Home Page
 ![Screenshot (1767)](https://user-images.githubusercontent.com/112859151/214073853-4bfa92ee-94b4-4588-895a-d232de0c9874.png)
-
+## Signup PAge
+![signupnew](https://user-images.githubusercontent.com/107982334/214096271-b71ba8a5-0fe8-40d5-9779-934e6905c0e9.jpg)
+## Login Page
+![loginnew](https://user-images.githubusercontent.com/107982334/214096401-d77e6324-b03f-4b5b-99d3-30d13d75e2c8.jpg)
 ## Product Page
-![Screenshot (1771)](https://user-images.githubusercontent.com/112859151/214096220-25da0ef6-4b42-4d21-b426-20fc8eef45c9.png)
-
 ## Product Details Page
 ![productdetails](https://user-images.githubusercontent.com/107982334/214095385-c92b3397-2e55-4e08-b09c-156020c471aa.jpg)
 ## Cart Page
 ![cartnew](https://user-images.githubusercontent.com/107982334/214095566-775c9d88-bd19-4807-b29a-99baa0035ed3.jpg)
 ## Address Page
-<img width="938" alt="address" src="https://user-images.githubusercontent.com/112859151/214096329-1f0240b6-f79d-4e2b-afa7-38c1761c3f0d.png">
-
 ## Payment And Order Summary Page
 ![payment](https://user-images.githubusercontent.com/107982334/214095785-8680876a-0ee5-497d-b224-b5a6d1a89247.jpg)
 
