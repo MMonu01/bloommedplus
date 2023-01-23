@@ -19,12 +19,10 @@ export const TrendingNow = () => {
   React.useEffect(() => {
     InGetData();
   }, []);
-  console.log(data, "oneojos");
   const InGetData = () => {
     setLoading(true);
     GetData()
       .then((res) => {
-        console.log("array of object", res);
         setData(() => res.data[5].Trending_now);
         setLoading(false);
       })
@@ -34,7 +32,6 @@ export const TrendingNow = () => {
       });
   };
   let box = document.querySelector("#bio1");
-  // console.log("box",box)
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;

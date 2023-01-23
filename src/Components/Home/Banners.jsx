@@ -6,8 +6,7 @@ import { Box, Image,Flex,Center,
 import styles from '../../Styles/Banners.module.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
+
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 export const Banners = () => {
@@ -86,7 +85,7 @@ export const Banners = () => {
           {/* ***** used swiper    className={styles.container} **** */}
 
        <Box textAlign={"center"} p="2rem" border="1px solid whitesmoke" 
-                w="90%" m="0px auto" bg='white'>
+               className={styles.leading} m="0px auto" bg='white'>
         <Text
           fontWeight={"400"}
           fontSize={"20px"}

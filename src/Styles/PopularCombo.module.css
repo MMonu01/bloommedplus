@@ -1,5 +1,5 @@
 
-.box{display:flex; align-items: center; background-color: white; width:95%; 
+.box{display:flex; align-items: center; background-color: white; width:97%; 
     position: relative;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;margin: auto ; }
 .box>div:nth-child(1), .box>div:nth-child(3){
     margin:4px; position: absolute;
@@ -47,4 +47,9 @@ border-radius: 10px;}
  background-color: red;
  border: 10px red;
 
+}
+
+
+@media screen and (min-width:100px) and (max-width:650px){
+    .box{width:95%}
 }

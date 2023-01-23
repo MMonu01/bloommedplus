@@ -19,12 +19,10 @@ export const PopularCombo = () => {
   React.useEffect(() => {
     InGetData();
   }, []);
-  console.log(data, "oneojos");
   const InGetData = () => {
     setLoading(true);
     GetData()
       .then((res) => {
-        console.log("array of object", res);
         setData(() => res.data[2].popular_Combo_Deals);
         setLoading(false);
       })
@@ -34,7 +32,6 @@ export const PopularCombo = () => {
       });
   };
   let box = document.querySelector("#pc2");
-  // console.log("box",box)
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;

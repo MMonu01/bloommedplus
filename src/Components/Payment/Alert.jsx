@@ -33,9 +33,6 @@ const  Alert =({head,message})=> {
                {message}
               </AlertDialogHeader>
   
-              {/* <AlertDialogBody>
-                Are you sure? You can't undo this action afterwards.
-              </AlertDialogBody> */}
               <div>
               <Button ref={cancelRef} style={{padding:"5px 10px",marginTop:"10px",border:"none"}} onClick={onClose}>
                  <FontAwesomeIcon style={{fontSize:"22px"}} icon={faCircleXmark}/>
@@ -43,9 +40,7 @@ const  Alert =({head,message})=> {
               </div>
   
               <AlertDialogFooter style={{textAlign:"center",marginRight:"50px",marginTop:"30px"}}>
-                {/* <Button colorScheme='red' onClick={onClose} ml={3}>
-                  Delete
-                </Button> */}
+         
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialogOverlay>

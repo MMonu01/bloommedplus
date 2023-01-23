@@ -18,22 +18,18 @@ export const PersonalCare = () => {
   React.useEffect(() => {
     InGetData();
   }, []);
-  console.log(data, "oneojos");
   const InGetData = () => {
     setLoading(true);
     GetData()
       .then((res) => {
-        // console.log( "raja",res)
         setData(() => res.data[4].Personal_care);
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
   };
   let box = document.querySelector("#c2");
-  console.log("box", box);
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;

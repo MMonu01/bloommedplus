@@ -4,6 +4,7 @@
     background-color: transparent;
   }
   
+  .box{margin-top: 40px;}
   .box2 {
     grid-template-columns: repeat(3, 1fr);
     text-align: center;

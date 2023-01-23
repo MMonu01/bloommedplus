@@ -1,4 +1,4 @@
-.box{display:flex; align-items: center; background-color: white; width:95%; 
+.box{display:flex; align-items: center; background-color: white; width:97%; 
     position: relative;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;margin: auto ; margin-top: 20px;}
 .box>div:nth-child(1), .box>div:nth-child(3){
     margin:4px; position: absolute;
@@ -35,3 +35,7 @@ width:100%
 .container p {padding:7px  0px 15px 0px}
 .container>div>div:hover{box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 border-radius: 10px;}
+
+@media screen and (min-width:100px) and (max-width:650px){
+    .box{width:95%}
+}

@@ -19,22 +19,18 @@ export const PopularCategories = () => {
   React.useEffect(() => {
     InGetData();
   }, []);
-  console.log(data, "oneojos");
   const InGetData = () => {
     setLoading(true);
     GetData()
       .then((res) => {
-        console.log("array of object", res);
         setData(() => res.data[1].popular_categories);
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
   };
   let box = document.querySelector("#h2");
-  // console.log("box",box)
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;
