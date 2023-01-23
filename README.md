@@ -29,13 +29,18 @@ https://bloommedplus.vercel.app/
 ![loginnew](https://user-images.githubusercontent.com/107982334/214096401-d77e6324-b03f-4b5b-99d3-30d13d75e2c8.jpg)
 ## Product Page
 ## Product Details Page
-![productdetails](https://user-images.githubusercontent.com/107982334/214095385-c92b3397-2e55-4e08-b09c-156020c471aa.jpg)
+<img width="928" alt="Single product" src="https://user-images.githubusercontent.com/112859151/214098876-a6d6c187-d635-4f1c-8a67-6cebdf1ea89b.png">
+
 ## Cart Page
-![cartnew](https://user-images.githubusercontent.com/107982334/214095566-775c9d88-bd19-4807-b29a-99baa0035ed3.jpg)
+<img width="935" alt="cart" src="https://user-images.githubusercontent.com/112859151/214100721-dce19566-4b75-4768-8d85-4bd944568e28.png">
+
 ## Address Page
 ## Payment And Order Summary Page
-![payment](https://user-images.githubusercontent.com/107982334/214095785-8680876a-0ee5-497d-b224-b5a6d1a89247.jpg)
+<img width="938" alt="payment" src="https://user-images.githubusercontent.com/112859151/214100660-4bd5a43d-a51c-4936-a4d7-88fa2675dc6c.png">
+
 ## Not found Page
+<img width="947" alt="Not found" src="https://user-images.githubusercontent.com/112859151/214100760-33ee7664-2076-4688-ab11-3618a531ab8a.png">
+
 ## Thank you for viewing.
 
 
