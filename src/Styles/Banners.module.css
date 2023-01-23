@@ -3,7 +3,7 @@
     background-color: transparent;
     margin: 5px auto;
     padding: 1px ;
-    width: 95%;
+    width: 97%;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
     margin: auto;
     align-items: center;
 }
-
+.leading{width:92%}
 .banner1{
 
     display: flex;
@@ -21,6 +21,11 @@
     align-items: center;
     margin: 5px auto;
     padding: 1px ;
-    width: 95%;
+    width: 97%;
     background-color: red;
+}
+
+@media screen and (min-width:100px) and (max-width:650px){
+.careplanb{width:95%}
+.leading{width:90%}
 }

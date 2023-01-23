@@ -18,22 +18,18 @@ export const Homeopathy = () => {
   React.useEffect(() => {
     InGetData();
   }, []);
-  console.log(data, "oneojos");
   const InGetData = () => {
     setLoading(true);
     GetData()
       .then((res) => {
-        console.log("array of object", res);
         setData(() => res.data[7].homeopathy);
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setLoading(false);
       });
   };
   let box = document.querySelector("#homeo1");
-  // console.log("box",box)
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;

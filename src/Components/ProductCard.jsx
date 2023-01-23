@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   Text,
@@ -21,10 +21,8 @@ import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { saveData } from "../Utils/accessLocalstorage";
 
 
-
 const ProductCard = ({ product, loader }) => {
   const [value, setValue] = useState("1");
-
 
 
   const {userCart,setUserCart} = React.useContext(CartContext)
@@ -43,26 +41,28 @@ const ProductCard = ({ product, loader }) => {
     const HandleBag = ()=>{
   
   
-  // ----------------------------------------------------
-  
-  let x = userCart.cart
-  
       let arr = []
+  // ----------------------------------------------------
+  if(userCart.cart!==undefined){
+
+    let x = userCart.cart
+    
       let matid = []
       for(let i=0; i<x.length; i++){
   if(x[i].id!==bag.id){
       arr.push(x[i])
       matid.push(x[i].id)
-  }else{
+    }else{
       let obj = []
       for(let j=0; j<arr.length; j++){
-          if(bag.id!==arr[j].id){
-              obj.push(arr[j])
-          }
+        if(bag.id!==arr[j].id){
+          obj.push(arr[j])
+        }
       }
-  arr = obj
+      arr = obj
+    }
   }
-  }
+}
   arr.push(bag)
   // ------------------------------------
   
@@ -90,13 +90,12 @@ const ProductCard = ({ product, loader }) => {
 
 
 
-
   return (
     <div key={product.id} className={styles.sp}>
       <div className={styles.container}>
-        <p className={styles.head}>Home {'>'} <Link style={{background:'white',border:"none",color:"black",textDecoration:"none"}} to="/products/skincare">Skin Care</Link> {'>'} {product.name}</p>
+        <p className={styles.head}><span style={{color:"#fd8e91",background:"white"}}>Home</span> {'>'} <Link style={{background:'white',border:"none",color:"#fd8e91",textDecoration:"none"}} to="/products/skincare">Skin Care</Link> {'>'} {product.name}</p>
       
-        <Flex className={styles.algn}>
+        <div className={styles.align}>
           <div className={styles.imgDiv}>
             <img
               className={styles.pimg}
@@ -106,7 +105,7 @@ const ProductCard = ({ product, loader }) => {
           </div>
 
           <div className={styles.info}>
-            <h1 style={{ backgroundColor: "#ffffff" }}>{product.name}</h1>
+            <h2 style={{ backgroundColor: "#ffffff" }} className={styles.productName}>{product.name}</h2>
             <h5 style={{ backgroundColor: "#ffffff" }}>{"Laboratory"}</h5>
             <div className={styles.review_rtng}>
               <div className={styles.rev}>
@@ -114,7 +113,9 @@ const ProductCard = ({ product, loader }) => {
                   style={{
                     backgroundColor: "#1aab2a",
                     color: "#ffffff",
-                    marginLeft: "10%",
+                    // marginLeft: "10",
+                    // height:"30px"
+                    marginRight:"5px"
                   }}
                 >
                   {product.rating}
@@ -144,55 +145,76 @@ const ProductCard = ({ product, loader }) => {
                 : null}
             </ul>
           </div>
-          <div style={{ backgroundColor: "#ffffff" }}>
+          <div className={styles.rhs} style={{ backgroundColor: "#ffffff"}}>
             <Box className={styles.sideDiv}>
-              <div className={styles.people}>
+              <div 
+              className={styles.people}
+              >
                 <img src="https://www.1mg.com/images/social_cue.svg" />
                 <Text >509 people bought this recently</Text>
               </div>
 
-              <Form className={styles.mrp_prc_dscnt}>
+              <Form 
+              // className={styles.mrp_prc_dscnt}
+              >
                 {["radio"].map((type) => (
                   <div
                     key={`default-${type}`}
                     style={{ backgroundColor: "#ffffff" }}
                   >
-                    <Flex className={styles.flx}>
+                    <div
+                    className={styles.flx}
+                    >
                       <Form.Check
                         type={type}
                         name={"radio"}
                         id={`default-${type}`}
-                        label={`₹ ${product.price}`}
+                        label={`  ₹${product.price}`}
                         className={styles.chk1}
                         defaultChecked
                       />{" "}
-                      <del className={styles.mrp1}> {`₹ ${product.mrp}`}</del>{" "}
+                      <del
+                       className={styles.mrp1}
+                       > 
+                      {`₹${product.mrp}`}</del>{" "}
                       <Text
                         className={styles.discnt}
                       >{`${product.discount}% off`}</Text>
-                    </Flex>
-                    <Flex className={styles.flx1}>
+                    </div>
+                    <Flex 
+                    className={styles.flx}
+                    >
                       <Form.Check
+                      style={{display:"flex",marginRight:"5px",gap:"5px"}}
                         type={type}
                         name={"radio"}
-                        label={`₹ ${product.price}`}
+                        label={` ₹${product.price}`}
                         id={`disabled-default-${type}`}
-                        className={styles.chk2} style={{width:"87px",marginRight:"5px"}}
+                        className={styles.chk1}
+                        //  style={{width:"87px",marginRight:"5px"}}
                       />
                       <div style={{ backgroundColor: "#ffffff" }}>
-                        <div className={styles.corePlan}>
-                          <Image src="https://onemg.gumlet.io/v1613645053/marketing/phb2bz61etrdmuurfdoq.png" />
+                        <div 
+                        // className={styles.corePlan}
+                        >
                         </div>
-                        <p className={styles.free}>
+                        <p 
+                        className={styles.free}
+                        >
                           + free shipping and 3% Extra NeuCoins With
+                          <Image marginLeft={"4px"} src="https://onemg.gumlet.io/v1613645053/marketing/phb2bz61etrdmuurfdoq.png" />
                         </p>
                       </div>
                     </Flex>
                   </div>
                 ))}
               </Form>
-              <Text className={styles.incl}>Inclusive of all taxes</Text>
-              <Flex className={styles.slct_txt}>
+              <Text 
+              className={styles.incl}
+              >Inclusive of all taxes</Text>
+              <Flex 
+              className={styles.slct_txt}
+              >
                 <select placeholder="Select option" onChange={(e)=>HandleQuantity(e)}  className={styles.slct}>
                 <option   className={styles.optn}>
                     select
@@ -217,11 +239,13 @@ const ProductCard = ({ product, loader }) => {
                   className={styles.stck}
                 >{`of ${product.stock} ${product.name}`}</Text>
               </Flex>
-              <Button onClick={HandleBag} className={styles.addToCart}>ADD TO CART</Button>
+              <Button onClick={HandleBag} 
+              className={styles.addToCart}
+              >ADD TO CART</Button>
             </Box>
             <Box className={styles.ear}>
               <Text className={styles.del}>
-                Earliest delicery by{" "}
+                Earliest delivery by{" "}
                 <span className={styles.pm}>8pm, Today</span>
               </Text>
               <Text className={styles.delive}>
@@ -234,6 +258,7 @@ const ProductCard = ({ product, loader }) => {
               <img
                 src="../../Images/pedia.png"
                 alt="med"
+                style={{width:"100%",borderRadius:"7px"}}
                 className={styles.med}
               />
             </Box>
@@ -244,47 +269,85 @@ const ProductCard = ({ product, loader }) => {
               className={styles.additional_offers}
             />
           </div>
-        </Flex>
+        </div>
       </div>
-      <div className={styles.info_about}>
-        <Flex gap="3%">
-          <div className={styles.ki_kb_sf}>
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* ------------------------------------------------------------------- */}
+      <div 
+      style={{marginTop:"50px"}}
+      // className={styles.info_about}
+      >
+        <div className={styles.information}>
+          <div 
+          className={styles.ki_kb_sf}
+          >
             <h2
               className={styles.infabt}
             >{`Information about ${product.name}`}</h2>
-            <p className={styles.descrip}>{product.description}</p>
-            <h4 className={styles.ki}>Key Ingredients:</h4>
-            <ul className={styles.ki_li}>
+            <p 
+            className={styles.descrip}
+            >{product.description}</p>
+            <h4 
+            className={styles.ki}
+            >Key Ingredients:</h4>
+            <ul 
+            className={styles.ki_li}
+            >
               {loader === false
                 ? product.key_ingredients.map((el, i) => {
                     return <li style={{ backgroundColor: "#ffffff" }}>{el}</li>;
                   })
                 : null}
             </ul>
-            <h4 className={styles.kb}>Key Benefits:</h4>
-            <ul className={styles.kb_li}>
+            <h4 
+            className={styles.kb}
+            >Key Benefits:</h4>
+            <ul 
+            className={styles.kb_li}
+            >
               {loader === false
                 ? product.key_benefits.map((el, i) => {
-                    return <li style={{ backgroundColor: "#ffffff" }}>{el}</li>;
+                    return <li 
+                    style={{ backgroundColor: "#ffffff" }}
+                    >{el}</li>;
                   })
                 : null}
             </ul>
 
-            <h4 className={styles.sf}>Safety Information:</h4>
-            <ul className={styles.sf_li}>
+            <h4 
+            className={styles.sf}
+            >Safety Information:</h4>
+            <ul 
+            className={styles.sf_li}
+            >
               {loader === false
                 ? product.safety_information.map((el, i) => {
                     return <li style={{ backgroundColor: "#ffffff" }}>{el}</li>;
                   })
                 : null}
             </ul>
-            <div className={styles.rtngRev}>
+            <div 
+            className={styles.rtngRev}
+            >
               <Box backgroundColor="#ffffff">
                 <h2 style={{ backgroundColor: "#ffffff" }}>
                   Ratings & Reviews
                 </h2>
                 <Flex gap="2%" backgroundColor="#ffffff" marginTop={"2%"}>
-                  <h1 className={styles.prdrtnd}>{product.rating}</h1>
+                  <h1 
+                  className={styles.prdrtnd}
+                  >{product.rating}</h1>
                   <img
                     src="../../Images/icons8-star-96.png"
                     backgroundColor="#1aab2a"
@@ -308,7 +371,9 @@ const ProductCard = ({ product, loader }) => {
             </div>
           </div>
           <div>
-            <div className={styles.lb}>
+            <div 
+            className={styles.lb}
+            >
               <Box>
                 <img
                   src="../../Images/book_lab_test.jpg"
@@ -326,7 +391,9 @@ const ProductCard = ({ product, loader }) => {
             </div>
             <div>
               <Box>
-                <img src="../../Images/ags.jpg" alt="" class={styles.ags} />
+                <img src="../../Images/ags.jpg" alt="" 
+                class={styles.ags}
+                 />
               </Box>
               <Box>
                 <img
@@ -337,10 +404,12 @@ const ProductCard = ({ product, loader }) => {
               </Box>
             </div>
           </div>
-        </Flex>
+        </div>
       </div>
     </div>
   );
 };
 
 export default ProductCard;
+
+

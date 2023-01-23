@@ -19,12 +19,12 @@ export const Breakfast = () => {
   React.useEffect(() => {
     InGetData();
   }, []);
-  console.log(data, "oneojos");
+
   const InGetData = () => {
     setLoading(true);
     GetData()
       .then((res) => {
-        console.log("array of object", res);
+
         setData(() => res.data[6].Breakfast);
         setLoading(false);
       })
@@ -34,7 +34,6 @@ export const Breakfast = () => {
       });
   };
   let box = document.querySelector("#Bf1");
-  // console.log("box",box)
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;

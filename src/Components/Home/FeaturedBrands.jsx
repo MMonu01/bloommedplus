@@ -18,12 +18,10 @@ export const FeaturedBrands = () => {
   React.useEffect(() => {
     InGetData();
   }, []);
-  console.log(data, "oneojos");
   const InGetData = () => {
     setLoading(true);
     GetData()
       .then((res) => {
-        console.log(res);
         setData(() => res.data[0].featured_brands);
         setLoading(false);
       })
@@ -33,7 +31,6 @@ export const FeaturedBrands = () => {
       });
   };
   let box = document.querySelector("#fbrands");
-  console.log("box", box);
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;

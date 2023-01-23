@@ -31,7 +31,7 @@ const SingleProducts = () => {
 
   return (<>
     <Navbar/>
-    <div>
+    <div style={{marginTop:"-50px"}}>
       <ProductCard loader={loader}  product={product} />
     </div>
     <Footer/>

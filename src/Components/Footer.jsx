@@ -43,7 +43,7 @@ export const Footer = () => {
 
   return (
     <>
-      <div>
+      <div className={styles.box}>
         <Box border={"2px solid #e6e9f0"}>
           <Container maxW="container.xl" pt={"10px"}>
             <Stack>
