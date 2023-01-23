@@ -1,7 +1,5 @@
 ![bloommedplus](https://user-images.githubusercontent.com/112859151/214072007-1f3bd710-97ef-4b08-8f57-45187a05ed11.png)
 
-https://bloommedplus.vercel.app/
-
 ## Bloommedplus.com <a href="https://bloommedplus.vercel.app/">Deployment Link</a>
 ## Tech Stacks:
    1. HTML
@@ -23,11 +21,16 @@ https://bloommedplus.vercel.app/
    
 ## Home Page
 ![Screenshot (1767)](https://user-images.githubusercontent.com/112859151/214073853-4bfa92ee-94b4-4588-895a-d232de0c9874.png)
-## Signup PAge
-![signupnew](https://user-images.githubusercontent.com/107982334/214096271-b71ba8a5-0fe8-40d5-9779-934e6905c0e9.jpg)
+
+## Signup Page
+<img width="947" alt="signup" src="https://user-images.githubusercontent.com/112859151/214101419-3cd143e5-ad05-4df8-999d-7da05bb954ed.png">
+
 ## Login Page
 ![loginnew](https://user-images.githubusercontent.com/107982334/214096401-d77e6324-b03f-4b5b-99d3-30d13d75e2c8.jpg)
+
 ## Product Page
+![Screenshot (1771)](https://user-images.githubusercontent.com/112859151/214101558-5074c229-eb67-4cbe-9285-d477ab8f75a9.png)
+
 ## Product Details Page
 <img width="928" alt="Single product" src="https://user-images.githubusercontent.com/112859151/214098876-a6d6c187-d635-4f1c-8a67-6cebdf1ea89b.png">
 
@@ -35,6 +38,8 @@ https://bloommedplus.vercel.app/
 <img width="935" alt="cart" src="https://user-images.githubusercontent.com/112859151/214100721-dce19566-4b75-4768-8d85-4bd944568e28.png">
 
 ## Address Page
+<img width="938" alt="address" src="https://user-images.githubusercontent.com/112859151/214101647-8ee9ef57-99ff-488e-b5db-ca8fa7f3bdbd.png">
+
 ## Payment And Order Summary Page
 <img width="938" alt="payment" src="https://user-images.githubusercontent.com/112859151/214100660-4bd5a43d-a51c-4936-a4d7-88fa2675dc6c.png">
 
