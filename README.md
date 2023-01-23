@@ -40,7 +40,7 @@
 ## Address Page
 <img width="938" alt="address" src="https://user-images.githubusercontent.com/112859151/214101647-8ee9ef57-99ff-488e-b5db-ca8fa7f3bdbd.png">
 
-## Payment And Order Summary Page
+## Payment and Order Summary Page
 <img width="938" alt="payment" src="https://user-images.githubusercontent.com/112859151/214100660-4bd5a43d-a51c-4936-a4d7-88fa2675dc6c.png">
 
 ## Not found Page
