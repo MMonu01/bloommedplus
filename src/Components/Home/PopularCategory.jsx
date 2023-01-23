@@ -69,7 +69,7 @@ export const PopularCategories = () => {
           >
             {loading === false
               ? data.map((el, index) =>
-                  index == 5 ? (
+                  index == 1 ? (
                     <div key={el.id}>
                       <Link to="/products/skincare">
                         <img src={el.image} alt={el.image} />

@@ -3,7 +3,7 @@
     {
       "id": "mdmonu",
       "name": "Monu",
-      "full_name": "Md Monu",
+      "username": "Md Monu",
       "mobile": "9315238455",
       "email": "mdmonu2021@gmail.com",
       "password": "matrioshka_brain",
@@ -1409,6 +1409,11 @@
           "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/488e9116-bb49-4842-a1e6-e9cd02765fec.png"
         },
         {
+          "id": "C6",
+          "name": "SKIN CARE",
+          "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/d31e6bfc-9848-47c5-bc45-a9268270ddc7.png"
+        },
+        {
           "id": "C2",
           "name": "WINTER CARE",
           "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/3f3b45d1-4bc3-45a8-a6e5-aa875d8d4011.png"
@@ -1427,11 +1432,6 @@
           "id": "C5",
           "name": "NUTRITIONAL DRINKS",
           "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/56ad3298-1c41-442d-9bfe-2b6068a1cffc.png"
-        },
-        {
-          "id": "C6",
-          "name": "SKIN CARE",
-          "image": "https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/d31e6bfc-9848-47c5-bc45-a9268270ddc7.png"
         },
         {
           "id": "C7",
