@@ -36,7 +36,7 @@ https://bloommedplus.vercel.app/
 ## Payment And Order Summary Page
 ![payment](https://user-images.githubusercontent.com/107982334/214095785-8680876a-0ee5-497d-b224-b5a6d1a89247.jpg)
 
-##Thank you for viewing.
+## Thank you for viewing.
 
 
   
