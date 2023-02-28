@@ -39,69 +39,24 @@ export const Banners = () => {
   const [bimagess, setImages] = useState(sliderImg);
 
   return (
-    <div> 
-      
-            {/* <h1> Banners first img</h1> */}
-  
-    <div style={{width:"95%", margin: "5px auto"}} >
-        <Flex >
-       <Swiper
-         height="200px"
-         spaceBetween={30}
-         centeredSlides={true}
-         loop={true}
-         autoplay={{
-         delay: 2000,
-         disableOnInteraction: false,
-       }}
-        pagination={{
-        clickable: true,
-       }}
-       navigation={false}
-       modules={[Autoplay, Pagination, Navigation]}
-     >
-      {bimagess.map((item, index) => (
-        <SwiperSlide key={item.id}>
-          <Image
-            src={item.img}
-            boxSize="200px"
-            width="100%"
-            objectFit="cover"
-          />
-        </SwiperSlide>
-       ))}
-       </Swiper>
-           <Spacer />
+    <div className={styles.container}> 
+    <div className={styles.box}>
+      <div>
+      <img src={"https://onemg.gumlet.io/a_ignore,w_899,h_200,c_fit,q_auto,f_auto/0c3f2c0a-b7e5-449a-a59d-331faa3155c9.png"} alt="Banner"/>
+</div>
+<div>
+      <img height="200px" src ="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/85bbe9a7-230b-4836-bff3-d5f451b426a7.png" />
 
-          <Box >
-            <img height="200px" src ="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/85bbe9a7-230b-4836-bff3-d5f451b426a7.png" />
-         </Box>
-         
-     </Flex>
+      </div>
+      </div>
+<div className={styles.text}>
+Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform
+  </div>
 
-        </div>
-    
-
-          {/* ***** used swiper    className={styles.container} **** */}
-
-       <Box textAlign={"center"} p="2rem" border="1px solid whitesmoke" 
-               className={styles.leading} m="0px auto" bg='white'>
-        <Text
-          fontWeight={"400"}
-          fontSize={"20px"}
-          lineHeight={"30px"}
-          color={"#666666"}
-          bg='white'
-         >
-           Bloommedplus: Indias Leading Online Pharmacy & Healthcare Platform
-          </Text>
-        </Box>
-
-          <div class={styles.careplanb}>
-              <img   src="https://res.cloudinary.com/du8msdgbj/image/upload/v1647251796/ueyxzzku83yuvpqxyrwe.png" />
-          </div>
-        
-     
+      <div>
+      <img  src="https://res.cloudinary.com/du8msdgbj/image/upload/v1647251796/ueyxzzku83yuvpqxyrwe.png" alt='Banner'/>
+   </div>
      </div>
   )
 }
+

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import styles from "../../Styles/PersonalCare.module.css";
+import styles from "../../Styles/Homeopathy.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
@@ -41,18 +41,7 @@ export const PersonalCare = () => {
   return (
     <div>
       <h3
-        style={{
-          background: "whitesmoke",
-          textAlign: "left",
-          width: "95%",
-          margin: "auto",
-         
-          paddingTop: "5px",
-          paddingBottom: "3px",
-          color: "#212121",
-          fontSize: "16px",
-          lineHeight: "22.8571px",
-        }}
+      className={styles.head}
       >
         {" "}
         Personal care{" "}

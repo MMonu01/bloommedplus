@@ -16,33 +16,33 @@ export const Home = ()=>{
          <Navbar/>
            {/* <h1>Homepage</h1> */}
          <main>
-           <div> 
+           <div > 
             <Banners/>
            </div>
-            <div style={{marginTop:"10px"}}> 
+            <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
              <PopularCategories/>
            </div>
-          <div style={{marginTop:"10px"}}> 
+          <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
            <TrendingNow/>
            </div>
-            <div style={{marginTop:"10px"}}> 
+            <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
            <Breakfast/>
            </div>
-              <div style={{marginTop:"10px"}}> 
+              <div style={{margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
            <FeaturedBrands/>
            </div>
-            <div style={{marginTop:"50px"}}> 
+            <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"50px"}}> 
            <PopularCombo/>
            </div>
-           <div style={{marginTop:"10px"}}> 
+           <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
             <PersonalCare/>
            </div>
            
-           <div style={{marginTop:"20px"}}> 
+           <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"20px"}}> 
            <Biotin/>
            </div>
           
-            <div style={{marginTop:"10px"}}> 
+            <div style={{margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
              <Homeopathy/>
            </div> 
 

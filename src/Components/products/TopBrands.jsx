@@ -33,38 +33,45 @@ const InGetData = ()=>{
         setLoading(false)
     })
 }
-let box = document.querySelector(".one")
 // console.log("box",box)
 const buttonPressRev = ()=>{
+    let box = document.querySelector(".oneone")
 let width =  box.clientWidth
 box.scrollLeft -= width
 }
 
 
 const buttonPressNext =()=>{
+    let box = document.querySelector(".oneone")
+
     let width =  box.clientWidth
     box.scrollLeft += width
 }
 
 return(
     <>
-    <div className={styles.box}>
+    {
+        loading==false?
+        
+        <div className={styles.box}>
         <div onClick={buttonPressRev}><FontAwesomeIcon  className={styles.icon} icon={faChevronLeft}/></div>
     <div className={styles.container} style={{width:"100%"}}>
-        <div className="one" style={{scrollBehavior:"smooth",background:"white"}}>
+        <div className="oneone" style={{scrollBehavior:"smooth",background:"white"}}>
 
-        {
-            loading===false ? data.map((el)=>(
+        
+    {data.map((el)=>(
                 <div key={el.id}>
                     <img src={el.image} alt={el.image}/>
                     <p>{el.name}</p>
                     </div>
-            )):null
-        }
+            ))
+    }
         </div>
     </div>
     <div onClick={buttonPressNext}><FontAwesomeIcon className={styles.icon} icon={faChevronRight}/></div>
     </div>
+
+:null}
     </>
 )
 

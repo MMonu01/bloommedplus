@@ -43,18 +43,7 @@ export const PopularCombo = () => {
   return (
     <div>
       <h3
-        style={{
-          background: "whitesmoke",
-          textAlign: "left",
-          width: "95%",
-          margin: "auto",
-        
-          paddingTop: "5px",
-          paddingBottom: "10px",
-          color: "#212121",
-          fontSize: "16px",
-          lineHeight: "22.8571px",
-        }}
+       className={styles.head}
       >
         {" "}
         Popular Combo categories{" "}
@@ -73,7 +62,7 @@ export const PopularCombo = () => {
                   <div
                     key={el.id}
                     style={{
-                      height: "270px",
+                      // height: "270px",
                       fontSize: "14px",
                       padding: "10px",
                       background: "white",

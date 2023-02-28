@@ -45,18 +45,7 @@ export const Biotin = () => {
   return (
     <div>
       <h3
-        style={{
-          background: "whitesmoke",
-          textAlign: "left",
-          width: "95%",
-          margin: "auto",
-          color: "black",
-          paddingTop: "5px",
-          paddingBottom: "10px",
-          color: "#212121",
-          fontSize: "16px",
-          lineHeight: "22.8571px",
-        }}
+       className={styles.head}
       >
         Biotin | Collagen supplement of the week{" "}
       </h3>

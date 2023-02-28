@@ -43,18 +43,7 @@ export const TrendingNow = () => {
   return (
     <div>
       <h3
-        style={{
-          background: "whitesmoke",
-          textAlign: "left",
-          width: "95%",
-          margin: "auto",
-
-          paddingTop: "5px",
-          paddingBottom: "10px",
-          color: "#212121",
-          fontSize: "16px",
-          lineHeight: "22.8571px",
-        }}
+       className={styles.head}
       >
         Trending now{" "}
       </h3>
@@ -72,7 +61,7 @@ export const TrendingNow = () => {
                   <div
                     key={el.id}
                     style={{
-                      height: "270px",
+                      // height: "270px",
                       fontSize: "14px",
                       padding: "10px",
                       background: "white",
@@ -82,7 +71,7 @@ export const TrendingNow = () => {
                       src={el.image}
                       alt={el.image}
                       height="150px"
-                      width="150px"
+                      // width="150px"
                     />
                     <div>
                       <p
@@ -108,7 +97,7 @@ export const TrendingNow = () => {
                         <div style={{ display: "flex", gap: "2px" }}>
                           <span>MRP ₹ </span>
                           <span
-                            style={{ "text-decoration-line": "line-through" }}
+                            style={{ textDecoration: "line-through" }}
                           >{`${el.mrp}`}</span>
                         </div>
                         <div

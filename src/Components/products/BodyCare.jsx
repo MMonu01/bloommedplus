@@ -1,6 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
-import styles from '../../Styles/Products/BodyCare.module.css'
+import styles from '../../Styles/Products/TopBrands.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -34,15 +34,17 @@ const InGetData = ()=>{
     })
 }
 // console.log(data)
-let box = document.querySelector(".three")
 // console.log("box",box)
 const buttonPressRev = ()=>{
+    let box = document.querySelector(".three")
 let width =  box.clientWidth
 box.scrollLeft -= width
 }
 
 
 const buttonPressNext =()=>{
+    let box = document.querySelector(".three")
+
     let width =  box.clientWidth
     box.scrollLeft += width
 }

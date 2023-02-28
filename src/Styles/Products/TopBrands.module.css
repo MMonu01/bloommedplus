@@ -24,15 +24,17 @@
     display:flex;
     overflow: hidden;
     background-color: white;
-  
+    font-size: 15px;
 width:100%
 }
  .container>div>div{
-    padding:50px 15px 0 15px;
+    padding:50px 1% 0 1%;
     margin:0 1%;
     cursor: pointer;
- width:200px
+ width:16%;
+ flex:none;
 } 
+.container img{width:100%;}
 .container>div>div,.container p{
     background-color: white;
 
@@ -45,3 +47,20 @@ width:100%
 
 .container>div>div:hover{box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 border-radius: 10px;}
+
+
+@media screen and (min-width:100px) and (max-width:600px){
+    .container>div>div{width:29%}
+
+    .box>div:nth-child(1), .box>div:nth-child(3){
+    
+        margin:2px; position: absolute;
+        background-color: white;
+        font-size: 14px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding:4px 8px;
+        border-radius: 50%;
+    }
+    .container>div{font-size: 13px;
+    }
+}
