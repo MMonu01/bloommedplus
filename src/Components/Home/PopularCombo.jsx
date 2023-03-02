@@ -1,24 +1,37 @@
 import axios from "axios";
 import React, { useState } from "react";
-import styles from "../../Styles/PopularCombo.module.css";
+import styles from "../../Styles/Home/PopularCombo.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { background } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+
+
+
 const GetData = () => {
   return axios({
     method: "get",
     baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
   });
 };
+
+
+
 export const PopularCombo = () => {
+
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
   React.useEffect(() => {
     InGetData();
   }, []);
+
+
   const InGetData = () => {
     setLoading(true);
     GetData()
@@ -31,17 +44,26 @@ export const PopularCombo = () => {
         setLoading(false);
       });
   };
+
+
+
   let box = document.querySelector("#pc2");
+
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
+
   const buttonPressNext = () => {
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
-  return (
-    <div>
+
+
+
+  return (<>
+ {loading === false?
+            <div className={styles.maxContainer} > 
       <h3
        className={styles.head}
       >
@@ -57,8 +79,7 @@ export const PopularCombo = () => {
             id="pc2"
             style={{ scrollBehavior: "smooth", background: "white" }}
           >
-            {loading === false
-              ? data.map((el) => (
+            { data.map((el) => (
                   <div
                     key={el.id}
                     style={{
@@ -68,12 +89,14 @@ export const PopularCombo = () => {
                       background: "white",
                     }}
                   >
+                      <Link to="/products/skincare">
                     <img
                       src={el.image}
                       alt={el.image}
                       height="150px"
                       width="150px"
                     />
+                    </Link>
                     <div>
                       <p
                         style={{
@@ -118,7 +141,7 @@ export const PopularCombo = () => {
                     </div>
                   </div>
                 ))
-              : null}
+              }
           </div>
         </div>
         <div onClick={buttonPressNext}>
@@ -126,5 +149,7 @@ export const PopularCombo = () => {
         </div>
       </div>
     </div>
+    :null}
+    </>
   );
 };

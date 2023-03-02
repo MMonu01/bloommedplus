@@ -1,9 +1,7 @@
-.productHead {
-    margin-top: 40px;margin-left:20px;font-size: 20px;
-}
+.skincare{margin-top: 15px;}
 
 .header{
-    display:flex; margin-top: 40px;margin-left:20px;  justify-content: space-between; align-items: center;
+    display:flex; margin-top: 40px; margin-left:20px;  justify-content: space-between; align-items: center;
 }
 
 .header p {font-size: 20px;}
@@ -15,4 +13,9 @@
     background-color: white;
     border:1px solid rgb(227, 227, 227);
     border-radius:5px;
+}
+
+
+@media screen and (min-width:100px) and (max-width:500px){
+.skincare{font-size: 20px;margin-bottom: -10px;}
 }

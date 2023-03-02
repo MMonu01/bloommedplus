@@ -6,6 +6,9 @@
    width:98%;
    margin-bottom: 100px;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .container>div:nth-child(2){
 width:83%;

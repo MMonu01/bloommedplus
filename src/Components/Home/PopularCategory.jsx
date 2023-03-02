@@ -1,24 +1,35 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
 import React, { useState } from "react";
-import styles from "../../Styles/Homeopathy.module.css";
+import styles from "../../Styles/Home/Homeopathy.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { Spinner } from '@chakra-ui/react'
+
+
+
 const GetData = () => {
   return axios({
     method: "get",
     baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
   });
 };
+
+
+
 export const PopularCategories = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
   React.useEffect(() => {
     InGetData();
   }, []);
+
+
   const InGetData = () => {
     setLoading(true);
     GetData()
@@ -30,17 +41,29 @@ export const PopularCategories = () => {
         setLoading(false);
       });
   };
-  let box = document.querySelector("#h2");
+
+
   const buttonPressRev = () => {
+    let box = document.querySelector(".oneworld");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
+
+
   const buttonPressNext = () => {
+    let box = document.querySelector(".oneworld");
+
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
-  return (
-    <div>
+
+
+
+  return (<>
+      {loading === false?
+            <div className={styles.maxContainer} > 
+  
+    
       <h3
        className={styles.head}
       >
@@ -53,27 +76,21 @@ export const PopularCategories = () => {
         </div>
         <div className={styles.container} style={{ width: "100%" }}>
           <div
-            className="one"
+            className="oneworld"
             id="h2"
             style={{ scrollBehavior: "smooth", background: "white" }}
           >
-            {loading === false
-              ? data.map((el, index) =>
-                  index == 1 ? (
-                    <div key={el.id}>
+              { data.map((el, index) =>
+             
+                <div key={el.id}>
                       <Link to="/products/skincare">
                         <img src={el.image} alt={el.image} />
                       </Link>
                       <p>{el.name}</p>
                     </div>
-                  ) : (
-                    <div key={el.id}>
-                      <img src={el.image} alt={el.image} />
-                      <p>{el.name}</p>
-                    </div>
+                 
                   )
-                )
-              : null}
+                }
           </div>
         </div>
         <div onClick={buttonPressNext}>
@@ -81,5 +98,8 @@ export const PopularCategories = () => {
         </div>
       </div>
     </div>
+                  
+              : <div className={styles.loader}></div>}
+                  </>
   );
 };

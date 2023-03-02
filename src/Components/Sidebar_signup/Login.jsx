@@ -4,13 +4,20 @@ import { Link,useNavigate,Navigate,useLocation } from 'react-router-dom'
 
 import { AuthSuccessAction,AuthFailureAction,AuthRequestAction } from "../../Redux/Authentication/action";
 import { useDispatch,useSelector } from "react-redux";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye,faEyeSlash,faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Login = ()=>{
 
   const isAuth  = useSelector((store)=>store.authReducer.isAuth)
   const navigate = useNavigate()
  const location = useLocation()
-  const [alertShow,setAlertShow] = React.useState(null)
+  const [alertShow,setAlertShow] = React.useState(false)
+const [allDetails,setAllDetails]  = React.useState("Nothing")
+
+
+  const [show, setShow] = React.useState(false)
+  const handleClick = () => setShow(!show)
 
   const [formData,setFormData] = React.useState({
   email:"",password:""
@@ -19,45 +26,71 @@ const Login = ()=>{
   const dispatch = useDispatch()
   
   
+  const HandleAlertShow = ()=>{
+    setAlertShow(true)
+    setTimeout(()=>{
+setAlertShow(false)
+    },3000)
+  }
+
+  
   
   const HandleLogin = async(e)=>{
     e.preventDefault()
-    dispatch(AuthRequestAction())
+
+if(formData.email===""){
+  setAllDetails("Email field is empty")
+  HandleAlertShow()
+}
+else if(formData.email.includes("@gmail.com")===false){
+setAllDetails("Email is incorrect")
+HandleAlertShow()
+}
+else if(formData.password==""){
+  setAllDetails("Password field is empty")
+}
+else{
+
+  
+  dispatch(AuthRequestAction())
+    
   
   try{
-  let res = await fetch(`https://bloodmedplus-server.onrender.com/user`)
-  res = await res.json()
+    let res = await fetch(`https://bloodmedplus-server.onrender.com/user`)
+    res = await res.json()
   let x = false
   for(let i=0; i<res.length; i++){
   if((res[i].email===formData.email && res[i].password===formData.password)){
-  x = true
-  // loginUser(res[i])
-  console.log("loginDataMatched")
-  dispatch(AuthSuccessAction(res[i]))
+    x = true
+    // loginUser(res[i])
+    console.log("loginDataMatched")
+    dispatch(AuthSuccessAction(res[i]))
   }
-  }
-  
-  
-  
-  if(x===false){
+}
+
+
+
+if(x===false){
   console.log("Alert is not working")
-  setAlertShow("False")
+  setAlertShow(true)
   dispatch(AuthFailureAction())
-  alert("Either email or password is incorrect")
-  }
-  else{
+  setAllDetails("Either email or password is incorrect")
+  HandleAlertShow()
+}
+else{
   setAlertShow("True")
-  }
-    
-  }
-  
-  catch(err){
+}
+
+}
+
+catch(err){
   console.log(err)
-  }
-  setFormData({
+}
+setFormData({
   email:"",password:""
-  })
-  }
+})
+}
+}
   
   
   const HandleFormData = (e)=>{
@@ -71,7 +104,11 @@ const Login = ()=>{
 
   return(
     <>
-    
+<div style={{display:alertShow===true?"flex":"none"}} className={styles.alert}>
+<p>{allDetails}</p>
+<FontAwesomeIcon className={styles.cross} onClick={()=>setAlertShow(false)} icon={faCircleXmark}/>
+    </div>
+
     <div className={styles.container}>
 
 <div className={styles.formContainer}>
@@ -80,7 +117,15 @@ const Login = ()=>{
 <input type="email" name="email" value={formData.email} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Enter your E-mail"/>
 
 
-<input type="password" name="password" value={formData.password} onChange={HandleFormData} style={{boxShadow:"none"}} placeholder="Enter password"/>
+
+<div  className={styles.passwordContainer}>
+<input  type={show ? 'text' : 'password'}name="password" value={formData.password} onChange={HandleFormData} style={{boxShadow:"none",width:"100%"}} placeholder="Enter password"/>
+<div className={styles.eyeButton}  onClick={handleClick}>  {show ? 
+<FontAwesomeIcon className={styles.eye}  icon={faEye}/>
+: <FontAwesomeIcon className={styles.eye} icon={faEyeSlash}/>
+}</div>
+</div>
+
 <button onClick={HandleLogin}>Login</button>
 </form>
 

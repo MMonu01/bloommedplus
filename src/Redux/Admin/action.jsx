@@ -145,5 +145,7 @@ const updateMeds = (payload) => async (dispatch) => {
   dispatch(updateMedRequest());
   return await axios.put(`url/${id}`, payload);
   console.log(res);
-  dispatch(updateMedSuccess(res.data)).then(())
+  dispatch(updateMedSuccess(res.data)).then(()=>{
+    
+  })
 };

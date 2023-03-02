@@ -12,7 +12,7 @@ const LeftSide = ()=>{
         <div className={styles.LeftSide_container} style={{paddingLeft:"0px",marginLeft:"0px"}}>
 
 <div >
-<h2 className={styles.header} style={{padding:"0 10px"}}>CATEGORIES</h2>
+{/* <h2 className={styles.header} style={{padding:"0 10px"}}>CATEGORIES</h2>
 <div style={{fontSize:"14px",padding:"0 10px"}} >PERSONAL CARE</div>
 
 <div className={styles.category} style={{marginLeft:"15px",marginTop:"7px",padding:"0 10px"}}>
@@ -38,7 +38,7 @@ const LeftSide = ()=>{
 <div><span>Men Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
 <div><span>Oral Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
 <div><span>Pet Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-</div>
+</div> */}
 
 
 

@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-import styles from "../../Styles/Homeopathy.module.css";
+import styles from "../../Styles/Home/Homeopathy.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const GetData = () => {
   return axios({
     method: "get",
@@ -38,8 +39,9 @@ export const PersonalCare = () => {
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
-  return (
-    <div>
+  return (<>
+    {loading === false?
+    <div  className={styles.maxContainer}>
       <h3
       className={styles.head}
       >
@@ -56,14 +58,16 @@ export const PersonalCare = () => {
             id="c2"
             style={{ scrollBehavior: "smooth", background: "white" }}
           >
-            {loading === false
-              ? data.map((el) => (
+            { data.map((el) => (
                   <div key={el.id}>
+                    <Link to="/products/skincare">
                     <img src={el.image} alt={el.image} />
+                    </Link>
+                      
                     <p>{el.name}</p>
                   </div>
                 ))
-              : null}
+              }
           </div>
         </div>
         <div onClick={buttonPressNext}>
@@ -71,5 +75,7 @@ export const PersonalCare = () => {
         </div>
       </div>
     </div>
+      : null}
+      </>
   );
 };

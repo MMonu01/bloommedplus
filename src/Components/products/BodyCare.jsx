@@ -51,23 +51,31 @@ const buttonPressNext =()=>{
 
 return(
     <>
+    {
+        loading==false?<>
+        <p className={styles.productHead}>Body care products</p>
     <div className={styles.box}>
         <div onClick={buttonPressRev}><FontAwesomeIcon  className={styles.icon} icon={faChevronLeft}/></div>
     <div className={styles.container} style={{width:"100%"}}>
-        <div className="three" style={{scrollBehavior:"smooth",background:"white"}}>
+        <div className="three"  style={{scrollBehavior:"smooth",background:"white"}}>
 
         {
-            loading===false ? data.map((el)=>(
-                <div key={el.id}>
+            data.map((el)=>(
+                <div  key={el.id}>
+                    <a className={styles.anchor} href="#AllProducts" alt="AllProducts">
                     <img src={el.image} alt={el.image}/>
+                    </a>
                     <p>{el.name}</p>
                     </div>
-            )):null
+            ))
         }
         </div>
     </div>
     <div onClick={buttonPressNext}><FontAwesomeIcon className={styles.icon} icon={faChevronRight}/></div>
     </div>
+    </>
+    :null}
+
     </>
 )
 

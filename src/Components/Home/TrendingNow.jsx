@@ -1,24 +1,37 @@
 import axios from "axios";
 import React, { useState } from "react";
-import styles from "../../Styles/PopularCombo.module.css";
+import styles from "../../Styles/Home/PopularCombo.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { background } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+
+
+
 const GetData = () => {
   return axios({
     method: "get",
     baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
   });
 };
+
+
+
 export const TrendingNow = () => {
+
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
   React.useEffect(() => {
     InGetData();
   }, []);
+
+
   const InGetData = () => {
     setLoading(true);
     GetData()
@@ -31,17 +44,27 @@ export const TrendingNow = () => {
         setLoading(false);
       });
   };
+
+
+
   let box = document.querySelector("#bio1");
+
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
+
   const buttonPressNext = () => {
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
-  return (
-    <div>
+
+
+
+
+  return (<>
+    {loading === false?
+      <div className={styles.maxContainer} > 
       <h3
        className={styles.head}
       >
@@ -56,8 +79,7 @@ export const TrendingNow = () => {
             id="bio1"
             style={{ scrollBehavior: "smooth", background: "white" }}
           >
-            {loading === false
-              ? data.map((el) => (
+            { data.map((el) => (
                   <div
                     key={el.id}
                     style={{
@@ -67,12 +89,15 @@ export const TrendingNow = () => {
                       background: "white",
                     }}
                   >
+                        <Link to="/products/skincare">
+
                     <img
                       src={el.image}
                       alt={el.image}
                       height="150px"
                       // width="150px"
-                    />
+                      />
+                      </Link>
                     <div>
                       <p
                         style={{
@@ -98,7 +123,7 @@ export const TrendingNow = () => {
                           <span>MRP ₹ </span>
                           <span
                             style={{ textDecoration: "line-through" }}
-                          >{`${el.mrp}`}</span>
+                            >{`${el.mrp}`}</span>
                         </div>
                         <div
                           style={{
@@ -106,18 +131,18 @@ export const TrendingNow = () => {
                             gap: "3px",
                             color: "green",
                           }}
-                        >
+                          >
                           <span style={{}}>{`${el.discount}`}</span>
                           <span>off</span>
                         </div>
                       </div>
                       <h4
                         style={{ "text-align": "start" }}
-                      >{` ₹ ${el.price}`}</h4>
+                        >{` ₹ ${el.price}`}</h4>
                     </div>
                   </div>
                 ))
-              : null}
+                }
           </div>
         </div>
         <div onClick={buttonPressNext}>
@@ -125,5 +150,7 @@ export const TrendingNow = () => {
         </div>
       </div>
     </div>
+    :null}
+  </>
   );
 };

@@ -1,18 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
-import styles from "../../Styles/PopularCombo.module.css";
+import styles from "../../Styles/Home/PopularCombo.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { background } from "@chakra-ui/react";
+
+import { Link } from "react-router-dom";
+
+
+
 const GetData = () => {
   return axios({
     method: "get",
     baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
   });
 };
+
+
+
 export const Biotin = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -42,8 +50,9 @@ export const Biotin = () => {
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
-  return (
-    <div>
+  return (<>
+    {loading === false?
+      <div className={styles.maxContainer} > 
       <h3
        className={styles.head}
       >
@@ -58,10 +67,9 @@ export const Biotin = () => {
             id="biotin1"
             style={{ scrollBehavior: "smooth", background: "white" }}
           >
-            {loading === false
-              ? data.map((el) => (
+            { data.map((el) => (
                   <div
-                    key={el.id}
+                  key={el.id}
                     style={{
                       height: "270px",
                       fontSize: "14px",
@@ -69,12 +77,9 @@ export const Biotin = () => {
                       background: "white",
                     }}
                   >
-                    <img
-                      src={el.image}
-                      alt={el.image}
-                      height="150px"
-                      width="150px"
-                    />
+                       <Link to="/products/skincare">
+                        <img src={el.image} alt={el.image} height="150px" width="150px" />
+                      </Link>
                     <div>
                       <p
                         style={{
@@ -119,7 +124,7 @@ export const Biotin = () => {
                     </div>
                   </div>
                 ))
-              : null}
+              }
           </div>
         </div>
         <div onClick={buttonPressNext}>
@@ -128,5 +133,7 @@ export const Biotin = () => {
       </div>
       <div style={{ margin: "10px 0px" }}></div>
     </div>
+  :null}
+  </>
   );
 };

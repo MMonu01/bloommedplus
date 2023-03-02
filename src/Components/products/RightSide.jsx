@@ -16,31 +16,18 @@ const RightSide = ({data,HandleSort})=>{
     return(
         <div style={{width:"100%"}}>
             <Nav/>
-            <h2 style={{marginTop:"6px"}}>SKIN CARE</h2 >
+            <h2 className={styles.skincare}>SKIN CARE</h2 >
             <img style={{width:"100%",marginTop:"25px"}} src="https://onemg.gumlet.io/0460c9f0-9952-4a9b-88d8-f285bc7ba712_1667481734.jpg?w=1027&h=120&format=auto" alt="head_image"/> 
-             <div style={{width:"100%"}}>
-            <div>
-                <p  className={styles.productHead}>Top brands</p>
+          
             <TopBrands/> 
-            </div>
-             </div>
-
-
-             <div>
-                <p  className={styles.productHead}>Face care products</p>
-            <FaceCare/> 
-            </div>
-             
-            <div>
-                <p className={styles.productHead}>Body care products</p>
+            <FaceCare/>  
             <BodyCare/> 
-            </div>
 
 
 <div>
     <div className={styles.header}>
 
-<p>All Products</p>
+<p id="AllProducts">All Products</p>
 <div>
     <span className={styles.sort}>Sort By</span>
     <select onChange={(e)=>HandleSort(e)}>

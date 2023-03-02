@@ -1,23 +1,36 @@
 import axios from "axios";
 import React, { useState } from "react";
-import styles from "../../Styles/Homeopathy.module.css";
+import styles from "../../Styles/Home/Homeopathy.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { Link } from "react-router-dom";
+
 const GetData = () => {
   return axios({
     method: "get",
     baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
   });
 };
+
+
+
 export const FeaturedBrands = () => {
+
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
   React.useEffect(() => {
     InGetData();
   }, []);
+
+
+
   const InGetData = () => {
     setLoading(true);
     GetData()
@@ -30,17 +43,27 @@ export const FeaturedBrands = () => {
         setLoading(false);
       });
   };
+
+
   let box = document.querySelector("#fbrands");
+
   const buttonPressRev = () => {
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
+
+
   const buttonPressNext = () => {
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
+
+
+
   return (
-    <div>
+    <>
+      {loading === false?
+    <div className={styles.maxContainer}>
       <h3
        
           className={styles.head}
@@ -54,18 +77,21 @@ export const FeaturedBrands = () => {
         </div>
         <div className={styles.container} style={{ width: "100%" }}>
           <div
-            className="one"
+            // className="one"
             id="fbrands"
             style={{ scrollBehavior: "smooth", background: "white" }}
           >
-            {loading === false
-              ? data.map((el) => (
-                  <div key={el.id}>
-                    <img src={el.image} alt={el.image} />
-                    <p>{el.name}</p>
+
+              { data.map((el) => (
+                <div key={el.id}>
+                  <Link to="/products/skincare">
+
+                <img src={el.image} alt={el.image} />
+                  </Link>
+                <p>{el.name}</p>
                   </div>
                 ))
-              : null}
+              }
           </div>
         </div>
         <div onClick={buttonPressNext}>
@@ -73,5 +99,7 @@ export const FeaturedBrands = () => {
         </div>
       </div>
     </div>
+              : null}
+    </>
   );
 };

@@ -19,32 +19,21 @@ export const Home = ()=>{
            <div > 
             <Banners/>
            </div>
-            <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
              <PopularCategories/>
-           </div>
-          <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
            <TrendingNow/>
-           </div>
-            <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
-           <Breakfast/>
-           </div>
-              <div style={{margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
-           <FeaturedBrands/>
-           </div>
-            <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"50px"}}> 
-           <PopularCombo/>
-           </div>
-           <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
-            <PersonalCare/>
-           </div>
            
-           <div style={{ margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"20px"}}> 
+           <Breakfast/>
+           
+    
+           <FeaturedBrands/>
+       
+           <PopularCombo/>
+     
+            <PersonalCare/>
+           
            <Biotin/>
-           </div>
           
-            <div style={{margin:"auto",marginLeft:"1.5%",marginRight:'1.5%',marginTop:"10px"}}> 
              <Homeopathy/>
-           </div> 
 
        </main>
              <Footer/>

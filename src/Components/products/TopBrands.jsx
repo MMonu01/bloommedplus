@@ -13,12 +13,15 @@ const GetData = ()=>{
 
 
 const TopBrands =()=>{
+
 const [data,setData]=useState([])
 const [loading,setLoading] = useState(false)
 
 React.useEffect(()=>{
 InGetData()
 },[])
+
+
 // console.log(data,"oneojos")
 const InGetData = ()=>{
     setLoading(true)
@@ -33,7 +36,9 @@ const InGetData = ()=>{
         setLoading(false)
     })
 }
-// console.log("box",box)
+
+
+
 const buttonPressRev = ()=>{
     let box = document.querySelector(".oneone")
 let width =  box.clientWidth
@@ -48,11 +53,15 @@ const buttonPressNext =()=>{
     box.scrollLeft += width
 }
 
+
+
+
 return(
     <>
+
     {
-        loading==false?
-        
+        loading==false?<>
+           <p  className={styles.productHead}>Top brands</p>
         <div className={styles.box}>
         <div onClick={buttonPressRev}><FontAwesomeIcon  className={styles.icon} icon={faChevronLeft}/></div>
     <div className={styles.container} style={{width:"100%"}}>
@@ -61,8 +70,11 @@ return(
         
     {data.map((el)=>(
                 <div key={el.id}>
+                    <a className={styles.anchor} href="#AllProducts" alt="AllProducts">
                     <img src={el.image} alt={el.image}/>
+                    </a>
                     <p>{el.name}</p>
+
                     </div>
             ))
     }
@@ -70,8 +82,9 @@ return(
     </div>
     <div onClick={buttonPressNext}><FontAwesomeIcon className={styles.icon} icon={faChevronRight}/></div>
     </div>
+    </>
 
-:null}
+: <div className={styles.loader}></div>}
     </>
 )
 
