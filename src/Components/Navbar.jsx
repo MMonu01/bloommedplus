@@ -14,7 +14,6 @@ import { Input, InputRightElement, Button, InputGroup } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 import React, { useState, useContext } from "react";
 import { CartContext } from "../Contexts/CartContext";
-import { SearchContext } from "../Contexts/SearchContext";
 import Signup from "./Sidebar_signup/Signup"
 import Login from './Sidebar_signup/Login'
 // import Signup from "../Pages/Signup";
@@ -36,7 +35,6 @@ export const Navbar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const All = searchParams.get("sort");
   // const getSearched = searchParams.get("q")
-  const { search, setSearch } = useContext(SearchContext);
   // const [search,setSearch] = useState(getSearched || "")
   const { userCart } = useContext(CartContext);
   const [cartItem, setCartItem] = useState(0);
@@ -60,9 +58,7 @@ saveData("locationDetails",{})
     }
   }, [userCart]);
 
-  React.useEffect(() => {
-    setSearchParams({ sort: All, q: search });
-  }, [search]);
+
 
   const HandleSearchKey = (e) => {
     if (e.keyCode == 13) {
@@ -73,7 +69,7 @@ saveData("locationDetails",{})
   };
 
   const HandleSearchChange = (e) => {
-    setSearch(e.target.value);
+    // setSearch(e.target.value);
   };
 
   return (
@@ -169,7 +165,7 @@ saveData("locationDetails",{})
                   className={styles.input}
                   onKeyUp={HandleSearchKey}
                   onChange={HandleSearchChange}
-                  value={search}
+                  // value={search}
                   type="text"
                   placeholder="Search for Medicines and Health Products"
                 />
@@ -311,7 +307,7 @@ saveData("locationDetails",{})
                   type="text"
                   onKeyUp={HandleSearchKey}
                   onChange={HandleSearchChange}
-                  value={search}
+                  // value={search}
                   placeholder="Search for Medicines and Health Products"
                 />
                 <InputRightElement

@@ -47,14 +47,15 @@ export const PopularCombo = () => {
 
 
 
-  let box = document.querySelector("#pc2");
-
+  
   const buttonPressRev = () => {
+    let box = document.querySelector("#pc2");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
 
   const buttonPressNext = () => {
+    let box = document.querySelector("#pc2");
     let width = box.clientWidth;
     box.scrollLeft += width;
   };

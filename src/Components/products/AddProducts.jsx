@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import styles from '../../Styles/Products/AllProducts.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar,faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons'
-import { SearchContext } from '../../Contexts/SearchContext'
 import { CartContext } from '../../Contexts/CartContext'
 import { saveData } from '../../Utils/accessLocalstorage'
 
@@ -11,7 +10,6 @@ import { saveData } from '../../Utils/accessLocalstorage'
 
 
 const AddProducts = ({el})=>{
-
 
 
 

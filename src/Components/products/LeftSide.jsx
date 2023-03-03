@@ -1,12 +1,88 @@
 import styles from "../../Styles/Products/LeftSide.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlus,faMinus } from '@fortawesome/free-solid-svg-icons'
+import { faPlus,faMinus,faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useState } from "react"
+import { BrandData,ProductTagData,ProductFormData,UsesData,AgeData,GenderData,DiscountData } from "./FilterData"
+import { HandleFilter } from "./FilterFunction"
 
 
-const LeftSide = ()=>{
 
 
+
+const LeftSide = ({brand,setBrand,productTag,setProductTag,productForm,setProductForm,uses,setUses,age,setAge,gender,setGender,discount,setDiscount})=>{
+
+
+   const HandleBrand = (e)=>{
+HandleFilter(brand,setBrand,e)
+   }
+
+const ClearBrand = ()=>{
+   if(brand.length>0){
+      setBrand([])
+   }
+}
+
+const HandleProductTag = (e)=>{
+   HandleFilter(productTag,setProductTag,e)
+      }
+   
+   const ClearProductTag = ()=>{
+      if(productTag.length>0){
+         setProductTag([])
+      }
+   }
+
+   const HandleProductForm = (e)=>{
+      HandleFilter(productForm,setProductForm,e)
+         }
+      
+      const ClearProductForm = ()=>{
+         if(productForm.length>0){
+            setProductForm([])
+         }
+      }
+
+      const HandleUses = (e)=>{
+         HandleFilter(uses,setUses,e)
+            }
+         
+         const ClearUses = ()=>{
+            if(uses.length>0){
+               setUses([])
+            }
+         }
+
+         const HandleAge = (e)=>{
+            HandleFilter(age,setAge,e)
+               }
+            
+            const ClearAge = ()=>{
+               if(age.length>0){
+                  setAge([])
+               }
+            }
+
+
+            const HandleGender = (e)=>{
+               HandleFilter(gender,setGender,e)
+                  }
+               
+               const ClearGender = ()=>{
+                  if(gender.length>0){
+                     setGender([])
+                  }
+               }
+
+               const HandleDiscount = (e)=>{
+setDiscount(e.target.value)
+               }
+
+               const ClearDiscount = ()=>{
+                  if(discount){
+                     setDiscount("")
+                  }
+               }
+   
 
     return (
         <div className={styles.LeftSide_container} style={{paddingLeft:"0px",marginLeft:"0px"}}>
@@ -47,163 +123,25 @@ const LeftSide = ()=>{
 
 
 {/* ---------------Brands */}
+<div className={styles.headContainer}>
 <h2 className={styles.header} style={{padding:"0 10px"}}>BRANDS</h2>
+<FontAwesomeIcon className={styles.clear} onClick={ClearBrand} icon={faTrash}/>
+</div>
+
 <input type="text" style={{margin:"0 10px 5px 10px"}} placeholder="Search Brands"/>
 <div className={styles.head} style={{padding:"4px 10px"}}>
-<div>
-   <div>
-   <input type="checkbox" />
-   <span>WOW Skin</span>
-   </div>
-   <span>422</span>
-</div>
 
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Maxisoft</span>
-</div>
-   <span>266</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Vaadi Herbals</span>
-</div>
-   <span>258</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Mirah Belle</span>
-</div>
-   <span>246</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Pearldew</span>
-</div>
-   <span>214</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>VLCC</span>
-</div>
-   <span>195</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Khadi Naturals</span>
-</div>
-   <span>180</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>St.Botanica</span>
-</div>
-   <span>177</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>inatur</span>
-</div>
-   <span>163</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Naturoman</span>
-</div>
-   <span>150</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Oshea Herbals</span>
-</div>
-   <span>133</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Organic Harvest</span>
-</div>
-   <span>130</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Vagad's Khadi</span>
-</div>
-   <span>130</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Khadi India</span>
-</div>
-   <span>126</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Aloe Veda</span>
-</div>
-   <span>123</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Deve Herbes</span>
-</div>
-   <span>120</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Nivea</span>
-</div>
-   <span>116</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Tjori</span>
-</div>
-   <span>111</span>
-</div>
+   {
+      BrandData.map((el)=>{
+         return <div key={el.name}>
+         <div>
+         <input value={el.name} onChange={HandleBrand} checked={brand.includes(el.name)} type={el.type} />
+         <span>{el.name}</span>
+         </div>
+         <span>{el.count}</span>
+      </div>
+      })
+   }
 
 </div>
 
@@ -212,164 +150,26 @@ const LeftSide = ()=>{
 
 
 
-
-<h2 className={styles.header} style={{padding:"4px 10px"}}>PRODUCT TAGS</h2>
+{/* ---------------------------------------------------- */}
+<div className={styles.headContainer}>
+<h2 className={styles.header} style={{padding:"0 10px"}}>PRODUCT TAGS</h2>
+<FontAwesomeIcon className={styles.clear} onClick={ClearProductTag} icon={faTrash}/>
+</div>
 <input type="text" style={{margin:"0 10px 5px 10px"}} placeholder="Search Product Tags"/>
 <div className={styles.head}  style={{padding:"4px 10px"}}>
-<div>
-  <div>
-  <input type="checkbox" />
-   <span>Antioxidant</span>
-  </div>
-   <span>165</span>
-</div>
 
+{
+      ProductTagData.map((el)=>{
+         return <div key={el.name}>
+         <div>
+         <input value={el.name} onChange={HandleProductTag} checked={productTag.includes(el.name)} type={el.type} />
+         <span>{el.name}</span>
+         </div>
+         <span>{el.count}</span>
+      </div>
+      })
+   }
 
-<div>
-<div>
-<input type="checkbox" />
-   <span>Wrinkles</span>
-</div>
-   <span>138</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Pores</span>
-</div>
-   <span>135</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Pimple</span>
-</div>
-   <span>134</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Complexion</span>
-</div>
-   <span>120</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Blemishes</span>
-</div>
-   <span>107</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Impurity</span>
-</div>
-   <span>88</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Antibacterial</span>
-</div>
-   <span>87</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Paraben</span>
-</div>
-   <span>77</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Oily</span>
-</div>
-   <span>76</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Moisturizer</span>
-</div>
-   <span>70</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Cleanser</span>
-</div>
-   <span>67</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Dryness</span>
-</div>
-   <span>67</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Sunscreen</span>
-</div>
-   <span>67</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Greasy</span>
-</div>
-   <span>65</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Elasticity</span>
-</div>
-   <span>63</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Khadi</span>
-</div>
-   <span>62</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Eczema</span>
-</div>
-   <span>60</span>
-</div>
 
 </div>
 
@@ -377,42 +177,25 @@ const LeftSide = ()=>{
 
 
 
-<h2 className={styles.header} style={{padding:"4px 10px"}}>DISCOUNT</h2>
+{/* ---------------------------------------- */}
+<div className={styles.headContainer}>
+<h2 className={styles.header} style={{padding:"0 10px"}}>DISCOUNT</h2>
+<FontAwesomeIcon onClick={ClearDiscount} className={styles.clear} icon={faTrash}/>
+</div>
 <div className={styles.head}  style={{padding:"4px 10px"}}>
-<div>
-   <div>
-   <input type="checkbox" />
-   <span>Less than 10%</span>
-   </div>
-   <span>5159</span>
-</div>
 
+{
+DiscountData.map((el)=>{
+         return <div key={el.name}>
+         <div>
+         <input value={el.name} onChange={HandleDiscount} checked={discount==el.name} type={el.type} />
+         <span>{el.name}</span>
+         </div>
+         <span>{el.count}</span>
+      </div>
+      })
+   }
 
-<div>
-<div>
-<input type="checkbox" />
-   <span>10% and above</span>
-</div>
-   <span>7912</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>20% and above</span>
-</div>
-   <span>3513</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>30% and above</span>
-</div>
-   <span>1714</span>
-</div>
 
 </div>
 
@@ -422,164 +205,27 @@ const LeftSide = ()=>{
 
 
 {/* --------------------------------- */}
-
-<h2 className={styles.header} style={{padding:"4px 10px"}}>PRODUCT FORM</h2>
+<div className={styles.headContainer}>
+<h2 className={styles.header} style={{padding:"0 10px"}}>PRODUCT FORM</h2>
+<FontAwesomeIcon className={styles.clear} onClick={ClearProductForm} icon={faTrash}/>
+</div>
 <input type="text" style={{margin:"0 10px 5px 10px"}} placeholder="Search Product Form"/>
 <div className={styles.head}  style={{padding:"4px 10px"}}>
-<div>
-<div>
-<input type="checkbox" />
-   <span>Cream</span>
-</div>
-   <span>2273</span>
-</div>
 
 
-<div>
-<div>
-<input type="checkbox" />
-   <span>Soap</span>
-</div>
-   <span>2221</span>
-</div>
+   
+{
+      ProductFormData.map((el)=>{
+         return <div key={el.name}>
+         <div>
+         <input value={el.name} onChange={HandleProductForm} checked={productForm.includes(el.name)} type={el.type} />
+         <span>{el.name}</span>
+         </div>
+         <span>{el.count}</span>
+      </div>
+      })
+   }
 
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Oil</span>
-</div>
-   <span>2138</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Face Wash</span>
-</div>
-   <span>1526</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Lotion</span>
-</div>
-   <span>1405</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Bottle</span>
-</div>
-   <span>964</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Gel</span>
-</div>
-   <span>847</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Serum</span>
-</div>
-   <span>771</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Pack</span>
-</div>
-   <span>671</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Scrub</span>
-</div>
-   <span>668</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Sanitizer</span>
-</div>
-   <span>661</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Liquid</span>
-</div>
-   <span>593</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Body Wash</span>
-</div>
-   <span>553</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Kit</span>
-</div>
-   <span>517</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Powder</span>
-</div>
-   <span>384</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Tube</span>
-</div>
-   <span>356</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Cleanser</span>
-</div>
-   <span>301</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Face Mask</span>
-</div>
-   <span>286</span>
-</div>
 
 </div>
 
@@ -592,206 +238,52 @@ const LeftSide = ()=>{
 
 {/* --------------------------------- */}
 
-<h2 className={styles.header} style={{padding:"4px 10px"}}>USES</h2>
+<div className={styles.headContainer}>
+<h2 className={styles.header} style={{padding:"0 10px"}}>USES</h2>
+<FontAwesomeIcon className={styles.clear} onClick={ClearUses} icon={faTrash}/>
+</div>
 <input type="text" style={{margin:"0 10px 5px 10px"}} placeholder="Search Uses"/>
 <div className={styles.head}  style={{padding:"4px 10px"}}>
-<div>
-   <div>
-   <input type="checkbox" />
-   <span>Skin Care</span>
-   </div>
-   <span>17260</span>
-</div>
 
+   
+{
+      UsesData.map((el)=>{
+         return <div key={el.name}>
+         <div>
+         <input value={el.name} onChange={HandleUses} checked={uses.includes(el.name)} type={el.type} />
+         <span>{el.name}</span>
+         </div>
+         <span>{el.count}</span>
+      </div>
+      })
+   }
 
-<div>
-<div>
-<input type="checkbox" />
-   <span>Hair Care</span>
-</div>
-   <span>1170</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Daily living aids</span>
-</div>
-   <span>990</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Baby Care</span>
-</div>
-   <span>609</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Mind Care</span>
-</div>
-   <span>524</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Men Care</span>
-</div>
-   <span>207</span>
-</div>
-
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Bone, Joint</span>
-</div>
-   <span>166</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Women Care</span>
-</div>
-   <span>163</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Stomach Care</span>
-</div>
-   <span>159</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Cardiac Care</span>
-</div>
-   <span>103</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Cough & Cold</span>
-</div>
-   <span>83</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Immunity Booster</span>
-</div>
-   <span>68</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Disinfectants</span>
-</div>
-   <span>62</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Eye & Ear Care</span>
-</div>
-   <span>26</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Kidney Care</span>
-</div>
-   <span>20</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Mother Care</span>
-</div>
-   <span>20</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Sexual Wellness</span>
-</div>
-   <span>20</span>
-</div>
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Liver Care</span>
-</div>
-   <span>19</span>
-</div>
 
 </div>
 
 <hr />
 
-
-
-<h2 className={styles.header} style={{padding:"4px 10px"}}>AGE</h2>
+{/* -------------------------------------- */}
+<div className={styles.headContainer}>
+<h2 className={styles.header} style={{padding:"0 10px"}}>AGE</h2>
+<FontAwesomeIcon onClick={ClearAge} className={styles.clear} icon={faTrash}/>
+</div>
 <div className={styles.head}  style={{padding:"4px 10px"}}>
-<div>
-  <div>
-  <input type="checkbox" />
-   <span>All</span>
-  </div>
-   <span>18031</span>
-</div>
+
+   
+{
+      AgeData.map((el)=>{
+         return <div key={el.name}>
+         <div>
+         <input value={el.name} onChange={HandleAge} checked={age.includes(el.name)} type={el.type} />
+         <span>{el.name}</span>
+         </div>
+         <span>{el.count}</span>
+      </div>
+      })
+   }
 
 
-<div>
-<div>
-<input type="checkbox" />
-   <span>Child</span>
-</div>
-   <span>683</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Adult</span>
-</div>
-   <span>19</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Elderly</span>
-</div>
-   <span>10</span>
-</div>
 
 </div>
 
@@ -799,34 +291,24 @@ const LeftSide = ()=>{
 
 
 
-
-<h2 className={styles.header} style={{padding:"4px 10px"}}>GENDER</h2>
+<div className={styles.headContainer}>
+<h2 className={styles.header} style={{padding:"0 10px"}}>GENDER</h2>
+<FontAwesomeIcon onClick={ClearGender} className={styles.clear} icon={faTrash}/>
+</div>
 <div className={styles.head}  style={{padding:"4px 10px"}}>
-<div>
- <div>
- <input type="checkbox" />
-   <span>Unisex</span>
- </div>
-   <span>18061</span>
-</div>
 
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Male</span>
-</div>
-   <span>428</span>
-</div>
-
-
-<div>
-<div>
-<input type="checkbox" />
-   <span>Female</span>
-</div>
-   <span>212</span>
-</div>
+   
+{
+      GenderData.map((el)=>{
+         return <div key={el.name}>
+         <div>
+         <input value={el.name} onChange={HandleGender} checked={gender.includes(el.name)} type={el.type} />
+         <span>{el.name}</span>
+         </div>
+         <span>{el.count}</span>
+      </div>
+      })
+   }
 
 
 

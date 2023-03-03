@@ -7,18 +7,32 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+
+
+
+
 const GetData = () => {
   return axios({
     method: "get",
     baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
   });
 };
+
+
+
 export const PersonalCare = () => {
+
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+
   React.useEffect(() => {
     InGetData();
   }, []);
+
+
+
   const InGetData = () => {
     setLoading(true);
     GetData()
@@ -30,15 +44,24 @@ export const PersonalCare = () => {
         setLoading(false);
       });
   };
-  let box = document.querySelector("#c2");
+
+
+
   const buttonPressRev = () => {
+    let box = document.querySelector("#c2");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
+
+
   const buttonPressNext = () => {
+    let box = document.querySelector("#c2");
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
+
+
+  
   return (<>
     {loading === false?
     <div  className={styles.maxContainer}>

@@ -41,15 +41,25 @@ export const Biotin = () => {
         setLoading(false);
       });
   };
-  let box = document.querySelector("#biotin1");
+
+
+
   const buttonPressRev = () => {
+    let box = document.querySelector("#biotin1");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
+
+
   const buttonPressNext = () => {
+    let box = document.querySelector("#biotin1");
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
+
+
+
+  
   return (<>
     {loading === false?
       <div className={styles.maxContainer} > 
