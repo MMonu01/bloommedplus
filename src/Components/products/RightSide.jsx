@@ -9,7 +9,7 @@ import { useSearchParams } from "react-router-dom"
 
 
 
-const RightSide = ({data,HandleSort})=>{
+const RightSide = ({HandleSort,sort})=>{
     
 
 
@@ -30,18 +30,19 @@ const RightSide = ({data,HandleSort})=>{
 <p id="AllProducts">All Products</p>
 <div>
     <span className={styles.sort}>Sort By</span>
-    <select onChange={(e)=>HandleSort(e)}>
-        <option>Relevance</option>
+    <select  value={sort || "name"} onChange={(e)=>HandleSort(e)}>
+        <option value="name">Relevance</option>
         <option value="rating">Average Customer Rating</option>
-        <option value="LH">Price: Low to High</option>
-        <option value="HL">Price: High to Low</option>
-        <option value="discount">Discount</option>
+        <option value="Pricelth">Price: Low to High</option>
+        <option value="Pricehtl">Price: High to Low</option>
+        <option value="discountlth">Discount: Low to High</option>
+        <option value="discounthtl">Discount: High to Low</option>
         <option></option>
     </select>
 </div>
     </div>
 
-    <AllProducts data={data}/>
+    <AllProducts />
 </div>
         </div>
     )

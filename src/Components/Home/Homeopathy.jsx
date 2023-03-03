@@ -44,14 +44,15 @@ export const Homeopathy = () => {
 
 
 
-  let box = document.querySelector("#homeo1");
-
+  
   const buttonPressRev = () => {
+    let box = document.querySelector("#homeo1");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
 
   const buttonPressNext = () => {
+    let box = document.querySelector("#homeo1");
     let width = box.clientWidth;
     box.scrollLeft += width;
   };

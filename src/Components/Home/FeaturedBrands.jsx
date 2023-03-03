@@ -45,15 +45,17 @@ export const FeaturedBrands = () => {
   };
 
 
-  let box = document.querySelector("#fbrands");
-
+  
   const buttonPressRev = () => {
+    let box = document.querySelector("#fbrands");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
 
 
   const buttonPressNext = () => {
+    let box = document.querySelector("#fbrands");
+
     let width = box.clientWidth;
     box.scrollLeft += width;
   };

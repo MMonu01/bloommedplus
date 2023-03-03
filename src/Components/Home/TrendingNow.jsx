@@ -47,14 +47,15 @@ export const TrendingNow = () => {
 
 
 
-  let box = document.querySelector("#bio1");
-
+  
   const buttonPressRev = () => {
+    let box = document.querySelector("#bio1");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
 
   const buttonPressNext = () => {
+    let box = document.querySelector("#bio1");
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
@@ -76,7 +77,7 @@ export const TrendingNow = () => {
         </div>
         <div className={styles.container} style={{ width: "100%" }}>
           <div
-            id="bio1"
+            id="bio1" 
             style={{ scrollBehavior: "smooth", background: "white" }}
           >
             { data.map((el) => (

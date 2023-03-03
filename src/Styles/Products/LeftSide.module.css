@@ -16,6 +16,9 @@
     background-color: white;
     padding-right:20px;
 }
+.headContainer{display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; margin-top: 10px;}
+.clear{font-size: 14px;margin-right: 10px; color:rgb(88, 88, 88);  cursor: pointer;}
+.clear:active{color:red;}
 
 
 .head>div>div{
@@ -46,7 +49,7 @@
     overflow:auto;
 }
 
-.LeftSide_container input[type=checkbox]{
+.LeftSide_container input[type=checkbox],.LeftSide_container input[type=radio]{
 padding:20px;
 height: 15px;
 width:15px;

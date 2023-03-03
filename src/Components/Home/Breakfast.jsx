@@ -46,14 +46,15 @@ export const Breakfast = () => {
 
 
 
-  let box = document.querySelector("#Bf1");
-
+  
   const buttonPressRev = () => {
+    let box = document.querySelector("#Bf1");
     let width = box.clientWidth;
     box.scrollLeft -= width;
   };
 
   const buttonPressNext = () => {
+      let box = document.querySelector("#Bf1");
     let width = box.clientWidth;
     box.scrollLeft += width;
   };
