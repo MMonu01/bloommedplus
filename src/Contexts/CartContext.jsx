@@ -20,12 +20,11 @@ let initialState = {
 
 function  CartContextProvider({children}){ 
 
-    const [userCart,setUserCart] = useState(loadData("Cart") || initialState)
+    const [userCart,setUserCart] = useState(loadData("Cart") || "")
 const [locationDetails,setLocationDetails] =  useState(loadData("locationDetails") || {})
 
 const [paymentDetails,setPaymentDetails] =  useState(loadData("paymentDetails") || {})
 
-console.log(paymentDetails)
 
 return(
     <CartContext.Provider value={{userCart,setUserCart,locationDetails,setLocationDetails,paymentDetails,setPaymentDetails}} >

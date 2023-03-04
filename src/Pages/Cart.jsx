@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGear,faChevronRight,faCircleInfo,faTrashCan,faCirclePlus,faCircleMinus } from '@fortawesome/free-solid-svg-icons'
 import { saveData } from '../Utils/accessLocalstorage'
 import Empty from '../Components/Cart/Empty'
-import { Navbar } from '../Components/Navbar'
 import { Link } from 'react-router-dom'
+import { Nav } from '../Components/Payment/Nav'
 
 const Cart = () => {
 
@@ -94,7 +94,7 @@ saveData("Cart",{...userCart,cart:x})
 
 
   return (<>
-    <Navbar/>
+    <Nav/>
     <>{userCart.cart===undefined ?<Empty/>:userCart.cart.length==0?<Empty/>:(
 
  
@@ -125,7 +125,6 @@ saveData("Cart",{...userCart,cart:x})
    
 
     </div>
-    <hr style={{border:"1px solid rbg(200,200,200)"}}/>
   </>
 ))}
 </div>

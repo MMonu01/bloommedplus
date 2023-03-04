@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import styles from "../Styles/address.module.css";
@@ -7,6 +7,10 @@ import { Flex, Box } from "@chakra-ui/react";
 import { Navbar } from "../Components/Navbar";
 import { CartContext } from "../Contexts/CartContext";
 import { saveData } from "../Utils/accessLocalstorage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { Nav } from "../Components/Payment/Nav";
+
 
 const initialState = {
   flat: "",
@@ -23,26 +27,64 @@ const initialState = {
 function Address() {
   const [formData, setFormData] = useState(initialState);
   const { setLocationDetails } = useContext(CartContext);
+  const [alertShow,setAlertShow] = React.useState(false)
+  const [allDetails,setAllDetails]  = React.useState("Nothing")
+
+  const navigate = useNavigate()
+ 
+
 
   const HandleFormData = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  // console.log(e.target.textContent,"this is radio")
 
   const HandleUse = (e) => {
     setFormData({ ...formData, product_used: e });
   };
 
+ 
+
+  
+  const HandleAlertShow = ()=>{
+    setAlertShow(true)
+    setTimeout(()=>{
+setAlertShow(false)
+    },3000)
+  }
+
+
+
   const SubmitData = () => {
-    setLocationDetails(formData);
-    saveData("locationDetails", formData);
-    setFormData(initialState);
+    if(formData.flat=="" || formData.landmark == "" || formData.pincode=="" || formData.locality=="" || formData.city == "" || formData.state == "" || formData.name=="" || formData.mobile=="" || formData.product_used =="" ){
+setAllDetails("Please fill all the credentials")
+HandleAlertShow()
+    }
+    else if(formData.pincode.length!==6){
+      setAllDetails("Pincode must contain only 6 digits")
+HandleAlertShow()
+    }
+    else if(formData.mobile.length!=10){
+setAllDetails("Mobile number must contain only 10 digits")
+HandleAlertShow()
+    }
+    else {
+      setLocationDetails(formData);
+      saveData("locationDetails", formData);
+      setFormData(initialState);
+      return navigate("/payment")
+    }
   };
+
+
 
   return (
     <>
-      <Navbar />
-      <div>
+      <div style={{display:alertShow===true?"flex":"none"}} className={styles.alert}>
+<p>{allDetails}</p>
+<FontAwesomeIcon className={styles.cross} onClick={()=>setAlertShow(false)} icon={faCircleXmark}/>
+    </div>
+      <Nav />
+      <div className={styles.container}>
         <h3 className={styles.please}>Please Enter Your Detailed Location</h3>
         <div className={styles.head}>
           <Form>
@@ -52,6 +94,8 @@ function Address() {
                 placeholder="Flat number,Building name,Street/Locality"
                 className={styles.flat}
                 name="flat"
+              
+              
                 value={formData.flat}
                 onChange={HandleFormData}
                 autoFocus="true"
@@ -61,7 +105,7 @@ function Address() {
             <Form.Group>
               <Form.Control
                 type="text"
-                placeholder="Landmark(optional)"
+                placeholder="Landmark"
                 className={styles.land}
                 name="landmark"
                 value={formData.landmark}
@@ -76,6 +120,7 @@ function Address() {
                 placeholder="Pincode"
                 className={styles.pin}
                 name="pincode"
+ 
                 value={formData.pincode}
                 onChange={HandleFormData}
                 autoFocus="true"
@@ -137,6 +182,7 @@ function Address() {
                 className={styles.mob}
                 name="mobile"
                 value={formData.mobile}
+                maxLength={10} 
                 onChange={HandleFormData}
                 autoFocus="true"
               />
@@ -201,6 +247,7 @@ function Address() {
               </Button>
 
               <Button
+            
                 variant="primary"
                 onClick={SubmitData}
                 className={styles.save}
@@ -210,16 +257,9 @@ function Address() {
                   color: "white",
                 }}
               >
-                <Link
-                  style={{
-                    background: "red",
-                    color: "white",
-                    textDecoration: "none",
-                  }}
-                  to="/payment"
-                >
+               
                   Save
-                </Link>
+                
               </Button>
             </Box>
           </Form>

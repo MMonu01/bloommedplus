@@ -1,8 +1,9 @@
-.container{width:90%;  margin:auto; margin-bottom: 100px; display: grid; grid-template-columns: 1.4fr 1fr; gap:30px;}
+.container{width:90%;  margin:auto; margin-bottom: 100px; margin-top: 30px; display: grid; grid-template-columns: 1.4fr 1fr; gap:30px;}
 /* .left,.right{height: 400px; background-color: white;} */
 .right{margin-right: 20px;}
 .list{background-color: white;}
-.child{background-color: white;padding:20px;}
+.child{background-color: white;padding:20px;border-bottom: 1px solid rgb(200,200,200);}
+.list .child:last-child{border:none;}
 .flx{display:flex; justify-content: space-between;background-color: white;}
 .trash{
     background-color: white;

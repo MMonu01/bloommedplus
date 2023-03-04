@@ -11,18 +11,18 @@ import {
   Radio,
   Image,
 } from "@chakra-ui/react";
-import styles from "../Styles/SingleProduct.module.css";
+import styles from "../../Styles/SingleProduct.module.css";
 import { FaRegStar } from "react-icons/fa";
 import { BsStarFill } from "react-icons/bs";
 import Form from "react-bootstrap/Form";
-import {CartContext} from '../Contexts/CartContext'
+import {CartContext} from '../../Contexts/CartContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import { saveData } from "../Utils/accessLocalstorage";
+import { saveData } from "../../Utils/accessLocalstorage";
 
 
 const ProductCard = ({ product, loader }) => {
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState(1);
 
 
   const {userCart,setUserCart} = React.useContext(CartContext)
@@ -34,48 +34,50 @@ const ProductCard = ({ product, loader }) => {
       // quantity: product.quantity,
       // price: product.price,
       // total_price: product.price*quantity,
+      quantity: +product.quantity || 1,total_price:(+product.quantity ||  1)*product.price,id:product.id, adminId: product.adminId,
+    name: product.name,
+    price: product.price,packs:product.packs,mrp:product.mrp,discount:product.discount,
       status: "placed"
     })
    
 
     const HandleBag = ()=>{
   
-  
       let arr = []
-  // ----------------------------------------------------
-  if(userCart.cart!==undefined){
-
-    let x = userCart.cart
+      if(userCart.cart!=undefined){
     
+        let x = userCart.cart
+        
+      let y = true
       let matid = []
-      for(let i=0; i<x.length; i++){
-  if(x[i].id!==bag.id){
-      arr.push(x[i])
-      matid.push(x[i].id)
-    }else{
-      let obj = []
-      for(let j=0; j<arr.length; j++){
-        if(bag.id!==arr[j].id){
-          obj.push(arr[j])
+         
+         
+          for(let j=0; j<x.length; j++){
+              if(bag.id==x[j].id){
+                x[j].quantity = Number(x[j].quantity)+ +bag.quantity
+                  arr.push(x[j])
+                  y = false
+              }else{
+                arr.push(x[j])
+              }
+          }
+    
+      
+      
+          if(y){
+            arr.push(bag)
+          }
         }
+        // ------------------------------------
+        
+        
+        setUserCart({...userCart,cart:arr})
+        saveData("Cart",{...userCart,cart:arr})
       }
-      arr = obj
-    }
-  }
-}
-  arr.push(bag)
-  // ------------------------------------
-  
-  
-  
-  
-  
-  
-  setUserCart({...userCart,cart:arr})
-  saveData("Cart",{...userCart,cart:arr})
-    }
+     
   
   const HandleQuantity = (val)=>{
+    // console.log(val.quantity.value)
     setBag({...bag,quantity:val.target.value,total_price:val.target.value*product.price,id:product.id, adminId: product.adminId,
     name: product.name,
     price: product.price,packs:product.packs,mrp:product.mrp,discount:product.discount})        
@@ -215,10 +217,10 @@ const ProductCard = ({ product, loader }) => {
               <Flex 
               className={styles.slct_txt}
               >
-                <select placeholder="Select option" onChange={(e)=>HandleQuantity(e)}  className={styles.slct}>
-                <option   className={styles.optn}>
+                <select placeholder="Select option"  onChange={HandleQuantity}  className={styles.slct}>
+                {/* <option   className={styles.optn}>
                     select
-                  </option> 
+                  </option>  */}
                   <option value={1} className={styles.optn}>
                     1 Quantity
                   </option>
@@ -306,7 +308,7 @@ const ProductCard = ({ product, loader }) => {
             >
               {loader === false
                 ? product.key_ingredients.map((el, i) => {
-                    return <li style={{ backgroundColor: "#ffffff" }}>{el}</li>;
+                    return <li key={el} style={{ backgroundColor: "#ffffff" }}>{el}</li>;
                   })
                 : null}
             </ul>
@@ -333,7 +335,7 @@ const ProductCard = ({ product, loader }) => {
             >
               {loader === false
                 ? product.safety_information.map((el, i) => {
-                    return <li style={{ backgroundColor: "#ffffff" }}>{el}</li>;
+                    return <li key={el} style={{ backgroundColor: "#ffffff" }}>{el}</li>;
                   })
                 : null}
             </ul>
