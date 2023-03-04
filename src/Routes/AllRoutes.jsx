@@ -21,7 +21,7 @@ const AllRoutes = () => {
       <Route path="/products/skincare/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout/address" element={<PrivateRoute><Address /> </PrivateRoute>} />
-      <Route path="/payment" element={<Payment />} />
+      <Route path="/payment" element={<PrivateRoute><Payment /></PrivateRoute> } />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

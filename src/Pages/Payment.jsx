@@ -1,21 +1,22 @@
 import React,{useContext,useState} from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import styles from '../Styles/Payment.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGear ,faChevronRight} from "@fortawesome/free-solid-svg-icons";
+import { faGear ,faChevronRight,faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 import {CartContext} from '../Contexts/CartContext'
-import  PinInput  from "../Components/Payment/PinInput"
+import  PinInput   from "../Components/Payment/PinInput"
 import { saveData,loadData } from "../Utils/accessLocalstorage";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import Button from 'react-bootstrap/Button';
-import {Alert} from '../Components/Payment/Alert'
 import { useDisclosure } from "@chakra-ui/react";
+import { Nav } from "../Components/Payment/Nav";
+import emailjs from '@emailjs/browser';
+
+
 
 const initialState = {
-cardNumber:"",
-month:"",
-year:"",
+  cardNumber:"",
+  date:"",
 securityCode:"",
 nameOnCard:""
 }
@@ -33,63 +34,45 @@ const PostOrder = (user)=>{
 
 
 const Payment = () => {
-
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
-
+  
+  
+  
   const {userCart,setUserCart,paymentDetails,setPaymentDetails,locationDetails}  = useContext(CartContext)
   const [faceValue,setFaceValue]  = React.useState(0)
   const [discount,setDiscount]  = React.useState(0)
   const [saving,setSaving]  = React.useState(0)
   const [payment,setPayment]  = React.useState(0)
-const [formData,setFormData] = React.useState(loadData(paymentDetails) || initialState)
+  
+  
+  const [formData,setFormData] = React.useState(loadData(paymentDetails) || initialState)
 const [inputLength] = useState(new Array(4).fill(null))
+
+const [alertShow,setAlertShow] = React.useState(false)
+const [allDetails,setAllDetails]  = React.useState("Nothing")
+
+
+const [showOtpBox,setShowOtpBox] = React.useState(false)
+const [otp,setOtp] = React.useState(8787)
+const [userOtp,setUserOtp] = React.useState("")
+const [text,setText] = React.useState("")
+const [showText,setShowText] = React.useState(false)
+const [paymentStatus,setPaymentStatus] = React.useState(false)
+const [orderStatus,setOrderStatus] = React.useState(false)
 
 
 const token = useSelector((store)=>store.authReducer.token)
 
-const InPostOrder = ()=>{
-  let pay = loadData("PaymentDetails") || {}
-PostOrder({...token,order:userCart.cart,locationDetails})
-console.log("Order is Placed")
-saveData("PaymentDetails",{})
-saveData("locationDetails",{})
-saveData("Cart",{})
-setUserCart({})
-}
 
-
-
-const HandleFormData = (e)=>{
-
-  setFormData({...formData,[e.target.name]:e.target.value})
-}
-// console.log(inputLength)
-const HandleCardNumber = (e)=>{
-  setFormData({...formData,cardNumber:inputLength.join("")})
-}
-
-
-const HandleSubmit = ()=>{
-setPaymentDetails(formData)
-saveData("PaymentDetails",formData)
-for(let i=0; i<4; i++){
-    inputLength[i] = null
-  
-}
-// setFormData(initialState)
-
-
-}
-
-
+const navigate = useNavigate()
 
 
 
 React.useEffect(()=>{
-  let m = userCart.cart
-  let x = 0
-  let d =0
+  if(userCart.cart){
+
+    let m = userCart.cart
+    let x = 0
+    let d =0
   let p =0
   let s =0
   if(m.length>0){
@@ -111,6 +94,7 @@ React.useEffect(()=>{
   setPayment(p)
   setSaving(s)
   // -------------
+}
   
   
   },[userCart])
@@ -118,6 +102,97 @@ React.useEffect(()=>{
 
 
 
+const InPostOrder = ()=>{
+if(paymentStatus){
+  let pay = loadData("PaymentDetails") || {}
+  PostOrder({...token,order:userCart.cart,locationDetails})
+  console.log("Order is Placed")
+  saveData("PaymentDetails",{})
+  saveData("locationDetails",{})
+  saveData("Cart",{})
+  setUserCart({})
+  setPaymentStatus(false)
+  setAllDetails("Order is Succesfully Placed")
+
+    HandlePlacedShow()
+  
+}
+}
+
+
+const HandlePlacedShow = ()=>{
+  setAllDetails("Order Placed Successfully")
+  setAlertShow(true)
+  setTimeout(()=>{
+setAlertShow(false)
+setOrderStatus((prev)=>!prev)
+  },3000)
+}
+
+if(orderStatus){
+  setOrderStatus((prev)=>!prev)
+  return navigate("/")
+}
+
+
+
+const HandleFormData = (e)=>{
+
+  setFormData({...formData,[e.target.name]:e.target.value})
+}
+
+
+
+const HandleSubmit = (e)=>{
+  e.preventDefault()
+ 
+  if(!formData.cardNumber){
+    setAllDetails("CardNumber must contain 16 digits")
+    HandleAlertShow()
+  }
+ else if(formData.cardNumber.length!==16){
+
+    setAllDetails("CardNumber must contain 16 digits")
+    HandleAlertShow()
+  }
+else if(formData.date =="" || formData.securityCode == "" || formData.nameOnCard == "" ){
+  setAllDetails("Please Fill all the credentials")
+  HandleAlertShow()
+}
+
+else if(formData.securityCode.length!=3){
+  setAllDetails("Security code must contain 3 digits")
+  HandleAlertShow()
+}
+else{
+  
+  setShowOtpBox(true)
+setFormData(initialState)
+
+emailjs.sendForm('service_9unm4o2', 'template_a3mjozf', e.target , '-dUL08qqfu1hOQkN5')
+  .then((result) => {
+    console.log(result.text);
+    
+
+    setShowOtpBox(true)
+  }, (error) => {
+      console.log(error.text);
+  });
+
+
+  
+}
+
+}
+
+
+const HandleAlertShow = ()=>{
+  setAlertShow(true)
+  setTimeout(()=>{
+setAlertShow(false)
+  },3000)
+ 
+}
 
 
 
@@ -132,20 +207,83 @@ React.useEffect(()=>{
 
 
 
+  const HandleOtpAlertShow = ()=>{
+    setShowText(true)
+setText("Incorrect OTP")
+    setTimeout(()=>{
+  setShowText(false)
+setText("")
+    },3000)
+  }
+  
 
 
+
+const HandleOtpSubmit = (e)=>{
+e.preventDefault()
+
+if(userOtp != otp){
+HandleOtpAlertShow()
+}
+else{
+  setPaymentStatus(true)
+ HandleCloseClick()
+ setAllDetails("Payment successfull")
+HandleAlertShow()
+}
+}
+
+
+const HandleCloseClick  = ()=>{
+  setShowOtpBox(false)
+  setText("")
+  setUserOtp("")
+  setShowText(false)
+}
+
+
+const HandleOtpChange = (e)=>{
+  setUserOtp(e.target.value)
+let value  = e.target.value + ""
+  if(value.length<4){
+    setText("OTP contains 4 digits")
+    setShowText(true)
+  }
+  else{
+    setText("")
+    setShowText(false)
+  }
+
+}
 
 
   return (
     <>
-  
-    <nav className={styles.navbar}>
-      <Link to="/" style={{background:"white"}}>
-<img src="../Images/bloommedplus.png"/>
-      </Link>
+<div className={styles.otpAlert} style={{display:showOtpBox?"block":"none"}}>
+  <div className={styles.otpInfo}>
+  <p>Please enter your OTP {"(sent to email)"} 
+  </p>
+  <FontAwesomeIcon onClick={HandleCloseClick} icon={faCircleXmark}/>
+  </div>
+    <p style={{fontSize:"12px",color:"red",marginTop:"5px"}}>{text}</p>
 
-<div>Need Help?</div>
-    </nav>
+  <form onSubmit={HandleOtpSubmit}>
+<input type="text" value={userOtp} onChange={HandleOtpChange} required className={styles.alertinput} maxLength={4} min={4}  placeholder="OTP.."/>
+<div>
+<button type="reset">Reset</button>
+<button type="submit">Submit</button>
+</div>
+  </form>
+</div>
+
+  <div style={{display:alertShow===true?"flex":"none",background:paymentStatus  ?"#e4f6e7":"rgb(255, 200, 200)"}} className={styles.alert}>
+
+<p style={{background:paymentStatus  ?"#e4f6e7":"rgb(255, 200, 200)"}}>{allDetails}</p>
+
+<FontAwesomeIcon style={{background:paymentStatus ?"#e4f6e7":"rgb(255, 200, 200)"}} className={styles.cross} onClick={()=>setAlertShow(false)} icon={faCircleXmark}/>
+    </div>
+
+   <Nav/>
       <div className={styles.container}>
 
 <div className={styles.left}>
@@ -157,6 +295,7 @@ React.useEffect(()=>{
   <img src="https://onemg.gumlet.io/marketing/ff180498-8b1b-4d29-8a21-dff2c383b6ae.jpg" alt="https://onemg.gumlet.io/marketing/ff180498-8b1b-4d29-8a21-dff2c383b6ae.jpg"/>
   <div>WALLETS</div>
 </div>
+
 
 <div>
 <img src="https://onemg.gumlet.io/image/upload/zf0de2srckrhx3fk8blm.png" alt="https://onemg.gumlet.io/image/upload/zf0de2srckrhx3fk8blm.png"/>
@@ -178,7 +317,6 @@ React.useEffect(()=>{
   <div>PAY ON DELIVERY</div>
 </div>
 </div>
-
 </div>
 
 
@@ -187,24 +325,41 @@ React.useEffect(()=>{
 <p className={styles.debit}>Credit & Debit Cards</p>
 <p className={styles.small}>Add New Card For Payment</p>
 <p className={styles.small} style={{marginTop:"30px"}}>Card Number</p>
-{/* <input type="text" className={styles.cardNumber} style={{boxShadow:"none",borderBottom:"2px solid rgb(201, 201, 201)"}} placeholder="XXXX XXXX XXXX XXXX"/> */}
+
+
+<form onSubmit={HandleSubmit} style={{background:"white"}}>
 
 <div className={styles.PinInput}>
-<PinInput inputLength={inputLength} HandleCardNumber={HandleCardNumber} length={4} className={styles.cardNumber}  maxChar={4}/>
+<input type="number" placeholder="XXXXXXXXXXXXXXXX" value={formData.cardNumber}  style={{outline:"none"}} onChange={HandleFormData} name="cardNumber"  className={styles.cardNumber}  />
 </div>
 <div className={styles.security}>
 <div>
   <p className={styles.small}>Expiry Date (MM/YY)</p>
-  <input type="text" className={styles.expiry} name="month" value={formData.month} onChange={HandleFormData} style={{boxShadow:"none",borderBottom:"2px solid rgb(201, 201, 201)"}} placeholder="MM"/><span style={{color:"rgb(162,162,162)",marginLeft:"5px",background:"white"}}>{'/'}</span>
+ 
+  <input type="month" className={styles.expiry} name="date" value={formData.date} onChange={HandleFormData} style={{boxShadow:"none",borderBottom:"2px solid rgb(201, 201, 201)",width:"125px"}} /><span style={{color:"rgb(162,162,162)",marginLeft:"5px",background:"white"}}>
+  </span>
   
-  <input type="text" className={styles.expiry}  name="year" value={formData.year} onChange={HandleFormData}  style={{boxShadow:"none",paddingRight:"0px",borderBottom:"2px solid rgb(201, 201, 201)"}} placeholder="YY"/>
 </div>
 
 <div>
   <p className={styles.small}>Security code</p>
-  <input type="text" className={styles.cvv}  name="securityCode" value={formData.securityCode} onChange={HandleFormData}  style={{boxShadow:"none",borderBottom:"2px solid rgb(201, 201, 201)"}}   placeholder="CVV"/>
+  <input type="number"   className={styles.cvv}  name="securityCode" value={formData.securityCode} onChange={HandleFormData}  style={{boxShadow:"none",borderBottom:"2px solid rgb(201, 201, 201)"}}   placeholder="CVV"/>
 </div>
 </div>
+
+
+{/* ------------------------------- hacking */}
+{
+  token && <>
+<input type="email" defaultValue={token.email} name="email" style={{display:"none"}}  />
+<input type="text" defaultValue={otp} name="randomOtp" style={{display:"none"}} />
+<input type="text" defaultValue={token.name} name="randomOtp" style={{display:"none"}} />
+  </>
+}
+
+
+{/* ------------------------------------------- */}
+
 
 <input type="text"  name="nameOnCard" value={formData.nameOnCard} onChange={HandleFormData}  className={styles.cardName} style={{boxShadow:"none",borderBottom:"2px solid rgb(201, 201, 201)"}} placeholder="Name on Card"/>
 
@@ -212,10 +367,12 @@ React.useEffect(()=>{
 <p className={styles.future}>Your card details will be saved securely for future transactions, based on the industry standards.</p>
 
 <div className={styles.makePayment}>
-<Alert onClick={HandleSubmit} head={"MAKE PAYMENT"} message={"Payment Successfull"}/>
-
-  {/* <button onClick={HandleSubmit}>MAKE PAYMENT</button> */}
+  <button type="submit" >MAKE PAYMENT</button>
 </div>
+
+</form>
+
+
 
 <p className={styles.domestic}>We Support domestic credit and debit cards of following brands</p>
 <div className={styles.brands}>
@@ -281,12 +438,14 @@ React.useEffect(()=>{
 </div>
 </div>
 <div className={styles.placeOrder}>
-  <Link to='/'>
 
-  <button onClick={InPostOrder} >
+{
+  paymentStatus && 
+  <button  onClick={InPostOrder} >
     PLACE ORDER
   </button>
-  </Link>
+}
+ 
 </div>
 
 </div>
