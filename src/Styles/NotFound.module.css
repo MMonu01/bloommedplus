@@ -1,4 +1,4 @@
-.container {width:300px; margin:auto;text-align: center;margin-top: 100px;}
+.container {width:300px; margin:auto;text-align: center;position: fixed; top:50%; left:50%; transform: translate(-50%,-50%);}
 .container img{height:160px;width:150px;}
 .container div{text-align: center;}
 .oop{font-size: 20px; font-weight: bold; text-align: center;}
@@ -10,8 +10,8 @@
     .container img{height:120px; width:110px;}
 }
 
-
 @media screen and (min-width:100px) and (max-width:300px){
     .container{width:200px;}
     .container img{height:120px; width:110px;}
 }
+

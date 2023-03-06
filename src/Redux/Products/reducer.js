@@ -33,15 +33,6 @@ switch(type){
         ...state,isCountLoading:false, isCountError:true
     }
 
-    case GET_SEARCH_PRODUCT_REQUEST: return {
-        ...state,isLoading:true
-    }
-    case GET_SEARCH_PRODUCT_SUCCESS: return {
-        ...state,isLoading:false, ProductsData:payload
-    }
-    case GET_SEARCH_PRODUCT_FAILURE: return {
-        ...state,isLoading:false,isError:true
-    }
 
     default: return state
 }
