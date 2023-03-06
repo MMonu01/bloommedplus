@@ -31,7 +31,8 @@
 <img width="958" alt="Login" src="https://user-images.githubusercontent.com/112859151/223062302-bf5a5f6c-35a1-4070-98cc-88b6941d208b.png">
 
 ## Product Page
-![Screenshot (1771)](https://user-images.githubusercontent.com/112859151/214101558-5074c229-eb67-4cbe-9285-d477ab8f75a9.png)
+<img width="938" alt="products" src="https://user-images.githubusercontent.com/112859151/223063443-0e72891f-8fb9-42ae-9211-f065aed4c1cc.png">
+
 
 ## Product Details Page
 <img width="928" alt="Single product" src="https://user-images.githubusercontent.com/112859151/214098876-a6d6c187-d635-4f1c-8a67-6cebdf1ea89b.png">
