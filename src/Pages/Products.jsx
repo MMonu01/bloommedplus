@@ -242,7 +242,7 @@ const HandleSort = (e)=>{
 
 {
     loader?null :
-<Pagination HandlePage={HandlePage} limit={limit} page={page}/>
+<Pagination HandlePage={HandlePage} setPage={setPage} limit={limit} page={page}/>
 }
 
 </div>

@@ -4,7 +4,7 @@ import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const Pagination = ({page,limit,HandlePage})=>{
+const Pagination = ({page,limit,HandlePage,setPage})=>{
 
 
 const totalItem = useSelector((store)=>  store.productReducer.totalCount) || 30
@@ -29,8 +29,8 @@ return (
   }
 
    
-{arr.map((el)=>{
-    return <button style={{background:el===page?"red":"white",color:el===page?"white":"black"}} key={el}>{el}</button>
+{arr.map((el,index)=>{
+    return <button onClick={()=>setPage(index+1)} style={{background:el===page?"red":"white",color:el===page?"white":"black"}} key={el}>{el}</button>
 })}
 
 
