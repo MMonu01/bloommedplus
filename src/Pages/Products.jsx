@@ -1,6 +1,5 @@
 import React, { useEffect, useState,useContext } from "react"
 import { useSearchParams } from "react-router-dom"
-import axios from "axios"
 import LeftSide from "../Components/products/LeftSide"
 import styles from '../Styles/Products/products.module.css'
 import RightSide from "../Components/products/RightSide"
@@ -16,7 +15,6 @@ import { HalfFilter } from "../Components/products/HalfFilter"
 
 
 const Products = ()=>{
-// const [data,setData] = useState([])
 
 const [searchParams,setSearchParams] = useSearchParams()
 const [totalItem,setTotalItem] = useState(12)
@@ -61,11 +59,12 @@ const HandlePage = (val)=>{
     setPage((prev)=>prev+val)
 }
 
-// const loader = useSelector((store)=>store.productReducer.isLoading)
 
 const {loader,CountLoader} = useSelector((store)=>{
     return {loader:store.productReducer.isLoading,CountLoader:store.productReducer.isCountLoading}
 })
+
+
     
 
 
@@ -203,8 +202,7 @@ else if(discount =="30% and above"){
     gte = 30
     lte = 100
 }
-// price__gte=10&price__lte=20
-// payload.discount={gte,lte}
+
 payload.discount_gte=gte
 payload.discount_lte=lte
 
@@ -227,9 +225,13 @@ const HandleSort = (e)=>{
         <Navbar/>
         <main>
 <div className={styles.container}>
+    {
+        loader?null:
+
 <div >
     <LeftSide brand={brand} productForm={productForm} setProductForm={setProductForm} setBrand={setBrand} setProductTag={setProductTag} productTag={productTag} uses={uses} setUses={setUses} age={age} setAge = {setAge} gender={gender} setGender={setGender} discount={discount} setDiscount={setDiscount}  />
 </div>
+}
 <div>
 
 {
@@ -239,7 +241,7 @@ const HandleSort = (e)=>{
 }
 
 {
-    CountLoader?null :
+    loader?null :
 <Pagination HandlePage={HandlePage} limit={limit} page={page}/>
 }
 

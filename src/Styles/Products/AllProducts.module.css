@@ -19,7 +19,6 @@
 .rating{display: flex; gap:6px; align-items: center;}
 .rating_count{font-size: 12.5px;color:rgb(151, 151, 151);}
 .rupee{font-size: 11px; color:rgb(107, 106, 106);}
-/* .down{bottom:0px;} */
 
 .discount{display: flex; gap:3px; font-size: 13px;margin:14px 0px 2px 0px;;}
 

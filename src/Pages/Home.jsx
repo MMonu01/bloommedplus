@@ -14,7 +14,6 @@ export const Home = ()=>{
       return (
         <>  
          <Navbar/>
-           {/* <h1>Homepage</h1> */}
          <main>
            <div > 
             <Banners/>

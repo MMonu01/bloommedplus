@@ -8,7 +8,6 @@ function loadData(key) {
     }
   }
   
-  //to save some data in the local storage
   function saveData(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
   }

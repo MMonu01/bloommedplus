@@ -1,6 +1,6 @@
 import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { SearchBar } from "./SearchBar";
 import {
   faCartShopping,
   faLocationDot,
@@ -14,10 +14,8 @@ import { Input, InputRightElement, Button, InputGroup } from "@chakra-ui/react";
 import Sidebar from "./Sidebar";
 import React, { useState, useContext } from "react";
 import { CartContext } from "../Contexts/CartContext";
-import Signup from "./Sidebar_signup/Signup"
-import Login from './Sidebar_signup/Login'
-// import Signup from "../Pages/Signup";
-// import Login from "../Pages/Login";
+
+
 import { useDispatch, useSelector } from "react-redux";
 import { LogoutSuccessAction } from "../Redux/Authentication/action";
 import { saveData } from "../Utils/accessLocalstorage";
@@ -25,17 +23,11 @@ import { saveData } from "../Utils/accessLocalstorage";
 
 
 export const Navbar = () => {
-  const [show, setShow] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const handleLoginClose = () => setShowLogin(false);
+
   const handleLoginShow = () => setShowLogin(true);
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const All = searchParams.get("sort");
-  // const getSearched = searchParams.get("q")
-  // const [search,setSearch] = useState(getSearched || "")
+
   const { userCart } = useContext(CartContext);
   const [cartItem, setCartItem] = useState(0);
 
@@ -60,17 +52,6 @@ saveData("locationDetails",{})
 
 
 
-  const HandleSearchKey = (e) => {
-    if (e.keyCode == 13) {
-      // return <Navigate to='/products'/>
-      // console.log("this is enter button")
-    }
-    // console.log(e)
-  };
-
-  const HandleSearchChange = (e) => {
-    // setSearch(e.target.value);
-  };
 
   return (
     <>
@@ -160,21 +141,13 @@ saveData("locationDetails",{})
               </div>
 
               <div className={styles.Search}>
-                <input
-                style={{boxShadow:"none"}}
-                  className={styles.input}
-                  onKeyUp={HandleSearchKey}
-                  onChange={HandleSearchChange}
-                  // value={search}
-                  type="text"
-                  placeholder="Search for Medicines and Health Products"
-                />
-                <Link to="/products/skincare">
+<SearchBar/>
+               
                   <FontAwesomeIcon
                     className={styles.glass}
                     icon={faMagnifyingGlass}
                   />
-                </Link>
+               
               </div>
             </div>
 
@@ -295,21 +268,8 @@ saveData("locationDetails",{})
                   borderRadius: "5px",
                 }}
               >
-                <Input
-                  style={{
-                    background: "white",
-                    padding: "10px 20px",
-                    marginLeft: "5px",
-                    outline: "none",
-                    border: "none",
-                  }}
-                  pr="4.5rem"
-                  type="text"
-                  onKeyUp={HandleSearchKey}
-                  onChange={HandleSearchChange}
-                  // value={search}
-                  placeholder="Search for Medicines and Health Products"
-                />
+               
+                <SearchBar/>
                 <InputRightElement
                   style={{
                     background: "white",
@@ -317,7 +277,6 @@ saveData("locationDetails",{})
                     marginRight: "15px",
                   }}
                 >
-                  <Link to="/products/skincare" style={{ background: "white" }}>
                     <FontAwesomeIcon
                       style={{
                         color: "black",
@@ -330,19 +289,13 @@ saveData("locationDetails",{})
                       }}
                       icon={faMagnifyingGlass}
                     />
-                  </Link>
                 </InputRightElement>
               </InputGroup>
             </div>
           </div>
         </div>
       </nav>
-      {/* <Signup handleShow={handleShow} handleClose={handleClose} show={show} />
-      <Login
-        handleLoginShow={handleLoginShow}
-        handleLoginClose={handleLoginClose}
-        showLogin={showLogin} */}
-      {/* /> */}
+  
     </>
   );
 };

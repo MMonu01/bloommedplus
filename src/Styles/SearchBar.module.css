@@ -1,0 +1,2 @@
+.Box{max-height:150px; border: 1px solid black; overflow: auto; width:300px;margin: auto;margin-top:10px; }
+.item{height:30px; cursor: pointer; text-align: left; padding-left: 10px;}

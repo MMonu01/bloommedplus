@@ -1,4 +1,4 @@
-import styles from '../../Styles/Login.module.css'
+import styles from '../../Styles/Signup.module.css'
 import React from 'react'
 import { Link,useNavigate,Navigate,useLocation } from 'react-router-dom'
 
@@ -62,7 +62,6 @@ else{
   for(let i=0; i<res.length; i++){
   if((res[i].email===formData.email && res[i].password===formData.password)){
     x = true
-    // loginUser(res[i])
     console.log("loginDataMatched")
     dispatch(AuthSuccessAction(res[i]))
   }
@@ -130,17 +129,13 @@ setFormData({
 </form>
 
 <div className={styles.have}>
-Need a Bloommedplus account? <Link to='/signup'>Create an account</Link>
+Need a Bloommedplus account? <Link className={styles.navigateButton} to='/signup'>Create an account</Link>
 </div>
 </div>
 
 
 
 
-<div className={styles.sideImage}>
-  <img src='../../../Images/registration.png'/>
-
-</div>
 
 
     </div>

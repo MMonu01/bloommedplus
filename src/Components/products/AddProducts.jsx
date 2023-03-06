@@ -71,11 +71,7 @@ const AddProducts = ({el})=>{
   saveData("Cart",{...userCart,cart:arr})
     }
   
-//   const HandleQuantity = ()=>{
-//     setBag({...bag,quantity:1,total_price:data.price,id:data.id, adminId: data.adminId,
-//     name: data.name,
-//     price: data.price,packs:data.packs,mrp:data.mrp,discount:data.discount})        
-//   }
+
   
 
 

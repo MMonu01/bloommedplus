@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import {Navbar} from '../Components/Navbar'
 import { Footer } from "../Components/Footer";
 import { GetSingleData } from "../Redux/SingleProduct/action";
+import styles from '../Styles/SingleProduct.module.css'
 
 
 const SingleProducts = () => {
@@ -17,12 +18,15 @@ const {loader,product} = useSelector((store)=>{
   return {loader:store.singleProductReducer.isLoading,product:store.singleProductReducer.singleProductData}
 }) 
 
+
 const dispatch = useDispatch()
   useEffect(() => {
   
     dispatch(GetSingleData(id))
   
   }, [id]);
+
+
 
   return (<>
     <Navbar/>
@@ -31,7 +35,7 @@ const dispatch = useDispatch()
       <div style={{marginTop:"-50px"}}>
       <ProductCard loader={loader}  product={product} />
     </div>
-    : null
+    : <div className={styles.loader}></div>
     }
     <Footer/>
   </>

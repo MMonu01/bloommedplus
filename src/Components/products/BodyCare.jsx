@@ -19,13 +19,11 @@ const [loading,setLoading] = useState(false)
 React.useEffect(()=>{
 InGetData()
 },[])
-// console.log(data,"oneojos")
 const InGetData = ()=>{
     setLoading(true)
     GetData()
     .then((res)=>{
         setData(()=>res.data)
-    // console.log(res.data)
         setLoading(false)
     })
     .catch((err)=>{
@@ -33,8 +31,7 @@ const InGetData = ()=>{
         setLoading(false)
     })
 }
-// console.log(data)
-// console.log("box",box)
+
 const buttonPressRev = ()=>{
     let box = document.querySelector(".three")
 let width =  box.clientWidth

@@ -35,8 +35,8 @@
 .nm,
 .mob {
   display: flex;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
-  
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  outline:none;
   border-radius: none;
   border: none;
   margin: auto;
@@ -45,6 +45,12 @@
   width: 80%;
   height: 30px;
   padding-left: 2%;
+}
+
+input.mob::-webkit-outer-spin-button,
+input.mob::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .hoo {
@@ -88,7 +94,8 @@ margin-top: 20px;
 
 .alert{
   position:fixed; top:20px; left:50%; transform: translate(-50%);
-  width:350px; background-color: rgb(255, 200, 200);
+  max-width:350px; background-color: rgb(255, 200, 200);
+  width:80%;
   display: flex;  padding: 15px 20px;
   justify-content: space-between; flex-wrap: none; border-radius: 10px; cursor: pointer;
 }

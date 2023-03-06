@@ -93,7 +93,7 @@ input.cvv::-webkit-inner-spin-button {
 
 .alert{
     position:fixed; top:20px; left:50%; transform: translate(-50%);
-    width:350px; background-color: rgb(255, 200, 200);
+    max-width:350px; width:80%; background-color: rgb(255, 200, 200);
     display: flex;  padding: 15px 20px;
     justify-content: space-between; flex-wrap: none; border-radius: 10px; cursor: pointer;
 }

@@ -8,15 +8,9 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { Spinner } from '@chakra-ui/react'
+import { PopularCategory as GetData } from "./api";
 
 
-
-const GetData = () => {
-  return axios({
-    method: "get",
-    baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
-  });
-};
 
 
 

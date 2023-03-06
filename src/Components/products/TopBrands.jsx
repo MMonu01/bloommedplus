@@ -22,7 +22,6 @@ InGetData()
 },[])
 
 
-// console.log(data,"oneojos")
 const InGetData = ()=>{
     setLoading(true)
     GetData()

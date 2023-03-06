@@ -88,33 +88,7 @@ setDiscount(e.target.value)
         <div className={styles.LeftSide_container} style={{paddingLeft:"0px",marginLeft:"0px"}}>
 
 <div >
-{/* <h2 className={styles.header} style={{padding:"0 10px"}}>CATEGORIES</h2>
-<div style={{fontSize:"14px",padding:"0 10px"}} >PERSONAL CARE</div>
 
-<div className={styles.category} style={{marginLeft:"15px",marginTop:"7px",padding:"0 10px"}}>
-
-<div><span style={{color:'red'}}>Skin Care</span> <span><FontAwesomeIcon icon={faMinus}/></span></div>
-
-<div className={styles.skin_care}>
-<div>Body Lotions</div>
-<div>Mosquito Redivellents</div>
-<div>Lip Balm</div>
-<div>Acne Care</div>
-<div>Bath Essentials</div>
-<div>Facewash</div>
-<div>Sanitizers & Handwash</div>
-<div>Sunscreen</div>
-</div>
-
-<div><span>Sexual Wellness</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-<div><span>Baby Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-<div><span>Hair Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-<div><span>Elderly Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-<div><span>Women Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-<div><span>Men Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-<div><span>Oral Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-<div><span>Pet Care</span> <span><FontAwesomeIcon icon={faPlus}/></span></div>
-</div> */}
 
 
 
