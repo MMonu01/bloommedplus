@@ -14,7 +14,7 @@
 .box div,.box span{background-color: white;}
 
 .image{text-align: center;padding:"10px";margin-bottom:25px;}
-.name{font-size: 14px;}
+.name{font-size: 14px; background-color: white; }
 .packs{font-size: 13px; color: rgb(108, 107, 107); margin-top: 5px; margin-bottom: 10px;}
 .rating{display: flex; gap:6px; align-items: center;}
 .rating_count{font-size: 12.5px;color:rgb(151, 151, 151);}
@@ -74,6 +74,17 @@
     100% { transform: rotate(360deg); }
   }
 
+
+  .alert{
+    z-index: 200000;
+    position:fixed; top:20px; left:50%; transform: translate(-50%);
+    max-width:350px; background-color: rgb(200, 255, 221);
+    width:80%;
+    display: flex;  padding: 15px 20px;
+    justify-content: space-between; flex-wrap: none; border-radius: 10px; cursor: pointer;
+  }
+  .alert p,.cross{background-color:rgb(200, 255, 221);color:black;}
+  .cross{font-size: 18px;}
 
 
 

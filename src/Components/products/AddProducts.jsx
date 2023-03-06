@@ -2,10 +2,10 @@ import React,{useContext,useState} from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../../Styles/Products/AllProducts.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faStar,faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons'
+import { faStar,faIndianRupeeSign,faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { CartContext } from '../../Contexts/CartContext'
 import { saveData } from '../../Utils/accessLocalstorage'
-
+import { Text } from '@chakra-ui/react'
 
 
 
@@ -15,7 +15,8 @@ const AddProducts = ({el})=>{
 
     
   const {userCart,setUserCart} = React.useContext(CartContext)
-  
+  const [alertShow,setAlertShow] = React.useState(false)
+  const [allDetails,setAllDetails]  = React.useState("Nothing")
    
    
    
@@ -58,7 +59,13 @@ const AddProducts = ({el})=>{
   
       if(y){
         arr.push(bag)
+        setAllDetails("Added to Cart")
+       
       }
+      else{
+        setAllDetails("Updated to Cart")
+      }
+      HandleAlertShow()
       // ------------------------------------
     }
   
@@ -72,20 +79,13 @@ const AddProducts = ({el})=>{
     }
   
 
-  
 
-
-
-
-
-
-
-
-
-
-
-
-
+    const HandleAlertShow = ()=>{
+      setAlertShow(true)
+      setTimeout(()=>{
+  setAlertShow(false)
+      },2000)
+    }
 
 
 
@@ -93,6 +93,13 @@ const AddProducts = ({el})=>{
 return (
 
 <>
+
+
+<div style={{display:alertShow===true?"flex":"none"}} className={styles.alert}>
+<p>{allDetails}</p>
+<FontAwesomeIcon className={styles.cross} onClick={()=>setAlertShow(false)} icon={faCircleXmark}/>
+    </div>
+
     <div key={el.id} className={styles.box}>
 <div className={styles.image}>
 <Link to={`/products/skincare/${el.id}`} style={{background:"white"}}>
@@ -103,7 +110,7 @@ return (
 {/* ---------------- */}
 
 <div>
-<div className={styles.name}>{el.name}</div>
+<Text noOfLines={1}  className={styles.name}>{el.name}</Text>
 <div className={styles.packs}>{el.packs}</div>
 <div className={styles.rating}><span style={{background:"#1aab2a",color:"white",padding:"2px 5px",display:"flex",justifyContent:"center",width:"32px",alignItems:"center",fontSize:"12px"}}>{el.rating} <FontAwesomeIcon style={{background:"#1aab2a",color:"white",marginLeft:"3px",fontSize:"10px"}} icon={faStar}/></span> <span className={styles.rating_count}>{el.rating_count} rating</span></div>
 

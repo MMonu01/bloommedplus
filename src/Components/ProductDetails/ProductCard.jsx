@@ -17,7 +17,7 @@ import { BsStarFill } from "react-icons/bs";
 import Form from "react-bootstrap/Form";
 import {CartContext} from '../../Contexts/CartContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronRight,faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight,faChevronLeft,faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { saveData } from "../../Utils/accessLocalstorage";
 
 
@@ -27,6 +27,8 @@ const ProductCard = ({ product, loader }) => {
 
   const {userCart,setUserCart} = React.useContext(CartContext)
   const [quantity,setQuantity] = useState(1)
+  const [alertShow,setAlertShow] = React.useState(false)
+  const [allDetails,setAllDetails]  = React.useState("Nothing")
 
   const [bag,setBag] = useState( {
      
@@ -62,7 +64,13 @@ const ProductCard = ({ product, loader }) => {
       
           if(y){
             arr.push(bag)
+            setAllDetails("Added to Cart")
+           
           }
+          else{
+            setAllDetails("Updated to Cart")
+          }
+          HandleAlertShow()
         }
         // ------------------------------------
         
@@ -85,11 +93,26 @@ const ProductCard = ({ product, loader }) => {
 
 
 
+  const HandleAlertShow = ()=>{
+    setAlertShow(true)
+    setTimeout(()=>{
+setAlertShow(false)
+    },2000)
+  }
 
 
 
 
   return (
+    <>
+
+<div style={{display:alertShow===true?"flex":"none"}} className={styles.alert}>
+<p>{allDetails}</p>
+<FontAwesomeIcon className={styles.cross} onClick={()=>setAlertShow(false)} icon={faCircleXmark}/>
+    </div>
+
+
+
     <div key={product.id} className={styles.sp}>
       <div className={styles.container}>
         <p className={styles.head}><span style={{color:"#fd8e91",background:"white"}}>Home</span> {'>'} <Link style={{background:'white',border:"none",color:"#fd8e91",textDecoration:"none"}} to="/products/skincare">Skin Care</Link> {'>'} {product.name}</p>
@@ -157,7 +180,7 @@ const ProductCard = ({ product, loader }) => {
                   <div
                     key={`default-${type}`}
                     style={{ backgroundColor: "#ffffff" }}
-                  >
+                    >
                     <div
                     className={styles.flx}
                     >
@@ -254,14 +277,14 @@ const ProductCard = ({ product, loader }) => {
                 alt="med"
                 style={{width:"100%",borderRadius:"7px"}}
                 className={styles.med}
-              />
+                />
             </Box>
 
             <img
               src="../../Images/Additional_offers.jpg"
               alt="add"
               className={styles.additional_offers}
-            />
+              />
           </div>
         </div>
       </div>
@@ -316,7 +339,7 @@ const ProductCard = ({ product, loader }) => {
                     style={{ backgroundColor: "#ffffff" }}
                     >{el}</li>;
                   })
-                : null}
+                  : null}
             </ul>
 
             <h4 
@@ -327,9 +350,9 @@ const ProductCard = ({ product, loader }) => {
             >
               {loader === false
                 ? product.safety_information.map((el, i) => {
-                    return <li key={el} style={{ backgroundColor: "#ffffff" }}>{el}</li>;
+                  return <li key={el} style={{ backgroundColor: "#ffffff" }}>{el}</li>;
                   })
-                : null}
+                  : null}
             </ul>
             <div 
             className={styles.rtngRev}
@@ -401,6 +424,7 @@ const ProductCard = ({ product, loader }) => {
         </div>
       </div>
     </div>
+                  </>
   );
 };
 
