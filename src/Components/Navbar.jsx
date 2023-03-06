@@ -229,15 +229,18 @@ saveData("locationDetails",{})
             <div style={{ background: "white" }}>
               <Link
                 to="/cart"
-                style={{ background: "white", textDecoration: "none" }}
+                style={{ background: "white", textDecoration: "none", }}
               >
                 <FontAwesomeIcon
                   icon={faCartShopping}
+                  
                   style={{
                     background: "white",
                     textDecoration: "none",
                     color: "black",
+                   
                   }}
+                  
                 />
                 <sup style={{ background: "white" }}>{cartItem}</sup>
               </Link>
