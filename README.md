@@ -12,7 +12,7 @@
    7. Redux
 ## Features
    1. Signup,Login,Logout
-   2. Sorting
+   2. Sorting,Filtering
    3. Search engine
    4. Pagination
    5. Add to cart,Increase and Decrease quantity,Remove from cart
