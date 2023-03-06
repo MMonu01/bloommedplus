@@ -110,7 +110,10 @@ const Close =()=>{
                     </td>
                     <td>
                       {" "}
+                      <Link className={styles.buy} to="/products/skincare">
+
                       <span>Buy medicines</span>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
@@ -119,7 +122,9 @@ const Close =()=>{
                     </td>
                     <td>
                       {" "}
+                      <Link className={styles.buy} to="/products/skincare">
                       <span>Buy health products</span>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
@@ -129,7 +134,9 @@ const Close =()=>{
                     </td>
                     <td>
                       {" "}
+                      <Link className={styles.buy} to="/products/skincare">
                       <span>Book lab tests</span>
+                      </Link>
                     </td>
                   </tr>
                   <tr>
@@ -212,15 +219,8 @@ const Close =()=>{
                       <span>All medicines</span>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <FontAwesomeIcon className={styles.listIcon} icon={faPrescriptionBottle} />
-                    </td>
-                    <td>
-                      {" "}
-                      <span>All diseases</span>
-                    </td>
-                  </tr>
+                  
+                
                   
                 </tbody>
               </div>

@@ -46,10 +46,13 @@ display:flex; flex-direction: column; gap:5px; margin-left:20px;
 
 .tbody span{margin-left: 20px;}
 .tbody td{padding-bottom:5px; padding-top:5px;cursor:pointer}
-.tbody td:nth-child(2):hover {color:#ff6f61}
+.buy{text-decoration: none;color:black;}
+.tbody td:nth-child(2):hover,.buy:hover {color:#ff6f61}
 .box{display:grid; grid-template-columns: 250px 1fr;}
 .close{margin-top: 20px; display: flex; justify-content: space-between; background-color: white; align-items: center; margin-left: 15px; margin-right: 20px;}
 .close img{height:50px; width:120px;}
+
+
 
 
 @media screen and (min-width:100px) and (max-width:500px){
