@@ -21,13 +21,14 @@
    8. Place order
    
 ## Home Page
-![Screenshot (1767)](https://user-images.githubusercontent.com/112859151/214073853-4bfa92ee-94b4-4588-895a-d232de0c9874.png)
+<img width="944" alt="Home" src="https://user-images.githubusercontent.com/112859151/223062059-fa657deb-a2df-48e1-a745-7b21addc3c53.png">
+
 
 ## Signup Page
-<img width="947" alt="signup" src="https://user-images.githubusercontent.com/112859151/214101419-3cd143e5-ad05-4df8-999d-7da05bb954ed.png">
+<img width="953" alt="signup" src="https://user-images.githubusercontent.com/112859151/223062214-7e380f14-0382-4256-8108-7bab160e4fab.png">
 
 ## Login Page
-![loginnew](https://user-images.githubusercontent.com/107982334/214096401-d77e6324-b03f-4b5b-99d3-30d13d75e2c8.jpg)
+<img width="958" alt="Login" src="https://user-images.githubusercontent.com/112859151/223062302-bf5a5f6c-35a1-4070-98cc-88b6941d208b.png">
 
 ## Product Page
 ![Screenshot (1771)](https://user-images.githubusercontent.com/112859151/214101558-5074c229-eb67-4cbe-9285-d477ab8f75a9.png)
