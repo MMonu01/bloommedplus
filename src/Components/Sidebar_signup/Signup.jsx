@@ -10,7 +10,6 @@ const Signup = ()=>{
 
   const isAuth  = useSelector((store)=>store.authReducer.isAuth)
 const navigate = useNavigate()
-const location = useLocation()
 const [show, setShow] = React.useState(false)
   const handleClick = () => setShow(!show)
 
@@ -38,18 +37,15 @@ const [allDetails,setAllDetails]  = React.useState("Nothing")
     
       res = await res.json()
     if(res.name!=undefined){
-      // console.log("signup Successful")
       setAllDetails("signup Successfull")
       HandleAlertShow(true)
       dispatch(SignupSuccessAction(res))
-      // loginUser(res)
     }
     
     }
     
     catch(err){
     console.log(err)
-    // console.log("NODAjjdss")
     }
     
   }  
@@ -65,7 +61,6 @@ setAlertShow(false)
 
 
   const HandleSignup = async(e)=>{
-    // console.log("Nothing is hapenig")
 e.preventDefault()
 // -------------------------------------------------------
 let status = true
@@ -96,7 +91,6 @@ dispatch(SignupRequestAction())
     status = false
     dispatch(SignupFailureAction())
     setAllDetails("Username is taken")
-    // setAlertShow(true)
     HandleAlertShow()
     break
   }
@@ -105,7 +99,6 @@ dispatch(SignupRequestAction())
     status = false
     dispatch(SignupFailureAction())
     setAllDetails("Email is already registered")
-    // setAlertShow(true)
     HandleAlertShow()
     break
   }
@@ -115,14 +108,12 @@ dispatch(SignupRequestAction())
     status = false
     dispatch(SignupFailureAction())
     setAllDetails("Mobile Number is already registered")
-    // setAlertShow(true)
     HandleAlertShow()
     break
   }
 }
 
 if(status){
-  // setAlertShow(false)
   InSignUp()
     
   setFormData({
@@ -160,7 +151,7 @@ setFormData({...formData,[e.target.name]:e.target.value})
     <div className={styles.container}>
 
 <div className={styles.formContainer}>
-  <h1>Get started with a free account</h1>
+  <h1>Get started!</h1>
 <form>
 <input  type="text" name="name" value={formData.name} onChange={HandleFormData} style={{boxShadow:"none"}} placeholder="Enter your full name"/>
 
@@ -172,11 +163,11 @@ setFormData({...formData,[e.target.name]:e.target.value})
 <input type="email" name="email" value={formData.email} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Enter your E-mail"/>
 
 
-<input type="number" name="mobile" value={formData.mobile} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Enter your mobile number"/>
+<input type="number" className={styles.remove} name="mobile" value={formData.mobile} onChange={HandleFormData}  style={{boxShadow:"none"}} placeholder="Enter your mobile number"/>
 
 <div  className={styles.passwordContainer}>
 
-<input  type={show ? 'text' : 'password'}name="password" value={formData.password} onChange={HandleFormData} style={{boxShadow:"none",width:"100%"}} placeholder="Enter password"/>
+<input  type={show ? 'text' : 'password'}  name="password" className={styles.password} value={formData.password} onChange={HandleFormData} style={{boxShadow:"none",width:"100%"}} placeholder="Enter password"/>
 <div className={styles.eyeButton}  onClick={handleClick}>  {show ? 
 <FontAwesomeIcon className={styles.eye}  icon={faEye}/>
 : <FontAwesomeIcon className={styles.eye} icon={faEyeSlash}/>
@@ -191,17 +182,12 @@ setFormData({...formData,[e.target.name]:e.target.value})
 </form>
 
 <div className={styles.have}>
-Already have a Bloommedplus account? <Link to='/login'>Login</Link>
+Already have a Bloommedplus account? <Link  className={styles.navigateButton} to='/login'>Login</Link>
 </div>
 </div>
 
 
 
-
-<div className={styles.sideImage}>
-  <img src='../../../Images/registration.png'/>
-
-</div>
 
 
     </div>

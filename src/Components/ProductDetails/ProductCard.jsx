@@ -27,13 +27,9 @@ const ProductCard = ({ product, loader }) => {
 
   const {userCart,setUserCart} = React.useContext(CartContext)
   const [quantity,setQuantity] = useState(1)
+
   const [bag,setBag] = useState( {
-      // id: product.id,
-      // adminId: product.adminId,
-      // name: product.name,
-      // quantity: product.quantity,
-      // price: product.price,
-      // total_price: product.price*quantity,
+     
       quantity: +product.quantity || 1,total_price:(+product.quantity ||  1)*product.price,id:product.id, adminId: product.adminId,
     name: product.name,
     price: product.price,packs:product.packs,mrp:product.mrp,discount:product.discount,
@@ -70,14 +66,15 @@ const ProductCard = ({ product, loader }) => {
         }
         // ------------------------------------
         
-        
         setUserCart({...userCart,cart:arr})
         saveData("Cart",{...userCart,cart:arr})
       }
      
+
+
+
   
   const HandleQuantity = (val)=>{
-    // console.log(val.quantity.value)
     setBag({...bag,quantity:val.target.value,total_price:val.target.value*product.price,id:product.id, adminId: product.adminId,
     name: product.name,
     price: product.price,packs:product.packs,mrp:product.mrp,discount:product.discount})        
@@ -115,8 +112,7 @@ const ProductCard = ({ product, loader }) => {
                   style={{
                     backgroundColor: "#1aab2a",
                     color: "#ffffff",
-                    // marginLeft: "10",
-                    // height:"30px"
+                   
                     marginRight:"5px"
                   }}
                 >
@@ -156,9 +152,7 @@ const ProductCard = ({ product, loader }) => {
                 <Text >509 people bought this recently</Text>
               </div>
 
-              <Form 
-              // className={styles.mrp_prc_dscnt}
-              >
+              <Form >
                 {["radio"].map((type) => (
                   <div
                     key={`default-${type}`}
@@ -218,9 +212,7 @@ const ProductCard = ({ product, loader }) => {
               className={styles.slct_txt}
               >
                 <select placeholder="Select option"  onChange={HandleQuantity}  className={styles.slct}>
-                {/* <option   className={styles.optn}>
-                    select
-                  </option>  */}
+               
                   <option value={1} className={styles.optn}>
                     1 Quantity
                   </option>

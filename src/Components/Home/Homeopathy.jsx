@@ -7,14 +7,8 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { Homeopathy as GetData } from "./api";
 
-
-const GetData = () => {
-  return axios({
-    method: "get",
-    baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
-  });
-};
 
 
 

@@ -4,7 +4,6 @@ import styles from '../Styles/Payment.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGear ,faChevronRight,faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 import {CartContext} from '../Contexts/CartContext'
-import  PinInput   from "../Components/Payment/PinInput"
 import { saveData,loadData } from "../Utils/accessLocalstorage";
 import axios from "axios";
 import { useSelector } from "react-redux";

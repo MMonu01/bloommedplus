@@ -1,6 +1,5 @@
 
 .LeftSide_container{
-    /* width:190px; */
     background-color: white;
     padding-bottom:20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -23,7 +22,6 @@
 
 .head>div>div{
     display: flex; justify-content: space-between;
-    /* style={{display:"flex", justContent:"space-between"}} */
 }
 
 .head>div>div>input {
@@ -70,4 +68,3 @@ background-color: white;
     background-color: white;
     gap:5px;
 }
-/* .cat{margin-left:"100px"} */

@@ -1,16 +1,54 @@
-.menu{font-size: 18px; background-color: white;margin-right: 20px; margin-left:-20px;cursor: pointer;}
+
+.nav{background-color: white;position:fixed; top:0;left:0; bottom:0; overflow: hidden; transition: .5s ease; height:100vh; z-index: 10000; border-right: 1px solid rgb(219, 219, 219); overflow: auto; }
+
+.main{background-color: rgb(238, 238, 238); height:100vh;transition:.5s;}
+
+.nav::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  
+ .nav::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  
+  .nav::-webkit-scrollbar-thumb {
+    background: #cacaca;
+  }
+  
+  
+  .nav::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+.main{display: flex; align-items: center; justify-content: center;}
+
+.font{color: yellow; font-size: 100px;cursor: pointer;}
+.font:hover{color: red;}
+
+
+
+.xmark{cursor: pointer; font-size: 22px; background-color:white;}
+
+.menu{font-size: 18px; background-color: white;margin-right: 20px; margin-left:-20px;cursor: pointer; margin-left: 15px; }
 
 .list{
 display:flex; flex-direction: column; gap:5px; margin-left:20px;
 }
 .list span{margin-left:20px}
 
+.container{margin-left: 20px; background-color: white;}
+
+.container div,.container span, .container h2,.container tbody,.container tr,.container td {background-color: white;}
+
+.container h2{margin-left: 10px;}
+
 .tbody span{margin-left: 20px;}
 .tbody td{padding-bottom:5px; padding-top:5px;cursor:pointer}
 .tbody td:nth-child(2):hover {color:#ff6f61}
-/* .container{width:250px;} */
 .box{display:grid; grid-template-columns: 250px 1fr;}
-.close{margin-top: 20px; display: flex; justify-content: space-between;width:250px;}
+.close{margin-top: 20px; display: flex; justify-content: space-between; background-color: white; align-items: center; margin-left: 15px; margin-right: 20px;}
 .close img{height:50px; width:120px;}
 
 

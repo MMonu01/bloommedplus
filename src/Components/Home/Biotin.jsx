@@ -9,15 +9,11 @@ import {
 import { background } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
+import { Biotin as GetData } from "./api";
 
 
 
-const GetData = () => {
-  return axios({
-    method: "get",
-    baseURL: "https://bloodmedplus-server.onrender.com/Landing_page",
-  });
-};
+
 
 
 

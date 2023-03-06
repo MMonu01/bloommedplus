@@ -65,9 +65,7 @@ let x = userCart.cart
 
 for(let i=0; i<x.length;i++){
   if(x[i].id===id){
-    // if(Number(x[i].quantity)<4){
       x[i].quantity = Number(x[i].quantity) + 1
-    // }
   }
 }
 setUserCart({...userCart,cart:x})
@@ -211,11 +209,9 @@ saveData("Cart",{...userCart,cart:x})
 {/* ----------------------------------- */}
 
 <div className={styles.checkout}>
-{/* <div> */}
 <Link to='/checkout/address'>
  <button>CHECKOUT</button>
 </Link>
-{/* </div> */}
 </div>
 
 

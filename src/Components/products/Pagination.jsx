@@ -14,7 +14,6 @@ let x = 1;
         for(let i=0; i<x;i++){
             arr.push(i+1)
     }
-console.log(totalItem,"these are toytal item",page)
     
 
 return (

@@ -1,3 +1,22 @@
+.Box{max-height:150px; overflow: auto; width:300px;margin: auto;margin-top:10px;  position: absolute; top:20px; background-color: white;}
+
+.item{height:20px; padding:5px; cursor: pointer; text-align: left; padding-left: 10px;  top:10px; background-color: white; display: flex; flex-direction: column; align-items: center; } 
+
+.Box::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .Box::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  .Box::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  .Box::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 .navbar{background-color: white;width:100%;}
 .laptop{background-color: white;}
@@ -26,8 +45,8 @@
 .dot{color:rgb(141, 141, 141); font-size: 15px;}
 .cross{color:rgb(141, 141, 141); font-size: 14px;}
 
-.Search{ height:36px; margin-left:3px;  display: flex; align-items: center; justify-content: space-between;width:60%; padding:0 6px;}
-.input{ padding:0 0 0px 5px;width:90%; font-size: 15px; height:100%;border:none;outline:none;}
+.Search{ height:36px; margin-left:3px;  display: flex; align-items: center; justify-content: space-between;width:60%; padding:0 6px; position:relative;}
+.input{ padding:0 0 0px 5px;width:400px; font-size: 15px; height:100%;border:none;outline:none;}
 .glass{font-size: 14px; width:20px;color:rgb(141, 141, 141);cursor: pointer; }
 
 .right{display:flex;background-color: white; align-items: center;}
@@ -54,10 +73,11 @@
 .newMiddle{ height:34px; background-color: white; display: flex; padding-left:40px; margin-top: 5px;}
 .newMiddle div,.newMiddle span{background-color: white;}
 .newdown{background-color: white;color:rgb(122, 120, 120); font-weight: lighter;}
-
+/* .newMiddle>div{display: flex;} */
 .newbottom{padding-left:40px; padding-right:40px; background-color: white;}
 .newSearch{width:100%; background-color: white;}
-.newSearch input{border:1px solid black; width:90%;}
+.newSearch input{ background-color: white;min-width:265px; font-size:14px; height:30px; width:90%;}
+.newSearch div {border:none; background:white;}
 
 
 @media screen and (min-width:500px) and (max-width:1100px){

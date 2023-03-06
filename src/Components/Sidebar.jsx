@@ -1,28 +1,7 @@
-import {
-  Button,
-  RadioGroup,
-  Stack,
-  Radio,
-  DrawerOverlay,
-  Drawer,
-  DrawerHeader,
-  DrawerBody,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  VStack,
-  StackDivider,
-  Box,
-} from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCartShopping,
-  faLocationDot,
-  faLocationCrosshairs,
-  faMagnifyingGlass,
-  faChevronDown,
   faBars,
   faCapsules,
   faBottleDroplet,
@@ -37,8 +16,8 @@ import {
   faPills,
   faPrescriptionBottle,
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import styles from "../Styles/Sidebar.module.css";
-import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { LogoutSuccessAction } from "../Redux/Authentication/action";
 import { saveData } from "../Utils/accessLocalstorage";
@@ -47,7 +26,6 @@ import { Link } from "react-router-dom";
 
 
 const Sidebar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [placement, setPlacement] = React.useState("left");
   
 
@@ -61,9 +39,25 @@ const Sidebar = () => {
   dispatch(LogoutSuccessAction())
   saveData("PaymentDetails",{})
 saveData("locationDetails",{})
+Close()
   }
 
 
+
+
+
+    const [show,setShow] = useState(false)
+
+const Open  = ()=>{
+    setShow(true)
+    document.body.style.backgroundColor = "rgba(250,250,250,.1)"
+}
+
+const Close =()=>{
+    setShow(false)
+    document.body.style.backgroundColor = "white"
+
+}
 
 
 
@@ -71,29 +65,17 @@ saveData("locationDetails",{})
 
   return (
     <>
-      <RadioGroup defaultValue={placement} onChange={setPlacement}>
-        {/* <Stack direction='row' mb='4'>
-            <Radio value='top'>Top</Radio>
-            <Radio value='right'>Right</Radio>
-            <Radio value='bottom'>Bottom</Radio>
-            <Radio value='left'>Left</Radio>
-          </Stack> */}
-      </RadioGroup>
-      {/* <Button colorScheme='blue' onClick={onOpen}> */}
-      <div onClick={onOpen} style={{ background: "white" }}>
-        <FontAwesomeIcon className={styles.menu} icon={faBars} />
-      </div>
 
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent style={{ marginLeft: "20px" }}>
-          <div className={styles.close}>
-            <img src="../../Images/bloommedplus.png" alt="logo" />
-            <DrawerCloseButton style={{ border: "none", cursor: "pointer" }} />
+<nav  style={{width:show?"300px":"0px"}} className={styles.nav}>
+<div className={styles.close}>
+            <img  src="../../Images/bloommedplus.png" alt="logo" />
+            <FontAwesomeIcon onClick={Close} className={styles.xmark} icon={faCircleXmark}/>
           </div>
 
-          <DrawerHeader borderBottomWidth="1px">Hi, there!</DrawerHeader>
-          <DrawerBody>
+
+      <div className={styles.container}>
+      <h2 borderBottomWidth="1px">Hi, there!</h2>
+       
             <div className={styles.box}>
               <div className={styles.container}>
 
@@ -124,7 +106,7 @@ saveData("locationDetails",{})
                 <tbody className={styles.tbody}>
                   <tr>
                     <td>
-                      <FontAwesomeIcon icon={faCapsules} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faCapsules} />
                     </td>
                     <td>
                       {" "}
@@ -133,7 +115,7 @@ saveData("locationDetails",{})
                   </tr>
                   <tr>
                     <td>
-                      <FontAwesomeIcon icon={faBottleDroplet} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faBottleDroplet} />
                     </td>
                     <td>
                       {" "}
@@ -143,7 +125,7 @@ saveData("locationDetails",{})
                   <tr>
                     <td>
                       {" "}
-                      <FontAwesomeIcon icon={faFlask} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faFlask} />
                     </td>
                     <td>
                       {" "}
@@ -152,7 +134,7 @@ saveData("locationDetails",{})
                   </tr>
                   <tr>
                     <td>
-                      <FontAwesomeIcon icon={faStethoscope} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faStethoscope} />
                     </td>
                     <td>
                       {" "}
@@ -161,7 +143,7 @@ saveData("locationDetails",{})
                   </tr>
                   <tr>
                     <td>
-                      <FontAwesomeIcon icon={faHandHoldingMedical} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faHandHoldingMedical} />
                     </td>
                     <td>
                       {" "}
@@ -170,12 +152,12 @@ saveData("locationDetails",{})
                   </tr>
                 </tbody>
 
-                <hr style={{ marginTop: "10px" }} />
+              
 
                 <tbody className={styles.tbody}>
                   <tr>
                     <td>
-                      <FontAwesomeIcon icon={faHandHoldingDroplet} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faHandHoldingDroplet} />
                     </td>
                     <td>
                       {" "}
@@ -185,7 +167,7 @@ saveData("locationDetails",{})
                   <tr>
                     <td>
                       {" "}
-                      <FontAwesomeIcon icon={faPlateWheat} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faPlateWheat} />
                     </td>
                     <td>
                       {" "}
@@ -194,7 +176,7 @@ saveData("locationDetails",{})
                   </tr>
                   <tr>
                     <td>
-                      <FontAwesomeIcon icon={faFileInvoice} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faFileInvoice} />
                     </td>
                     <td>
                       <span>Hindi articles</span>
@@ -203,7 +185,7 @@ saveData("locationDetails",{})
                   <tr>
                     <td>
                       {" "}
-                      <FontAwesomeIcon icon={faGear} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faGear} />
                     </td>
                     <td>
                       {" "}
@@ -213,7 +195,7 @@ saveData("locationDetails",{})
                   <tr>
                     <td>
                       {" "}
-                      <FontAwesomeIcon icon={faDisease} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faDisease} />
                     </td>
                     <td>
                       {" "}
@@ -223,7 +205,7 @@ saveData("locationDetails",{})
                   <tr>
                     <td>
                       {" "}
-                      <FontAwesomeIcon icon={faPills} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faPills} />
                     </td>
                     <td>
                       {" "}
@@ -232,21 +214,29 @@ saveData("locationDetails",{})
                   </tr>
                   <tr>
                     <td>
-                      <FontAwesomeIcon icon={faPrescriptionBottle} />
+                      <FontAwesomeIcon className={styles.listIcon} icon={faPrescriptionBottle} />
                     </td>
                     <td>
                       {" "}
                       <span>All diseases</span>
                     </td>
                   </tr>
+                  
                 </tbody>
               </div>
 
  
             </div>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+         
+      </div>
+                 </nav>
+       
+
+         
+         <div onClick={Open} style={{ background: "white" }}>
+        <FontAwesomeIcon className={styles.menu} icon={faBars} />
+      </div>
+       
      
     </>
   );
